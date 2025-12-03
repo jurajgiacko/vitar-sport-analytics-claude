@@ -26,7 +26,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-05-01",
     "total_czk": 23801.63,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 20673.68,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100553",
@@ -52,7 +54,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-02-07",
     "total_czk": 25480.65,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 22566.95,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -78,7 +82,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-02-17",
     "total_czk": 5046.66,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4505.95,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100645",
@@ -104,7 +110,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-05-01",
     "total_czk": 26874.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 23994.66,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -130,7 +138,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-02-17",
     "total_czk": 58398.7,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 51192.91,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250200053",
@@ -156,7 +166,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-02-20",
     "total_czk": 83033.37,
-    "total_eur": 3311.4
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 3311.4,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100780",
@@ -182,7 +194,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-03-18",
     "total_czk": 131822.15,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 117698.35,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100782",
@@ -208,7 +222,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-02-28",
     "total_czk": 30579.22,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 27075.85,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100848",
@@ -234,7 +250,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-05-01",
     "total_czk": 120610.88,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 107530.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101228",
@@ -260,7 +278,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-04-17",
     "total_czk": 6377.08,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5693.82,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101238",
@@ -286,7 +306,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-04-17",
     "total_czk": 952673.87,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 837127.63,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102606",
@@ -312,7 +334,9 @@ const sponsoringData = [
     "is_paid": false,
     "liquidation_date": "",
     "total_czk": 8006.6,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 7095.72,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102756",
@@ -338,7 +362,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-11-01",
     "total_czk": 5820.6,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5080.98,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102825",
@@ -364,7 +390,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-10-22",
     "total_czk": 7083.11,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 6292.72,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102985",
@@ -390,7 +418,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-10-31",
     "total_czk": 33235.57,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 29076.95,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102986",
@@ -416,7 +446,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-10-31",
     "total_czk": 38408.27,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 33651.65,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -442,7 +474,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-07-25",
     "total_czk": 119500.09,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 106609.58,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103003",
@@ -468,7 +502,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-09-03",
     "total_czk": 100842.47,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 89422.51,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103098",
@@ -494,7 +530,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-10-31",
     "total_czk": 13815.91,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 12295.86,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103179",
@@ -520,7 +558,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-10-22",
     "total_czk": 31231.4,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 27805.63,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103349",
@@ -546,7 +586,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-07-15",
     "total_czk": 115973.53,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 102897.55,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103350",
@@ -572,7 +614,9 @@ const sponsoringData = [
     "is_paid": false,
     "liquidation_date": "",
     "total_czk": 24585.05,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 21926.44,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103359",
@@ -598,7 +642,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-07-01",
     "total_czk": 3465.44,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3045.44,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103386",
@@ -624,7 +670,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-10-01",
     "total_czk": 31025.64,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 27150.3,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103471",
@@ -650,7 +698,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-10-31",
     "total_czk": 22810.29,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 20167.44,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103925",
@@ -676,7 +726,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-06-25",
     "total_czk": 13510.98,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 11798.2,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104245",
@@ -702,7 +754,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-07-25",
     "total_czk": 17916.26,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 15996.66,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104266",
@@ -728,7 +782,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-11-01",
     "total_czk": 15732.93,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 13833.02,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104335",
@@ -754,7 +810,9 @@ const sponsoringData = [
     "is_paid": false,
     "liquidation_date": "",
     "total_czk": 13670.29,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 12205.6,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104500",
@@ -780,7 +838,9 @@ const sponsoringData = [
     "is_paid": false,
     "liquidation_date": "",
     "total_czk": 52857.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 47193.74,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104559",
@@ -806,7 +866,9 @@ const sponsoringData = [
     "is_paid": false,
     "liquidation_date": "",
     "total_czk": 6755.49,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5899.1,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104972",
@@ -832,7 +894,9 @@ const sponsoringData = [
     "is_paid": false,
     "liquidation_date": "",
     "total_czk": 3824.03,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3414.31,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250200584",
@@ -858,7 +922,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-10-30",
     "total_czk": 24641.32,
-    "total_eur": 1006.59
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 1006.59,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105181",
@@ -884,7 +950,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-10-27",
     "total_czk": 20529.62,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 18053.1,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105275",
@@ -910,7 +978,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-10-01",
     "total_czk": 1869.31,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1618.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105373",
@@ -936,7 +1006,9 @@ const sponsoringData = [
     "is_paid": false,
     "liquidation_date": "",
     "total_czk": 4759.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4249.11,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105421",
@@ -962,7 +1034,9 @@ const sponsoringData = [
     "is_paid": false,
     "liquidation_date": "",
     "total_czk": 2530.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2258.93,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105461",
@@ -988,7 +1062,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-10-31",
     "total_czk": 23567.96,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 20363.84,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105482",
@@ -1014,7 +1090,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-10-31",
     "total_czk": 6755.5,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5899.11,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105744",
@@ -1040,7 +1118,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-11-12",
     "total_czk": 129942.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 116019.65,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105788",
@@ -1066,7 +1146,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-10-01",
     "total_czk": 160622.95,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 142450.25,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106080",
@@ -1092,7 +1174,9 @@ const sponsoringData = [
     "is_paid": false,
     "liquidation_date": "",
     "total_czk": 66603.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 59466.96,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106464",
@@ -1118,7 +1202,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-11-01",
     "total_czk": 14040.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 11603.32,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -1144,7 +1230,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-10-27",
     "total_czk": 54448.67,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 48520.04,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106687",
@@ -1170,7 +1258,9 @@ const sponsoringData = [
     "is_paid": false,
     "liquidation_date": "",
     "total_czk": 5249.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4338.84,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250200745",
@@ -1196,7 +1286,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-10-01",
     "total_czk": 18625.53,
-    "total_eur": 766.01
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 766.01,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106738",
@@ -1222,7 +1314,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-11-04",
     "total_czk": 470453.12,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 415823.4,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106739",
@@ -1248,7 +1342,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-11-24",
     "total_czk": 30655.18,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 27370.69,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106740",
@@ -1274,7 +1370,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-11-24",
     "total_czk": 2834.93,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2524.49,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106743",
@@ -1300,7 +1398,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-10-31",
     "total_czk": 18542.07,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 16429.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -1326,7 +1426,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-11-18",
     "total_czk": 58551.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 51641.35,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106840",
@@ -1352,7 +1454,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-11-25",
     "total_czk": 60805.88,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 53633.53,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106841",
@@ -1378,7 +1482,9 @@ const sponsoringData = [
     "is_paid": false,
     "liquidation_date": "",
     "total_czk": 33663.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 30057.13,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106873",
@@ -1404,7 +1510,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-11-11",
     "total_czk": 12496.65,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 11157.73,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106876",
@@ -1430,7 +1538,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-11-13",
     "total_czk": 118410.95,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 104378.24,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106887",
@@ -1456,7 +1566,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-11-14",
     "total_czk": 3433.27,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3065.42,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250200766",
@@ -1482,7 +1594,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-11-18",
     "total_czk": 79055.12,
-    "total_eur": 3247.94
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 3247.94,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106922",
@@ -1508,7 +1622,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-11-11",
     "total_czk": 1032.62,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 921.99,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106923",
@@ -1534,7 +1650,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-11-11",
     "total_czk": 1216.82,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1086.45,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106924",
@@ -1560,7 +1678,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-11-10",
     "total_czk": 10769.64,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 9562.71,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106965",
@@ -1586,7 +1706,9 @@ const sponsoringData = [
     "is_paid": false,
     "liquidation_date": "",
     "total_czk": 19036.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 16996.43,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250200775",
@@ -1612,7 +1734,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-11-27",
     "total_czk": 16925.26,
-    "total_eur": 699.68
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 699.68,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250107207",
@@ -1638,7 +1762,9 @@ const sponsoringData = [
     "is_paid": false,
     "liquidation_date": "",
     "total_czk": 11210.18,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 10001.19,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250107209",
@@ -1664,7 +1790,9 @@ const sponsoringData = [
     "is_paid": false,
     "liquidation_date": "",
     "total_czk": 35519.06,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 31650.49,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101688",
@@ -1690,7 +1818,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-04-25",
     "total_czk": 12298.46,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 10980.77,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101795",
@@ -1716,7 +1846,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-04-10",
     "total_czk": 43790.12,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 39019.63,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101817",
@@ -1742,7 +1874,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-04-17",
     "total_czk": 25961.87,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 23180.24,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -1768,7 +1902,9 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-05-28",
     "total_czk": 2424.96,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2146.1,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102444",
@@ -1794,6 +1930,8 @@ const sponsoringData = [
     "is_paid": true,
     "liquidation_date": "2025-10-22",
     "total_czk": 10647.8,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 9507.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   }
 ];

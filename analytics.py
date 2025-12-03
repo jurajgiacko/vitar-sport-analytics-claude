@@ -217,7 +217,9 @@ def parse_order(order_element):
 
     # Get totals from summary - use foreignCurrency for EUR orders, homeCurrency for CZK
     total_czk = Decimal('0')
+    total_czk_bez_dph = Decimal('0')
     total_eur = Decimal('0')
+    total_eur_bez_dph = Decimal('0')
 
     if summary is not None:
         if currency == 'EUR':
@@ -226,6 +228,10 @@ def parse_order(order_element):
             if foreign_curr_sum is not None:
                 eur_sum = get_text(foreign_curr_sum, './/typ:priceSum', '0')
                 total_eur = Decimal(eur_sum)
+                # Get price without VAT for EUR
+                eur_low = Decimal(get_text(foreign_curr_sum, './/typ:priceLow', '0'))
+                eur_high = Decimal(get_text(foreign_curr_sum, './/typ:priceHigh', '0'))
+                total_eur_bez_dph = eur_low + eur_high
             # Also get CZK equivalent from homeCurrency
             home_curr = summary.find('.//ord:homeCurrency', NS)
             if home_curr is not None:
@@ -237,9 +243,14 @@ def parse_order(order_element):
             # For CZK orders
             home_curr = summary.find('.//ord:homeCurrency', NS)
             if home_curr is not None:
-                price_low = Decimal(get_text(home_curr, './/typ:priceLowSum', '0'))
-                price_high = Decimal(get_text(home_curr, './/typ:priceHighSum', '0'))
-                total_czk = price_low + price_high
+                # With VAT (priceSum = priceLowSum + priceHighSum)
+                price_low_sum = Decimal(get_text(home_curr, './/typ:priceLowSum', '0'))
+                price_high_sum = Decimal(get_text(home_curr, './/typ:priceHighSum', '0'))
+                total_czk = price_low_sum + price_high_sum
+                # Without VAT (price = priceLow + priceHigh)
+                price_low = Decimal(get_text(home_curr, './/typ:priceLow', '0'))
+                price_high = Decimal(get_text(home_curr, './/typ:priceHigh', '0'))
+                total_czk_bez_dph = price_low + price_high
 
     # Classify order
     channel, salesperson, country, supplier = classify_order(order_number, currency, centre)
@@ -273,7 +284,9 @@ def parse_order(order_element):
         'note': note,
         'int_note': int_note,
         'total_czk': total_czk,
+        'total_czk_bez_dph': total_czk_bez_dph,
         'total_eur': total_eur,
+        'total_eur_bez_dph': total_eur_bez_dph,
     }
 
     # Parse order items
@@ -426,7 +439,9 @@ def parse_invoice(invoice_element):
 
     # Get totals from summary
     total_czk = Decimal('0')
+    total_czk_bez_dph = Decimal('0')
     total_eur = Decimal('0')
+    total_eur_bez_dph = Decimal('0')
 
     if summary is not None:
         if currency == 'EUR':
@@ -435,6 +450,10 @@ def parse_invoice(invoice_element):
             if foreign_curr_sum is not None:
                 eur_sum = get_text(foreign_curr_sum, './/typ:priceSum', '0')
                 total_eur = Decimal(eur_sum)
+                # Get price without VAT for EUR
+                eur_low = Decimal(get_text(foreign_curr_sum, './/typ:priceLow', '0'))
+                eur_high = Decimal(get_text(foreign_curr_sum, './/typ:priceHigh', '0'))
+                total_eur_bez_dph = eur_low + eur_high
             # Also get CZK equivalent from homeCurrency
             home_curr = summary.find('.//inv:homeCurrency', NS)
             if home_curr is not None:
@@ -446,10 +465,15 @@ def parse_invoice(invoice_element):
             # For CZK invoices
             home_curr = summary.find('.//inv:homeCurrency', NS)
             if home_curr is not None:
+                # With VAT
                 price_none = Decimal(get_text(home_curr, './/typ:priceNone', '0'))
-                price_low = Decimal(get_text(home_curr, './/typ:priceLowSum', '0'))
-                price_high = Decimal(get_text(home_curr, './/typ:priceHighSum', '0'))
-                total_czk = price_none + price_low + price_high
+                price_low_sum = Decimal(get_text(home_curr, './/typ:priceLowSum', '0'))
+                price_high_sum = Decimal(get_text(home_curr, './/typ:priceHighSum', '0'))
+                total_czk = price_none + price_low_sum + price_high_sum
+                # Without VAT
+                price_low = Decimal(get_text(home_curr, './/typ:priceLow', '0'))
+                price_high = Decimal(get_text(home_curr, './/typ:priceHigh', '0'))
+                total_czk_bez_dph = price_none + price_low + price_high
 
     # Classify invoice based on order number (same logic as orders)
     channel, salesperson, country, supplier = classify_order(order_number, currency, centre)
@@ -483,7 +507,9 @@ def parse_invoice(invoice_element):
         'is_paid': is_paid,
         'liquidation_date': liquidation_date,
         'total_czk': total_czk,
+        'total_czk_bez_dph': total_czk_bez_dph,
         'total_eur': total_eur,
+        'total_eur_bez_dph': total_eur_bez_dph,
     }
 
     # Parse invoice items
@@ -580,7 +606,9 @@ def export_invoices_to_js(invoices, items, output_dir):
             'is_paid': inv['is_paid'],
             'liquidation_date': inv['liquidation_date'],
             'total_czk': float(inv['total_czk']),
-            'total_eur': float(inv['total_eur'])
+            'total_czk_bez_dph': float(inv.get('total_czk_bez_dph', 0)),
+            'total_eur': float(inv['total_eur']),
+            'total_eur_bez_dph': float(inv.get('total_eur_bez_dph', 0))
         }
 
     def item_to_dict(item):
@@ -953,13 +981,15 @@ def export_to_csv(orders, reports, output_dir):
             'ico', 'dic', 'email', 'phone', 'currency', 'centre',
             'channel', 'salesperson', 'country', 'supplier',
             'payment_type', 'price_level', 'is_executed', 'is_delivered',
-            'note', 'int_note', 'total_czk', 'total_eur'
+            'note', 'int_note', 'total_czk', 'total_czk_bez_dph', 'total_eur', 'total_eur_bez_dph'
         ])
         writer.writeheader()
         for order in orders:
             row = order.copy()
             row['total_czk'] = float(row['total_czk'])
+            row['total_czk_bez_dph'] = float(row.get('total_czk_bez_dph', 0))
             row['total_eur'] = float(row['total_eur'])
+            row['total_eur_bez_dph'] = float(row.get('total_eur_bez_dph', 0))
             writer.writerow(row)
     print(f"\nExported orders to: {orders_file}")
 
@@ -1049,7 +1079,9 @@ def export_to_js(orders, items, output_dir):
             'is_executed': order['is_executed'],
             'is_delivered': order['is_delivered'],
             'total_czk': float(order['total_czk']),
-            'total_eur': float(order['total_eur'])
+            'total_czk_bez_dph': float(order.get('total_czk_bez_dph', 0)),
+            'total_eur': float(order['total_eur']),
+            'total_eur_bez_dph': float(order.get('total_eur_bez_dph', 0))
         })
 
     with open(orders_file, 'w', encoding='utf-8') as f:
