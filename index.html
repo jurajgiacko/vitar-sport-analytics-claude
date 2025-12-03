@@ -362,6 +362,39 @@
             margin-top: 5px;
         }
 
+        /* Stock alerts */
+        .stock-critical { background: #c62828; color: white; }
+        .stock-low { background: #ff9800; color: white; }
+        .stock-ok { background: #4caf50; color: white; }
+        .stock-high { background: #2196f3; color: white; }
+        .stock-no-sales { background: #9e9e9e; color: white; }
+
+        .stock-row-critical { background: #ffcdd2 !important; }
+        .stock-row-low { background: #fff3e0 !important; }
+
+        .stock-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stock-card {
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stock-card h4 {
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+
+        .stock-card .count {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
         @media (max-width: 768px) {
             .filters {
                 flex-direction: column;
@@ -404,6 +437,7 @@
                 <button class="view-btn" data-view="invoices">Faktúry</button>
                 <button class="view-btn" data-view="sponsoring">Sponzoring</button>
                 <button class="view-btn" data-view="overdue">Po splatnosti</button>
+                <button class="view-btn" data-view="stock">Sklad</button>
             </div>
         </header>
 
@@ -468,6 +502,25 @@
                     <option value="15-30">15-30 dní</option>
                     <option value="30-90">30-90 dní</option>
                     <option value="90+">90+ dní (právne odd.)</option>
+                </select>
+            </div>
+            <div class="filter-group" id="stockBrandFilterGroup" style="display: none;">
+                <label>Značka</label>
+                <select id="stockBrandFilter">
+                    <option value="all">Všechny</option>
+                    <option value="ENERVIT">ENERVIT</option>
+                    <option value="ROYALBAY">ROYALBAY</option>
+                </select>
+            </div>
+            <div class="filter-group" id="stockStatusFilterGroup" style="display: none;">
+                <label>Stav zásob</label>
+                <select id="stockStatusFilter">
+                    <option value="all">Všechny</option>
+                    <option value="critical">Kritické (&lt;30 dní)</option>
+                    <option value="low">Nízké (30-60 dní)</option>
+                    <option value="ok">OK (60-120 dní)</option>
+                    <option value="high">Vysoké (&gt;120 dní)</option>
+                    <option value="no_sales">Bez predaja</option>
                 </select>
             </div>
         </div>
@@ -740,6 +793,34 @@
                 <p id="overdueCount" style="margin-top: 15px; color: #666; font-size: 0.9rem;"></p>
             </div>
         </div>
+
+        <!-- Stock section (shown only when stock view is active) -->
+        <div id="stockSection" style="display: none;">
+            <div id="stockSummary" class="stock-summary">
+                <!-- Dynamically populated -->
+            </div>
+            <div class="section">
+                <h2>Skladové zásoby</h2>
+                <div class="table-container">
+                    <table id="stockTable">
+                        <thead>
+                            <tr>
+                                <th>Kód</th>
+                                <th>Produkt</th>
+                                <th>Značka</th>
+                                <th class="text-right">Na sklade</th>
+                                <th class="text-right">Predaj/deň</th>
+                                <th class="text-right">Predaj 90d</th>
+                                <th class="text-right">Dní zostáva</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <p id="stockCount" style="margin-top: 15px; color: #666; font-size: 0.9rem;"></p>
+            </div>
+        </div>
     </div>
 
     <script src="auth.js"></script>
@@ -758,6 +839,7 @@
     <script src="invoices_items.js"></script>
     <script src="sponsoring_data.js"></script>
     <script src="sponsoring_items.js"></script>
+    <script src="stock_data.js"></script>
     <script src="plan.js"></script>
     <script src="app.js"></script>
 </body>

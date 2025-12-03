@@ -31,6 +31,7 @@ NS = {
     'dat': 'http://www.stormware.cz/schema/version_2/data.xsd',
     'ord': 'http://www.stormware.cz/schema/version_2/order.xsd',
     'inv': 'http://www.stormware.cz/schema/version_2/invoice.xsd',
+    'stk': 'http://www.stormware.cz/schema/version_2/stock.xsd',
     'typ': 'http://www.stormware.cz/schema/version_2/type.xsd',
 }
 
@@ -1126,6 +1127,161 @@ def export_to_js(orders, items, output_dir):
     print(f"Exported {len(items_list)} items to: {items_file}")
 
 
+# ============================================================================
+# STOCK PARSING FUNCTIONS
+# ============================================================================
+
+def parse_stock_item(stock_element):
+    """Parse a single stock item from XML."""
+    header = stock_element.find('.//stk:stockHeader', NS)
+    if header is None:
+        return None
+
+    code = get_text(header, './/stk:code')
+    name = get_text(header, './/stk:name')
+    name_complement = get_text(header, './/stk:nameComplement')
+    ean = get_text(header, './/stk:EAN')
+    unit = get_text(header, './/stk:unit')
+    count = Decimal(get_text(header, './/stk:count', '0'))
+    selling_price = Decimal(get_text(header, './/stk:sellingPrice', '0'))
+    purchase_price = Decimal(get_text(header, './/stk:purchasingPrice', '0'))
+
+    return {
+        'code': code,
+        'name': name,
+        'name_complement': name_complement,
+        'full_name': f"{name} {name_complement}".strip() if name_complement else name,
+        'ean': ean,
+        'unit': unit,
+        'count': count,
+        'selling_price': selling_price,
+        'purchase_price': purchase_price,
+    }
+
+
+def analyze_stock(stock_dir):
+    """Analyze stock from XML exports."""
+    all_stock = []
+
+    # Process ENERVIT stock
+    en_files = glob.glob(os.path.join(stock_dir, '*EN*.xml')) + glob.glob(os.path.join(stock_dir, '*en*.xml'))
+    for xml_file in en_files:
+        print(f"Processing {os.path.basename(xml_file)} (ENERVIT)...")
+        try:
+            tree = ET.parse(xml_file)
+            root = tree.getroot()
+
+            for stock_element in root.findall('.//stk:stock', NS):
+                item = parse_stock_item(stock_element)
+                if item:
+                    item['brand'] = 'ENERVIT'
+                    all_stock.append(item)
+
+            print(f"  Found {len([s for s in all_stock if s['brand'] == 'ENERVIT'])} ENERVIT items")
+        except ET.ParseError as e:
+            print(f"  Error parsing: {e}")
+
+    # Process ROYALBAY stock
+    rb_files = glob.glob(os.path.join(stock_dir, '*RB*.xml')) + glob.glob(os.path.join(stock_dir, '*rb*.xml'))
+    for xml_file in rb_files:
+        print(f"Processing {os.path.basename(xml_file)} (ROYALBAY)...")
+        try:
+            tree = ET.parse(xml_file)
+            root = tree.getroot()
+
+            count_before = len(all_stock)
+            for stock_element in root.findall('.//stk:stock', NS):
+                item = parse_stock_item(stock_element)
+                if item:
+                    item['brand'] = 'ROYALBAY'
+                    all_stock.append(item)
+
+            print(f"  Found {len(all_stock) - count_before} ROYALBAY items")
+        except ET.ParseError as e:
+            print(f"  Error parsing: {e}")
+
+    print(f"\nTotal stock items: {len(all_stock)}")
+    return all_stock
+
+
+def calculate_stock_predictions(stock_items, order_items):
+    """Calculate average daily sales and days remaining for each stock item."""
+    from datetime import datetime, timedelta
+
+    # Get date range from orders (use last 90 days for average)
+    dates = [item['date'] for item in order_items if item.get('date')]
+    if not dates:
+        return stock_items
+
+    dates.sort()
+    end_date = datetime.strptime(dates[-1], '%Y-%m-%d')
+    start_date = end_date - timedelta(days=90)
+    start_date_str = start_date.strftime('%Y-%m-%d')
+
+    # Calculate total quantity sold per product code in last 90 days
+    sales_by_code = defaultdict(Decimal)
+    for item in order_items:
+        if item.get('date', '') >= start_date_str:
+            code = item.get('product_code', '')
+            qty = Decimal(str(item.get('quantity', 0)))
+            if code:
+                sales_by_code[code] += qty
+
+    # Calculate predictions
+    days_in_period = 90
+    for stock_item in stock_items:
+        code = stock_item['code']
+        total_sold = sales_by_code.get(code, Decimal('0'))
+
+        # Average daily sales
+        avg_daily = total_sold / days_in_period if days_in_period > 0 else Decimal('0')
+        stock_item['total_sold_90d'] = total_sold
+        stock_item['avg_daily_sales'] = avg_daily
+
+        # Days remaining
+        if avg_daily > 0:
+            days_remaining = stock_item['count'] / avg_daily
+            stock_item['days_remaining'] = int(days_remaining)
+        else:
+            # No sales in last 90 days
+            stock_item['days_remaining'] = -1  # -1 means no sales data
+
+    return stock_items
+
+
+def export_stock_to_js(stock_items, output_dir):
+    """Export stock data to JavaScript file."""
+    import json
+
+    stock_file = os.path.join(output_dir, 'stock_data.js')
+    stock_list = []
+
+    for item in stock_items:
+        stock_list.append({
+            'code': item['code'],
+            'name': item['name'],
+            'full_name': item['full_name'],
+            'ean': item['ean'],
+            'unit': item['unit'],
+            'brand': item['brand'],
+            'count': float(item['count']),
+            'selling_price': float(item['selling_price']),
+            'purchase_price': float(item['purchase_price']),
+            'total_sold_90d': float(item.get('total_sold_90d', 0)),
+            'avg_daily_sales': float(item.get('avg_daily_sales', 0)),
+            'days_remaining': item.get('days_remaining', -1),
+        })
+
+    with open(stock_file, 'w', encoding='utf-8') as f:
+        f.write('// VITAR Sport Analytics - Stock Data\n')
+        f.write('// Generated from Pohoda XML exports\n\n')
+        f.write('const stockData = ')
+        f.write(json.dumps(stock_list, ensure_ascii=False, indent=2))
+        f.write(';\n')
+
+    print(f"Exported {len(stock_list)} stock items to: {stock_file}")
+
+
 def main():
     """Main entry point."""
     # Directory with XML exports
@@ -1187,6 +1343,29 @@ def main():
             print("No invoices found!")
     else:
         print(f"Invoices directory not found: {invoices_dir}")
+
+    # ========================================
+    # PROCESS STOCK
+    # ========================================
+    stock_dir = os.path.join(xml_dir, 'sklad')
+    if os.path.exists(stock_dir):
+        print("\n" + "="*50)
+        print("SKLAD (Stock)")
+        print("="*50)
+
+        stock_items = analyze_stock(stock_dir)
+
+        if stock_items and order_items:
+            # Calculate predictions based on order history
+            stock_items = calculate_stock_predictions(stock_items, order_items)
+            export_stock_to_js(stock_items, script_dir)
+        elif stock_items:
+            print("Warning: No order items for predictions, exporting stock without predictions")
+            export_stock_to_js(stock_items, script_dir)
+        else:
+            print("No stock items found!")
+    else:
+        print(f"Stock directory not found: {stock_dir}")
 
     print("\n" + "="*50)
     print("Analýza dokončena!")

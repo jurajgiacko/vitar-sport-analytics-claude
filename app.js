@@ -1201,6 +1201,141 @@ function updateOverdueTable(invoices) {
     }
 }
 
+// ============================================================================
+// STOCK FUNCTIONS
+// ============================================================================
+
+// Get stock status category
+function getStockStatus(daysRemaining) {
+    if (daysRemaining === -1) return 'no_sales';
+    if (daysRemaining < 30) return 'critical';
+    if (daysRemaining < 60) return 'low';
+    if (daysRemaining <= 120) return 'ok';
+    return 'high';
+}
+
+// Get stock status text
+function getStockStatusText(daysRemaining) {
+    if (daysRemaining === -1) return 'Bez predaja';
+    if (daysRemaining < 30) return 'Kritické';
+    if (daysRemaining < 60) return 'Nízké';
+    if (daysRemaining <= 120) return 'OK';
+    return 'Vysoké';
+}
+
+// Get filtered stock items
+function getFilteredStock() {
+    const brandFilter = document.getElementById('stockBrandFilter')?.value || 'all';
+    const statusFilter = document.getElementById('stockStatusFilter')?.value || 'all';
+
+    let filtered = stockData.filter(item => item.count > 0); // Only items with stock
+
+    // Brand filter
+    if (brandFilter !== 'all') {
+        filtered = filtered.filter(item => item.brand === brandFilter);
+    }
+
+    // Status filter
+    if (statusFilter !== 'all') {
+        filtered = filtered.filter(item => {
+            const status = getStockStatus(item.days_remaining);
+            return status === statusFilter;
+        });
+    }
+
+    // Sort by days remaining (critical first)
+    filtered.sort((a, b) => {
+        // No sales items at the end
+        if (a.days_remaining === -1 && b.days_remaining !== -1) return 1;
+        if (b.days_remaining === -1 && a.days_remaining !== -1) return -1;
+        return a.days_remaining - b.days_remaining;
+    });
+
+    return filtered;
+}
+
+// Update stock summary cards
+function updateStockSummary() {
+    const container = document.getElementById('stockSummary');
+    if (!container) return;
+
+    const stats = {
+        critical: { count: 0, label: 'Kritické (<30 dní)' },
+        low: { count: 0, label: 'Nízké (30-60 dní)' },
+        ok: { count: 0, label: 'OK (60-120 dní)' },
+        high: { count: 0, label: 'Vysoké (>120 dní)' },
+        no_sales: { count: 0, label: 'Bez predaja' }
+    };
+
+    stockData.forEach(item => {
+        if (item.count <= 0) return;
+        const status = getStockStatus(item.days_remaining);
+        stats[status].count++;
+    });
+
+    container.innerHTML = `
+        <div class="stock-card stock-critical">
+            <h4>${stats.critical.label}</h4>
+            <div class="count">${stats.critical.count}</div>
+        </div>
+        <div class="stock-card stock-low">
+            <h4>${stats.low.label}</h4>
+            <div class="count">${stats.low.count}</div>
+        </div>
+        <div class="stock-card stock-ok">
+            <h4>${stats.ok.label}</h4>
+            <div class="count">${stats.ok.count}</div>
+        </div>
+        <div class="stock-card stock-high">
+            <h4>${stats.high.label}</h4>
+            <div class="count">${stats.high.count}</div>
+        </div>
+        <div class="stock-card stock-no-sales">
+            <h4>${stats.no_sales.label}</h4>
+            <div class="count">${stats.no_sales.count}</div>
+        </div>
+    `;
+}
+
+// Update stock table
+function updateStockTable(items) {
+    const tbody = document.querySelector('#stockTable tbody');
+    if (!tbody) return;
+
+    let html = '';
+    items.forEach(item => {
+        const status = getStockStatus(item.days_remaining);
+        const statusText = getStockStatusText(item.days_remaining);
+
+        let rowClass = '';
+        if (status === 'critical') rowClass = 'stock-row-critical';
+        else if (status === 'low') rowClass = 'stock-row-low';
+
+        const daysText = item.days_remaining === -1 ? '-' : `${item.days_remaining}`;
+        const avgDaily = item.avg_daily_sales.toFixed(1);
+
+        html += `
+            <tr class="${rowClass}">
+                <td>${item.code}</td>
+                <td>${item.full_name}</td>
+                <td><span class="badge badge-${item.brand === 'ENERVIT' ? 'enervit' : 'royalbay'}">${item.brand}</span></td>
+                <td class="text-right">${item.count.toLocaleString('cs-CZ')} ${item.unit}</td>
+                <td class="text-right">${avgDaily}</td>
+                <td class="text-right">${item.total_sold_90d.toLocaleString('cs-CZ')}</td>
+                <td class="text-right"><strong>${daysText}</strong></td>
+                <td><span class="badge stock-${status}">${statusText}</span></td>
+            </tr>
+        `;
+    });
+
+    tbody.innerHTML = html || '<tr><td colspan="8" style="text-align:center;color:#999;">Žádné položky</td></tr>';
+
+    const countEl = document.getElementById('stockCount');
+    if (countEl) {
+        countEl.textContent = `Zobrazeno ${items.length} z ${stockData.filter(i => i.count > 0).length} položiek`;
+    }
+}
+
 // Initialize view toggle
 function initViewToggle() {
     document.querySelectorAll('.view-btn').forEach(btn => {
@@ -1213,13 +1348,22 @@ function initViewToggle() {
                 document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
-                // Show/hide overdue filter
+                // Show/hide special filters and sections
                 const overdueFilterGroup = document.getElementById('overdueFilterGroup');
                 const overdueSection = document.getElementById('overdueSection');
-                const filtersDiv = document.querySelector('.filters');
+                const stockBrandFilterGroup = document.getElementById('stockBrandFilterGroup');
+                const stockStatusFilterGroup = document.getElementById('stockStatusFilterGroup');
+                const stockSection = document.getElementById('stockSection');
                 const summaryCards = document.getElementById('summaryCards');
                 const tabsDiv = document.querySelector('.tabs');
                 const tabContents = document.querySelectorAll('.tab-content');
+
+                // Hide all special sections first
+                if (overdueFilterGroup) overdueFilterGroup.style.display = 'none';
+                if (overdueSection) overdueSection.style.display = 'none';
+                if (stockBrandFilterGroup) stockBrandFilterGroup.style.display = 'none';
+                if (stockStatusFilterGroup) stockStatusFilterGroup.style.display = 'none';
+                if (stockSection) stockSection.style.display = 'none';
 
                 if (newView === 'overdue') {
                     // Show overdue-specific UI
@@ -1233,10 +1377,21 @@ function initViewToggle() {
                     const overdueInvoices = getOverdueInvoices();
                     updateOverdueSummary(overdueInvoices);
                     updateOverdueTable(overdueInvoices);
+                } else if (newView === 'stock') {
+                    // Show stock-specific UI
+                    if (stockBrandFilterGroup) stockBrandFilterGroup.style.display = 'flex';
+                    if (stockStatusFilterGroup) stockStatusFilterGroup.style.display = 'flex';
+                    if (stockSection) stockSection.style.display = 'block';
+                    if (summaryCards) summaryCards.style.display = 'none';
+                    if (tabsDiv) tabsDiv.style.display = 'none';
+                    tabContents.forEach(tc => tc.style.display = 'none');
+
+                    // Update stock display
+                    updateStockSummary();
+                    const filteredStock = getFilteredStock();
+                    updateStockTable(filteredStock);
                 } else {
                     // Show normal UI
-                    if (overdueFilterGroup) overdueFilterGroup.style.display = 'none';
-                    if (overdueSection) overdueSection.style.display = 'none';
                     if (summaryCards) summaryCards.style.display = 'grid';
                     if (tabsDiv) tabsDiv.style.display = 'flex';
 
@@ -1279,6 +1434,28 @@ function initFilters() {
             if (currentView === 'overdue') {
                 const overdueInvoices = getOverdueInvoices();
                 updateOverdueTable(overdueInvoices);
+            }
+        });
+    }
+
+    // Stock filters
+    const stockBrandFilter = document.getElementById('stockBrandFilter');
+    const stockStatusFilter = document.getElementById('stockStatusFilter');
+
+    if (stockBrandFilter) {
+        stockBrandFilter.addEventListener('change', () => {
+            if (currentView === 'stock') {
+                const filteredStock = getFilteredStock();
+                updateStockTable(filteredStock);
+            }
+        });
+    }
+
+    if (stockStatusFilter) {
+        stockStatusFilter.addEventListener('change', () => {
+            if (currentView === 'stock') {
+                const filteredStock = getFilteredStock();
+                updateStockTable(filteredStock);
             }
         });
     }
