@@ -1031,6 +1031,176 @@ function initCityFilter() {
     });
 }
 
+// Calculate days overdue for an invoice
+function getDaysOverdue(invoice) {
+    if (invoice.is_paid) return 0;
+    if (!invoice.date_due) return 0;
+
+    const today = new Date();
+    const dueDate = new Date(invoice.date_due);
+    const diffTime = today - dueDate;
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    return diffDays > 0 ? diffDays : 0;
+}
+
+// Get overdue category
+function getOverdueCategory(daysOverdue) {
+    if (daysOverdue === 0) return 'ok';
+    if (daysOverdue <= 15) return 'warning';
+    if (daysOverdue <= 30) return 'danger';
+    if (daysOverdue <= 90) return 'danger';
+    return 'critical';
+}
+
+// Get overdue status text
+function getOverdueStatusText(daysOverdue) {
+    if (daysOverdue === 0) return 'Uhrazeno';
+    if (daysOverdue <= 15) return '0-15 dní';
+    if (daysOverdue <= 30) return '15-30 dní';
+    if (daysOverdue <= 90) return '30-90 dní';
+    return '90+ dní - PRÁVNE ODD.';
+}
+
+// Get overdue invoices
+function getOverdueInvoices() {
+    const overdueFilter = document.getElementById('overdueFilter')?.value || 'all';
+
+    // Combine regular and sponsoring invoices
+    const allInvoices = [...invoicesData, ...sponsoringData];
+
+    // Filter unpaid invoices that are past due date
+    let overdue = allInvoices.filter(inv => {
+        if (inv.is_paid) return false;
+        const daysOverdue = getDaysOverdue(inv);
+        return daysOverdue > 0;
+    });
+
+    // Apply filter
+    if (overdueFilter !== 'all') {
+        overdue = overdue.filter(inv => {
+            const days = getDaysOverdue(inv);
+            switch (overdueFilter) {
+                case '0-15': return days > 0 && days <= 15;
+                case '15-30': return days > 15 && days <= 30;
+                case '30-90': return days > 30 && days <= 90;
+                case '90+': return days > 90;
+                default: return true;
+            }
+        });
+    }
+
+    // Sort by days overdue descending
+    overdue.sort((a, b) => getDaysOverdue(b) - getDaysOverdue(a));
+
+    return overdue;
+}
+
+// Update overdue summary cards
+function updateOverdueSummary(invoices) {
+    const container = document.getElementById('overdueSummary');
+    if (!container) return;
+
+    // Calculate stats for each category
+    const stats = {
+        '0-15': { count: 0, amount: 0 },
+        '15-30': { count: 0, amount: 0 },
+        '30-90': { count: 0, amount: 0 },
+        '90+': { count: 0, amount: 0 }
+    };
+
+    // Use all unpaid invoices for summary (not filtered)
+    const allInvoices = [...invoicesData, ...sponsoringData];
+    allInvoices.forEach(inv => {
+        if (inv.is_paid) return;
+        const days = getDaysOverdue(inv);
+        if (days <= 0) return;
+
+        const amount = inv.currency === 'EUR' ?
+            getPriceField(inv, 'EUR') * 25 :
+            getPriceField(inv, 'CZK');
+
+        if (days <= 15) {
+            stats['0-15'].count++;
+            stats['0-15'].amount += amount;
+        } else if (days <= 30) {
+            stats['15-30'].count++;
+            stats['15-30'].amount += amount;
+        } else if (days <= 90) {
+            stats['30-90'].count++;
+            stats['30-90'].amount += amount;
+        } else {
+            stats['90+'].count++;
+            stats['90+'].amount += amount;
+        }
+    });
+
+    container.innerHTML = `
+        <div class="overdue-card overdue-ok">
+            <h4>0-15 dní</h4>
+            <div class="count">${stats['0-15'].count}</div>
+            <div class="amount">${formatCZK(stats['0-15'].amount)}</div>
+        </div>
+        <div class="overdue-card overdue-warning">
+            <h4>15-30 dní</h4>
+            <div class="count">${stats['15-30'].count}</div>
+            <div class="amount">${formatCZK(stats['15-30'].amount)}</div>
+        </div>
+        <div class="overdue-card overdue-danger">
+            <h4>30-90 dní</h4>
+            <div class="count">${stats['30-90'].count}</div>
+            <div class="amount">${formatCZK(stats['30-90'].amount)}</div>
+        </div>
+        <div class="overdue-card overdue-critical">
+            <h4>90+ dní (právne odd.)</h4>
+            <div class="count">${stats['90+'].count}</div>
+            <div class="amount">${formatCZK(stats['90+'].amount)}</div>
+        </div>
+    `;
+}
+
+// Update overdue table
+function updateOverdueTable(invoices) {
+    const tbody = document.querySelector('#overdueTable tbody');
+    if (!tbody) return;
+
+    let html = '';
+    invoices.forEach(inv => {
+        const daysOverdue = getDaysOverdue(inv);
+        const category = getOverdueCategory(daysOverdue);
+        const statusText = getOverdueStatusText(daysOverdue);
+        const amount = inv.currency === 'EUR' ?
+            formatEUR(getPriceField(inv, 'EUR')) :
+            formatCZK(getPriceField(inv, 'CZK'));
+
+        let rowClass = '';
+        if (category === 'warning') rowClass = 'overdue-row-warning';
+        else if (category === 'danger') rowClass = 'overdue-row-danger';
+        else if (category === 'critical') rowClass = 'overdue-row-critical';
+
+        let statusClass = 'overdue-' + category;
+
+        html += `
+            <tr class="${rowClass}">
+                <td>${inv.invoice_number}</td>
+                <td>${inv.company || inv.customer_name || '-'}</td>
+                <td>${inv.salesperson || inv.centre || 'VITAR Sport'}</td>
+                <td>${inv.date_due}</td>
+                <td><strong>${daysOverdue}</strong> dní</td>
+                <td><span class="badge ${statusClass}">${statusText}</span></td>
+                <td class="text-right">${amount}</td>
+            </tr>
+        `;
+    });
+
+    tbody.innerHTML = html || '<tr><td colspan="7" style="text-align:center;color:#999;">Žádné faktury po splatnosti</td></tr>';
+
+    const countEl = document.getElementById('overdueCount');
+    if (countEl) {
+        countEl.textContent = `Celkem ${invoices.length} faktúr po splatnosti`;
+    }
+}
+
 // Initialize view toggle
 function initViewToggle() {
     document.querySelectorAll('.view-btn').forEach(btn => {
@@ -1043,13 +1213,41 @@ function initViewToggle() {
                 document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
-                // Reinitialize filters for new data source
-                initMonthFilter();
-                initPaymentFilter();
-                initCityFilter();
+                // Show/hide overdue filter
+                const overdueFilterGroup = document.getElementById('overdueFilterGroup');
+                const overdueSection = document.getElementById('overdueSection');
+                const filtersDiv = document.querySelector('.filters');
+                const summaryCards = document.getElementById('summaryCards');
+                const tabsDiv = document.querySelector('.tabs');
+                const tabContents = document.querySelectorAll('.tab-content');
 
-                // Update display
-                updateDisplay();
+                if (newView === 'overdue') {
+                    // Show overdue-specific UI
+                    if (overdueFilterGroup) overdueFilterGroup.style.display = 'flex';
+                    if (overdueSection) overdueSection.style.display = 'block';
+                    if (summaryCards) summaryCards.style.display = 'none';
+                    if (tabsDiv) tabsDiv.style.display = 'none';
+                    tabContents.forEach(tc => tc.style.display = 'none');
+
+                    // Update overdue display
+                    const overdueInvoices = getOverdueInvoices();
+                    updateOverdueSummary(overdueInvoices);
+                    updateOverdueTable(overdueInvoices);
+                } else {
+                    // Show normal UI
+                    if (overdueFilterGroup) overdueFilterGroup.style.display = 'none';
+                    if (overdueSection) overdueSection.style.display = 'none';
+                    if (summaryCards) summaryCards.style.display = 'grid';
+                    if (tabsDiv) tabsDiv.style.display = 'flex';
+
+                    // Reinitialize filters for new data source
+                    initMonthFilter();
+                    initPaymentFilter();
+                    initCityFilter();
+
+                    // Update display
+                    updateDisplay();
+                }
             }
         });
     });
@@ -1073,6 +1271,17 @@ function initFilters() {
     ['monthFilter', 'marketFilter', 'channelFilter', 'salespersonFilter', 'paymentFilter', 'cityFilter', 'vatFilter'].forEach(id => {
         document.getElementById(id).addEventListener('change', updateDisplay);
     });
+
+    // Overdue filter
+    const overdueFilter = document.getElementById('overdueFilter');
+    if (overdueFilter) {
+        overdueFilter.addEventListener('change', () => {
+            if (currentView === 'overdue') {
+                const overdueInvoices = getOverdueInvoices();
+                updateOverdueTable(overdueInvoices);
+            }
+        });
+    }
 }
 
 // Initialize application
