@@ -281,7 +281,7 @@
     <div class="container">
         <header>
             <h1>VITAR Sport Analytics</h1>
-            <p>Analýza objednávok z Pohody | Január - November 2025</p>
+            <p>Analýza objednávok z Pohody | Január - December 2025</p>
         </header>
 
         <div class="filters">
@@ -316,6 +316,18 @@
                     <option value="Jirka">Jirka</option>
                     <option value="Štěpán">Štěpán</option>
                     <option value="VITAR Sport">VITAR Sport</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Platba</label>
+                <select id="paymentFilter">
+                    <option value="all">Všechny</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Město</label>
+                <select id="cityFilter">
+                    <option value="all">Všechna města</option>
                 </select>
             </div>
         </div>
@@ -526,8 +538,11 @@
                                 <th>Číslo obj.</th>
                                 <th>Datum</th>
                                 <th>Zákazník</th>
+                                <th>Město</th>
                                 <th>Kanál</th>
                                 <th>Obchodník</th>
+                                <th>Platba</th>
+                                <th>Stav</th>
                                 <th class="text-right">Částka</th>
                             </tr>
                         </thead>

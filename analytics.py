@@ -95,16 +95,24 @@ def parse_order_items(order_element, order_info):
         product_name = get_text(item, './/ord:text')
         product_code = get_text(item, './/ord:code')
         quantity = Decimal(get_text(item, './/ord:quantity', '0'))
+        delivered = Decimal(get_text(item, './/ord:delivered', '0'))
+        unit = get_text(item, './/ord:unit')
+        discount = Decimal(get_text(item, './/ord:discountPercentage', '0'))
+
+        # Get EAN
+        ean = get_text(item, './/ord:stockItem//typ:stockItem//typ:EAN')
 
         # Get price
         home_curr = item.find('.//ord:homeCurrency', NS)
         if home_curr is not None:
+            unit_price = Decimal(get_text(home_curr, './/typ:unitPrice', '0'))
             price_sum = Decimal(get_text(home_curr, './/typ:priceSum', '0'))
         else:
+            unit_price = Decimal('0')
             price_sum = Decimal('0')
 
-        # Skip items with no product name or zero/negative values (like shipping, discounts)
-        if not product_name or price_sum <= 0:
+        # Skip items with no product code (like shipping, discounts)
+        if not product_code:
             continue
 
         items.append({
@@ -115,11 +123,17 @@ def parse_order_items(order_element, order_info):
             'channel': order_info['channel'],
             'salesperson': order_info['salesperson'],
             'country': order_info['country'],
+            'supplier': order_info['supplier'],
             'product_code': product_code,
             'product_name': product_name,
+            'ean': ean,
             'quantity': quantity,
+            'delivered': delivered,
+            'unit': unit,
+            'unit_price': unit_price,
+            'discount_percent': discount,
             'total_czk': price_sum if order_info['currency'] != 'EUR' else Decimal('0'),
-            'total_eur': Decimal('0'),  # Items don't have EUR breakdown in XML
+            'total_eur': Decimal('0'),
         })
 
     return items
@@ -135,9 +149,12 @@ def parse_order(order_element):
 
     # Get order number
     order_number = get_text(header, './/ord:numberOrder')
+    internal_number = get_text(header, './/ord:number//typ:numberRequested')
 
-    # Get date
+    # Get dates
     order_date = get_text(header, './/ord:date')
+    date_from = get_text(header, './/ord:dateFrom')
+    date_to = get_text(header, './/ord:dateTo')
 
     # Get currency (check foreignCurrency for EUR)
     currency = 'CZK'
@@ -152,8 +169,46 @@ def parse_order(order_element):
     # Get centre (Kdo řeší)
     centre = get_text(header, './/ord:centre//typ:ids')
 
-    # Get customer info
-    company = get_text(header, './/ord:partnerIdentity//typ:address//typ:company')
+    # Get customer info from partnerIdentity
+    partner = header.find('.//ord:partnerIdentity', NS)
+    company = ''
+    customer_name = ''
+    city = ''
+    street = ''
+    zip_code = ''
+    customer_country = ''
+    ico = ''
+    dic = ''
+    email = ''
+    phone = ''
+
+    if partner is not None:
+        address = partner.find('.//typ:address', NS)
+        if address is not None:
+            company = get_text(address, './/typ:company')
+            customer_name = get_text(address, './/typ:name')
+            city = get_text(address, './/typ:city')
+            street = get_text(address, './/typ:street')
+            zip_code = get_text(address, './/typ:zip')
+            customer_country = get_text(address, './/typ:country//typ:ids')
+            ico = get_text(address, './/typ:ico')
+            dic = get_text(address, './/typ:dic')
+            email = get_text(address, './/typ:email')
+            phone = get_text(address, './/typ:mobilPhone') or get_text(address, './/typ:phone')
+
+    # Get payment type
+    payment_type = get_text(header, './/ord:paymentType//typ:ids')
+
+    # Get price level
+    price_level = get_text(header, './/ord:priceLevel//typ:ids')
+
+    # Get status flags
+    is_executed = get_text(header, './/ord:isExecuted') == 'true'
+    is_delivered = get_text(header, './/ord:isDelivered') == 'true'
+
+    # Get notes
+    note = get_text(header, './/ord:note')
+    int_note = get_text(header, './/ord:intNote')
 
     # Get totals from summary - use foreignCurrency for EUR orders, homeCurrency for CZK
     total_czk = Decimal('0')
@@ -186,14 +241,32 @@ def parse_order(order_element):
 
     order_data = {
         'order_number': order_number,
+        'internal_number': internal_number,
         'date': order_date,
+        'date_from': date_from,
+        'date_to': date_to,
         'company': company,
+        'customer_name': customer_name,
+        'city': city,
+        'street': street,
+        'zip': zip_code,
+        'customer_country': customer_country,
+        'ico': ico,
+        'dic': dic,
+        'email': email,
+        'phone': phone,
         'currency': currency,
         'centre': centre,
         'channel': channel,
         'salesperson': salesperson,
         'country': country,
         'supplier': supplier,
+        'payment_type': payment_type,
+        'price_level': price_level,
+        'is_executed': is_executed,
+        'is_delivered': is_delivered,
+        'note': note,
+        'int_note': int_note,
         'total_czk': total_czk,
         'total_eur': total_eur,
     }
@@ -492,8 +565,12 @@ def export_to_csv(orders, reports, output_dir):
     orders_file = os.path.join(output_dir, 'all_orders.csv')
     with open(orders_file, 'w', newline='', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=[
-            'order_number', 'date', 'company', 'currency', 'centre',
-            'channel', 'salesperson', 'country', 'supplier', 'total_czk', 'total_eur'
+            'order_number', 'internal_number', 'date', 'date_from', 'date_to',
+            'company', 'customer_name', 'city', 'street', 'zip', 'customer_country',
+            'ico', 'dic', 'email', 'phone', 'currency', 'centre',
+            'channel', 'salesperson', 'country', 'supplier',
+            'payment_type', 'price_level', 'is_executed', 'is_delivered',
+            'note', 'int_note', 'total_czk', 'total_eur'
         ])
         writer.writeheader()
         for order in orders:
@@ -568,14 +645,26 @@ def export_to_js(orders, items, output_dir):
     for order in orders:
         orders_list.append({
             'order_number': order['order_number'],
+            'internal_number': order['internal_number'],
             'date': order['date'],
             'company': order['company'],
+            'customer_name': order['customer_name'],
+            'city': order['city'],
+            'zip': order['zip'],
+            'customer_country': order['customer_country'],
+            'ico': order['ico'],
+            'email': order['email'],
+            'phone': order['phone'],
             'currency': order['currency'],
             'centre': order['centre'],
             'channel': order['channel'],
             'salesperson': order['salesperson'] if order['salesperson'] else None,
             'country': order['country'],
             'supplier': order['supplier'],
+            'payment_type': order['payment_type'],
+            'price_level': order['price_level'],
+            'is_executed': order['is_executed'],
+            'is_delivered': order['is_delivered'],
             'total_czk': float(order['total_czk']),
             'total_eur': float(order['total_eur'])
         })
@@ -600,9 +689,15 @@ def export_to_js(orders, items, output_dir):
             'channel': item['channel'],
             'salesperson': item['salesperson'] if item['salesperson'] else None,
             'country': item['country'],
+            'supplier': item['supplier'],
             'product_code': item['product_code'],
             'product_name': item['product_name'],
+            'ean': item['ean'],
             'quantity': float(item['quantity']),
+            'delivered': float(item['delivered']),
+            'unit': item['unit'],
+            'unit_price': float(item['unit_price']),
+            'discount_percent': float(item['discount_percent']),
             'total_czk': float(item['total_czk']),
         })
 

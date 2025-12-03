@@ -45,6 +45,8 @@ function getFilteredItems() {
     const marketFilter = document.getElementById('marketFilter').value;
     const channelFilter = document.getElementById('channelFilter').value;
     const salespersonFilter = document.getElementById('salespersonFilter').value;
+    const paymentFilter = document.getElementById('paymentFilter').value;
+    const cityFilter = document.getElementById('cityFilter').value;
 
     return itemsData.filter(item => {
         // Month filter
@@ -80,6 +82,8 @@ function getFilteredOrders() {
     const marketFilter = document.getElementById('marketFilter').value;
     const channelFilter = document.getElementById('channelFilter').value;
     const salespersonFilter = document.getElementById('salespersonFilter').value;
+    const paymentFilter = document.getElementById('paymentFilter').value;
+    const cityFilter = document.getElementById('cityFilter').value;
 
     return ordersData.filter(order => {
         // Month filter
@@ -102,6 +106,16 @@ function getFilteredOrders() {
 
         // Salesperson filter
         if (salespersonFilter !== 'all' && order.salesperson !== salespersonFilter) {
+            return false;
+        }
+
+        // Payment filter
+        if (paymentFilter !== 'all' && order.payment_type !== paymentFilter) {
+            return false;
+        }
+
+        // City filter
+        if (cityFilter !== 'all' && order.city !== cityFilter) {
             return false;
         }
 
@@ -400,13 +414,26 @@ function updateOrdersTable(orders) {
                             order.channel.includes('ROYALBAY') ? 'badge-royalbay' : 'badge-b2b';
         const amount = order.currency === 'EUR' ? formatEUR(order.total_eur) : formatCZK(order.total_czk);
 
+        // Status indicator
+        let statusHtml = '';
+        if (order.is_delivered) {
+            statusHtml = '<span class="badge" style="background:#e8f5e9;color:#2e7d32;">Doručeno</span>';
+        } else if (order.is_executed) {
+            statusHtml = '<span class="badge" style="background:#fff3e0;color:#ef6c00;">Vyřízeno</span>';
+        } else {
+            statusHtml = '<span class="badge" style="background:#ffebee;color:#c62828;">Čeká</span>';
+        }
+
         html += `
             <tr>
                 <td>${order.order_number}</td>
                 <td>${order.date}</td>
                 <td>${order.company || '-'}</td>
+                <td>${order.city || '-'}</td>
                 <td><span class="badge ${channelClass}">${order.channel}</span></td>
                 <td>${order.salesperson || '-'}</td>
+                <td>${order.payment_type || '-'}</td>
+                <td>${statusHtml}</td>
                 <td class="text-right">${amount}</td>
             </tr>
         `;
@@ -725,6 +752,44 @@ function initMonthFilter() {
     });
 }
 
+// Initialize payment filter options
+function initPaymentFilter() {
+    const payments = [...new Set(ordersData.map(o => o.payment_type).filter(p => p))].sort();
+    const select = document.getElementById('paymentFilter');
+
+    payments.forEach(payment => {
+        const option = document.createElement('option');
+        option.value = payment;
+        option.textContent = payment;
+        select.appendChild(option);
+    });
+}
+
+// Initialize city filter options (top 50 cities by order count)
+function initCityFilter() {
+    const cityCounts = {};
+    ordersData.forEach(o => {
+        if (o.city) {
+            cityCounts[o.city] = (cityCounts[o.city] || 0) + 1;
+        }
+    });
+
+    const topCities = Object.entries(cityCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 50)
+        .map(([city]) => city)
+        .sort();
+
+    const select = document.getElementById('cityFilter');
+
+    topCities.forEach(city => {
+        const option = document.createElement('option');
+        option.value = city;
+        option.textContent = `${city} (${cityCounts[city]})`;
+        select.appendChild(option);
+    });
+}
+
 // Initialize tabs
 function initTabs() {
     document.querySelectorAll('.tab').forEach(tab => {
@@ -740,7 +805,7 @@ function initTabs() {
 
 // Initialize filters
 function initFilters() {
-    ['monthFilter', 'marketFilter', 'channelFilter', 'salespersonFilter'].forEach(id => {
+    ['monthFilter', 'marketFilter', 'channelFilter', 'salespersonFilter', 'paymentFilter', 'cityFilter'].forEach(id => {
         document.getElementById(id).addEventListener('change', updateDisplay);
     });
 }
@@ -748,6 +813,8 @@ function initFilters() {
 // Initialize application
 document.addEventListener('DOMContentLoaded', () => {
     initMonthFilter();
+    initPaymentFilter();
+    initCityFilter();
     initTabs();
     initFilters();
     updateDisplay();
