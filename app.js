@@ -20,6 +20,25 @@ function formatEUR(amount) {
     }).format(amount);
 }
 
+// Format percentage
+function formatPercent(value) {
+    return value.toFixed(1) + '%';
+}
+
+// Get progress bar class based on percentage
+function getProgressClass(percent) {
+    if (percent >= 90) return 'good';
+    if (percent >= 70) return 'warning';
+    return 'bad';
+}
+
+// Get diff class based on value
+function getDiffClass(diff) {
+    if (diff > 0) return 'positive';
+    if (diff < 0) return 'negative';
+    return 'neutral';
+}
+
 // Get filtered orders based on current filter state
 function getFilteredOrders() {
     const monthFilter = document.getElementById('monthFilter').value;
@@ -363,6 +382,204 @@ function updateOrdersTable(orders) {
         `Zobrazeno ${limitedOrders.length} z ${orders.length} objednávek`;
 }
 
+// Update Plan vs Actual CZ table
+function updatePlanCZTable(orders) {
+    const monthlyData = aggregateByMonth(orders);
+    const tbody = document.querySelector('#planCZTable tbody');
+    const months = Object.keys(planData).filter(m => m !== '2025-12').sort(); // Exclude December (no actual data yet)
+
+    let totalPlan = 0, totalActual = 0;
+
+    let html = '';
+    months.forEach(month => {
+        const plan = planData[month]?.celkomCZ || 0;
+        const actualData = monthlyData[month];
+        const actual = actualData ?
+            (actualData.ESHOP_ENERVIT_CZ.czk + actualData.ESHOP_ROYALBAY_CZ.czk + actualData.B2B_CZ.czk) : 0;
+        const diff = actual - plan;
+        const percent = plan > 0 ? (actual / plan) * 100 : 0;
+
+        totalPlan += plan;
+        totalActual += actual;
+
+        const progressClass = getProgressClass(percent);
+        const diffClass = getDiffClass(diff);
+
+        html += `
+            <tr>
+                <td>${month}</td>
+                <td class="text-right plan-cell">${formatCZK(plan)}</td>
+                <td class="text-right">${formatCZK(actual)}</td>
+                <td class="text-right diff-cell ${diffClass}">${diff >= 0 ? '+' : ''}${formatCZK(diff)}</td>
+                <td class="text-right diff-cell ${diffClass}">${formatPercent(percent)}</td>
+                <td>
+                    <div class="progress-bar">
+                        <div class="progress-fill ${progressClass}" style="width: ${Math.min(percent, 100)}%"></div>
+                    </div>
+                </td>
+            </tr>
+        `;
+    });
+
+    const totalPercent = totalPlan > 0 ? (totalActual / totalPlan) * 100 : 0;
+    const totalDiff = totalActual - totalPlan;
+    const totalProgressClass = getProgressClass(totalPercent);
+    const totalDiffClass = getDiffClass(totalDiff);
+
+    html += `
+        <tr class="total-row">
+            <td>CELKEM</td>
+            <td class="text-right plan-cell">${formatCZK(totalPlan)}</td>
+            <td class="text-right">${formatCZK(totalActual)}</td>
+            <td class="text-right diff-cell ${totalDiffClass}">${totalDiff >= 0 ? '+' : ''}${formatCZK(totalDiff)}</td>
+            <td class="text-right diff-cell ${totalDiffClass}">${formatPercent(totalPercent)}</td>
+            <td>
+                <div class="progress-bar">
+                    <div class="progress-fill ${totalProgressClass}" style="width: ${Math.min(totalPercent, 100)}%"></div>
+                </div>
+            </td>
+        </tr>
+    `;
+
+    tbody.innerHTML = html;
+}
+
+// Update Plan vs Actual SK table
+function updatePlanSKTable(orders) {
+    const monthlyData = aggregateByMonth(orders);
+    const tbody = document.querySelector('#planSKTable tbody');
+    const months = Object.keys(planData).filter(m => m !== '2025-12').sort();
+
+    let totalPlan = 0, totalActual = 0;
+
+    let html = '';
+    months.forEach(month => {
+        const plan = planData[month]?.celkomSK || 0;
+        const actualData = monthlyData[month];
+        const actual = actualData ?
+            (actualData.ESHOP_ENERVIT_SK.eur + actualData.ESHOP_ROYALBAY_SK.eur + actualData.B2B_SK.eur) : 0;
+        const diff = actual - plan;
+        const percent = plan > 0 ? (actual / plan) * 100 : 0;
+
+        totalPlan += plan;
+        totalActual += actual;
+
+        const progressClass = getProgressClass(percent);
+        const diffClass = getDiffClass(diff);
+
+        html += `
+            <tr>
+                <td>${month}</td>
+                <td class="text-right plan-cell">${formatEUR(plan)}</td>
+                <td class="text-right">${formatEUR(actual)}</td>
+                <td class="text-right diff-cell ${diffClass}">${diff >= 0 ? '+' : ''}${formatEUR(diff)}</td>
+                <td class="text-right diff-cell ${diffClass}">${formatPercent(percent)}</td>
+                <td>
+                    <div class="progress-bar">
+                        <div class="progress-fill ${progressClass}" style="width: ${Math.min(percent, 100)}%"></div>
+                    </div>
+                </td>
+            </tr>
+        `;
+    });
+
+    const totalPercent = totalPlan > 0 ? (totalActual / totalPlan) * 100 : 0;
+    const totalDiff = totalActual - totalPlan;
+    const totalProgressClass = getProgressClass(totalPercent);
+    const totalDiffClass = getDiffClass(totalDiff);
+
+    html += `
+        <tr class="total-row">
+            <td>CELKEM</td>
+            <td class="text-right plan-cell">${formatEUR(totalPlan)}</td>
+            <td class="text-right">${formatEUR(totalActual)}</td>
+            <td class="text-right diff-cell ${totalDiffClass}">${totalDiff >= 0 ? '+' : ''}${formatEUR(totalDiff)}</td>
+            <td class="text-right diff-cell ${totalDiffClass}">${formatPercent(totalPercent)}</td>
+            <td>
+                <div class="progress-bar">
+                    <div class="progress-fill ${totalProgressClass}" style="width: ${Math.min(totalPercent, 100)}%"></div>
+                </div>
+            </td>
+        </tr>
+    `;
+
+    tbody.innerHTML = html;
+}
+
+// Update Plan vs Actual B2B table
+function updatePlanB2BTable(orders) {
+    const b2bData = aggregateB2BBySalesperson(orders);
+    const tbody = document.querySelector('#planB2BTable tbody');
+    const months = Object.keys(planData).filter(m => m !== '2025-12').sort();
+
+    let totals = {
+        karolinaPlan: 0, karolinaActual: 0,
+        jirkaPlan: 0, jirkaActual: 0,
+        stepanPlan: 0, stepanActual: 0
+    };
+
+    let html = '';
+    months.forEach(month => {
+        const plan = planData[month];
+        const actual = b2bData[month] || {};
+
+        const karolinaPlan = plan?.karolina || 0;
+        const karolinaActual = actual.Karolina || 0;
+        const karolinaPercent = karolinaPlan > 0 ? (karolinaActual / karolinaPlan) * 100 : 0;
+
+        const jirkaPlan = plan?.jirkaCZ || 0;
+        const jirkaActual = actual.Jirka || 0;
+        const jirkaPercent = jirkaPlan > 0 ? (jirkaActual / jirkaPlan) * 100 : 0;
+
+        const stepanPlan = plan?.stepanCZ || 0;
+        const stepanActual = actual['Štěpán'] || 0;
+        const stepanPercent = stepanPlan > 0 ? (stepanActual / stepanPlan) * 100 : 0;
+
+        totals.karolinaPlan += karolinaPlan;
+        totals.karolinaActual += karolinaActual;
+        totals.jirkaPlan += jirkaPlan;
+        totals.jirkaActual += jirkaActual;
+        totals.stepanPlan += stepanPlan;
+        totals.stepanActual += stepanActual;
+
+        html += `
+            <tr>
+                <td>${month}</td>
+                <td class="text-right plan-cell">${formatCZK(karolinaPlan)}</td>
+                <td class="text-right">${formatCZK(karolinaActual)}</td>
+                <td class="text-right diff-cell ${getDiffClass(karolinaActual - karolinaPlan)}">${formatPercent(karolinaPercent)}</td>
+                <td class="text-right plan-cell">${formatCZK(jirkaPlan)}</td>
+                <td class="text-right">${formatCZK(jirkaActual)}</td>
+                <td class="text-right diff-cell ${getDiffClass(jirkaActual - jirkaPlan)}">${formatPercent(jirkaPercent)}</td>
+                <td class="text-right plan-cell">${formatCZK(stepanPlan)}</td>
+                <td class="text-right">${formatCZK(stepanActual)}</td>
+                <td class="text-right diff-cell ${getDiffClass(stepanActual - stepanPlan)}">${formatPercent(stepanPercent)}</td>
+            </tr>
+        `;
+    });
+
+    const karolinaTotalPercent = totals.karolinaPlan > 0 ? (totals.karolinaActual / totals.karolinaPlan) * 100 : 0;
+    const jirkaTotalPercent = totals.jirkaPlan > 0 ? (totals.jirkaActual / totals.jirkaPlan) * 100 : 0;
+    const stepanTotalPercent = totals.stepanPlan > 0 ? (totals.stepanActual / totals.stepanPlan) * 100 : 0;
+
+    html += `
+        <tr class="total-row">
+            <td>CELKEM</td>
+            <td class="text-right plan-cell">${formatCZK(totals.karolinaPlan)}</td>
+            <td class="text-right">${formatCZK(totals.karolinaActual)}</td>
+            <td class="text-right diff-cell ${getDiffClass(totals.karolinaActual - totals.karolinaPlan)}">${formatPercent(karolinaTotalPercent)}</td>
+            <td class="text-right plan-cell">${formatCZK(totals.jirkaPlan)}</td>
+            <td class="text-right">${formatCZK(totals.jirkaActual)}</td>
+            <td class="text-right diff-cell ${getDiffClass(totals.jirkaActual - totals.jirkaPlan)}">${formatPercent(jirkaTotalPercent)}</td>
+            <td class="text-right plan-cell">${formatCZK(totals.stepanPlan)}</td>
+            <td class="text-right">${formatCZK(totals.stepanActual)}</td>
+            <td class="text-right diff-cell ${getDiffClass(totals.stepanActual - totals.stepanPlan)}">${formatPercent(stepanTotalPercent)}</td>
+        </tr>
+    `;
+
+    tbody.innerHTML = html;
+}
+
 // Update all displays
 function updateDisplay() {
     const filteredOrders = getFilteredOrders();
@@ -373,6 +590,9 @@ function updateDisplay() {
     updateMonthlyTable(filteredOrders);
     updateB2BTable(filteredOrders);
     updateOrdersTable(filteredOrders);
+    updatePlanCZTable(ordersData); // Use all orders for plan comparison
+    updatePlanSKTable(ordersData);
+    updatePlanB2BTable(ordersData);
 }
 
 // Initialize month filter options

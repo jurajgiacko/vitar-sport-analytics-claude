@@ -221,6 +221,38 @@
         .badge-royalbay { background: #e8f5e9; color: #2e7d32; }
         .badge-b2b { background: #f3e5f5; color: #7b1fa2; }
 
+        .positive { color: #27ae60; }
+        .negative { color: #e74c3c; }
+        .neutral { color: #95a5a6; }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-fill.good { background: #27ae60; }
+        .progress-fill.warning { background: #f39c12; }
+        .progress-fill.bad { background: #e74c3c; }
+
+        .plan-cell {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .diff-cell {
+            font-weight: 600;
+        }
+
         .table-container {
             overflow-x: auto;
         }
@@ -294,9 +326,73 @@
 
         <div class="tabs">
             <button class="tab active" data-tab="overview">Přehled</button>
+            <button class="tab" data-tab="plan">Plán vs Skutečnost</button>
             <button class="tab" data-tab="monthly">Měsíční detail</button>
             <button class="tab" data-tab="b2b">B2B detail</button>
             <button class="tab" data-tab="orders">Objednávky</button>
+        </div>
+
+        <div id="plan" class="tab-content">
+            <div class="section">
+                <h2>Celkový plán vs Skutečnost - CZ Market (CZK)</h2>
+                <div class="table-container">
+                    <table id="planCZTable">
+                        <thead>
+                            <tr>
+                                <th>Měsíc</th>
+                                <th class="text-right">Plán</th>
+                                <th class="text-right">Skutečnost</th>
+                                <th class="text-right">Rozdíl</th>
+                                <th class="text-right">Plnění %</th>
+                                <th style="width: 150px;">Progress</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Celkový plán vs Skutečnost - SK Market (EUR)</h2>
+                <div class="table-container">
+                    <table id="planSKTable">
+                        <thead>
+                            <tr>
+                                <th>Měsíc</th>
+                                <th class="text-right">Plán</th>
+                                <th class="text-right">Skutečnost</th>
+                                <th class="text-right">Rozdíl</th>
+                                <th class="text-right">Plnění %</th>
+                                <th style="width: 150px;">Progress</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>B2B Obchodníci - Plán vs Skutečnost (CZK)</h2>
+                <div class="table-container">
+                    <table id="planB2BTable">
+                        <thead>
+                            <tr>
+                                <th>Měsíc</th>
+                                <th class="text-right">Karolina Plán</th>
+                                <th class="text-right">Karolina Skut.</th>
+                                <th class="text-right">Karolina %</th>
+                                <th class="text-right">Jirka Plán</th>
+                                <th class="text-right">Jirka Skut.</th>
+                                <th class="text-right">Jirka %</th>
+                                <th class="text-right">Štěpán Plán</th>
+                                <th class="text-right">Štěpán Skut.</th>
+                                <th class="text-right">Štěpán %</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
         </div>
 
         <div id="overview" class="tab-content active">
@@ -405,6 +501,7 @@
     </div>
 
     <script src="data.js"></script>
+    <script src="plan.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
