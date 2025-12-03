@@ -602,7 +602,7 @@ function updateTop10ProductsTable(items) {
 function updatePlanCZTable(orders) {
     const monthlyData = aggregateByMonth(orders);
     const tbody = document.querySelector('#planCZTable tbody');
-    const months = Object.keys(planData).filter(m => m !== '2025-12').sort(); // Exclude December (no actual data yet)
+    const months = Object.keys(planData).sort();
 
     let totalPlan = 0, totalActual = 0;
 
@@ -664,7 +664,7 @@ function updatePlanCZTable(orders) {
 function updatePlanSKTable(orders) {
     const monthlyData = aggregateByMonth(orders);
     const tbody = document.querySelector('#planSKTable tbody');
-    const months = Object.keys(planData).filter(m => m !== '2025-12').sort();
+    const months = Object.keys(planData).sort();
 
     let totalPlan = 0, totalActual = 0;
 
@@ -726,7 +726,7 @@ function updatePlanSKTable(orders) {
 function updatePlanB2BTable(orders) {
     const b2bData = aggregateB2BBySalesperson(orders);
     const tbody = document.querySelector('#planB2BTable tbody');
-    const months = Object.keys(planData).filter(m => m !== '2025-12').sort();
+    const months = Object.keys(planData).sort();
 
     let totals = {
         karolinaPlan: 0, karolinaActual: 0,
