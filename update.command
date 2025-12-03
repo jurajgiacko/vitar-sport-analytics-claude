@@ -10,12 +10,16 @@ echo "=========================================="
 echo ""
 
 # Spusti Python analytics
-echo "1. Spracovávam XML súbory (objednávky + faktúry)..."
+echo "1. Spracovávam XML súbory..."
+echo "   - Objednávky (xml-exports/objednavky/)"
+echo "   - Faktúry (xml-exports/faktury/)"
+echo "   - Sklad (xml-exports/sklad/)"
+echo ""
 python3 analytics.py
 
 echo ""
 echo "2. Ukladám zmeny do Git..."
-git add data.js items.js invoices_data.js invoices_items.js sponsoring_data.js sponsoring_items.js
+git add data.js items.js invoices_data.js invoices_items.js sponsoring_data.js sponsoring_items.js stock_data.js
 
 # Skontroluj či sú zmeny
 if git diff --staged --quiet; then
@@ -28,7 +32,6 @@ else
     echo ""
     echo "=========================================="
     echo "HOTOVO! Webovka sa aktualizuje o chvíľu."
-    echo "https://vitar-sport-analytics-claude.vercel.app/"
     echo "=========================================="
 fi
 
