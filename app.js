@@ -790,11 +790,22 @@ function updatePlanB2BTable(orders) {
     tbody.innerHTML = html;
 }
 
+// Update section titles based on current view
+function updateTitles() {
+    const viewLabel = currentView === 'invoices' ? 'Faktúry' : 'Objednávky';
+
+    document.getElementById('planCZTitle').textContent = `Plán vs Skutečnost - CZ Market (CZK) - ${viewLabel}`;
+    document.getElementById('planSKTitle').textContent = `Plán vs Skutečnost - SK Market (EUR) - ${viewLabel}`;
+    document.getElementById('planB2BTitle').textContent = `B2B Obchodníci - Plán vs Skutečnost (CZK) - ${viewLabel}`;
+}
+
 // Update all displays
 function updateDisplay() {
     const filteredOrders = getFilteredOrders();
     const filteredItems = getFilteredItems();
+    const allCurrentData = getCurrentData(); // All data from current view (orders or invoices)
 
+    updateTitles();
     updateSummaryCards(filteredOrders);
     updateCZTable(filteredOrders);
     updateSKTable(filteredOrders);
@@ -803,9 +814,9 @@ function updateDisplay() {
     updateOrdersTable(filteredOrders);
     updateTop10CustomersTable(filteredOrders);
     updateTop10ProductsTable(filteredItems);
-    updatePlanCZTable(ordersData); // Use all orders for plan comparison
-    updatePlanSKTable(ordersData);
-    updatePlanB2BTable(ordersData);
+    updatePlanCZTable(allCurrentData); // Use current view data for plan comparison
+    updatePlanSKTable(allCurrentData);
+    updatePlanB2BTable(allCurrentData);
 }
 
 // Initialize month filter options
