@@ -18,5 +18,5 @@ Thumbs.db
 # XML exports (large files)
 xml-exports/
 
-# CSV data files (generated)
+# CSV data files (generated, keep locally)
 *.csv
