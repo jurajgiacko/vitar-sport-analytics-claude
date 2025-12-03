@@ -1070,6 +1070,7 @@ def export_to_js(orders, items, output_dir):
             'unit_price': float(item['unit_price']),
             'discount_percent': float(item['discount_percent']),
             'total_czk': float(item['total_czk']),
+            'total_eur': float(item.get('total_eur', 0)),
         })
 
     with open(items_file, 'w', encoding='utf-8') as f:

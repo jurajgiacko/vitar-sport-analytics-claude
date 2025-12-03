@@ -296,7 +296,8 @@ function aggregateByBrand(items) {
         }
 
         const brand = classifyBrand(item.product_name);
-        const amount = item.total_czk + (item.total_eur * 25); // Convert EUR to CZK approx
+        const eurAmount = item.total_eur || 0;
+        const amount = item.total_czk + (eurAmount * 25); // Convert EUR to CZK approx
 
         months[month][brand] += amount;
         months[month].total += amount;
