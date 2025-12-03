@@ -33,6 +33,38 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-info span {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .logout-btn {
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
         header h1 {
             font-size: 2rem;
             margin-bottom: 5px;
@@ -318,8 +350,16 @@
 <body>
     <div class="container">
         <header>
-            <h1>VITAR Sport Analytics</h1>
-            <p>Analýza objednávok a faktúr z Pohody | Január - December 2025</p>
+            <div class="header-top">
+                <div>
+                    <h1>VITAR Sport Analytics</h1>
+                    <p>Analýza objednávok a faktúr z Pohody | Január - December 2025</p>
+                </div>
+                <div class="user-info">
+                    <span id="currentUser"></span>
+                    <button onclick="logout()" class="logout-btn">Odhlásit</button>
+                </div>
+            </div>
             <div class="view-toggle">
                 <button class="view-btn active" data-view="orders">Objednávky</button>
                 <button class="view-btn" data-view="invoices">Faktúry</button>
@@ -597,6 +637,16 @@
         </div>
     </div>
 
+    <script src="auth.js"></script>
+    <script>
+        // Check authentication before loading page
+        if (!isAuthenticated()) {
+            window.location.href = 'login.html';
+        } else {
+            // Show current user
+            document.getElementById('currentUser').textContent = getCurrentUser();
+        }
+    </script>
     <script src="data.js"></script>
     <script src="items.js"></script>
     <script src="invoices_data.js"></script>
