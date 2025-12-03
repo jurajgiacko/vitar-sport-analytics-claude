@@ -257,6 +257,40 @@
             overflow-x: auto;
         }
 
+        .view-toggle {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .view-btn {
+            padding: 10px 25px;
+            border: 2px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .view-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .view-btn.active {
+            background: white;
+            color: #2c3e50;
+            border-color: white;
+        }
+
+        .current-view-label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
         @media (max-width: 768px) {
             .filters {
                 flex-direction: column;
@@ -274,6 +308,10 @@
             .card .value {
                 font-size: 1.4rem;
             }
+
+            .view-toggle {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -281,7 +319,11 @@
     <div class="container">
         <header>
             <h1>VITAR Sport Analytics</h1>
-            <p>Analýza objednávok z Pohody | Január - December 2025</p>
+            <p>Analýza objednávok a faktúr z Pohody | Január - December 2025</p>
+            <div class="view-toggle">
+                <button class="view-btn active" data-view="orders">Objednávky</button>
+                <button class="view-btn" data-view="invoices">Faktúry</button>
+            </div>
         </header>
 
         <div class="filters">
@@ -556,6 +598,8 @@
 
     <script src="data.js"></script>
     <script src="items.js"></script>
+    <script src="invoices_data.js"></script>
+    <script src="invoices_items.js"></script>
     <script src="plan.js"></script>
     <script src="app.js"></script>
 </body>

@@ -1,5 +1,8 @@
 // VITAR Sport Analytics - Main Application
 
+// Current view state: 'orders' or 'invoices'
+let currentView = 'orders';
+
 // Format number as CZK
 function formatCZK(amount) {
     return new Intl.NumberFormat('cs-CZ', {
@@ -39,6 +42,15 @@ function getDiffClass(diff) {
     return 'neutral';
 }
 
+// Get current data based on view
+function getCurrentData() {
+    return currentView === 'orders' ? ordersData : invoicesData;
+}
+
+function getCurrentItems() {
+    return currentView === 'orders' ? itemsData : invoiceItemsData;
+}
+
 // Get filtered items based on current filter state
 function getFilteredItems() {
     const monthFilter = document.getElementById('monthFilter').value;
@@ -48,7 +60,9 @@ function getFilteredItems() {
     const paymentFilter = document.getElementById('paymentFilter').value;
     const cityFilter = document.getElementById('cityFilter').value;
 
-    return itemsData.filter(item => {
+    const sourceItems = getCurrentItems();
+
+    return sourceItems.filter(item => {
         // Month filter
         if (monthFilter !== 'all' && item.date.substring(0, 7) !== monthFilter) {
             return false;
@@ -76,7 +90,7 @@ function getFilteredItems() {
     });
 }
 
-// Get filtered orders based on current filter state
+// Get filtered orders/invoices based on current filter state
 function getFilteredOrders() {
     const monthFilter = document.getElementById('monthFilter').value;
     const marketFilter = document.getElementById('marketFilter').value;
@@ -85,7 +99,9 @@ function getFilteredOrders() {
     const paymentFilter = document.getElementById('paymentFilter').value;
     const cityFilter = document.getElementById('cityFilter').value;
 
-    return ordersData.filter(order => {
+    const sourceData = getCurrentData();
+
+    return sourceData.filter(order => {
         // Month filter
         if (monthFilter !== 'all' && order.date.substring(0, 7) !== monthFilter) {
             return false;
@@ -403,10 +419,38 @@ function updateB2BTable(orders) {
     tbody.innerHTML = html;
 }
 
-// Update orders table
+// Update orders/invoices table
 function updateOrdersTable(orders) {
     const tbody = document.querySelector('#ordersTable tbody');
+    const thead = document.querySelector('#ordersTable thead tr');
     const limitedOrders = orders.slice(0, 500); // Limit to 500 for performance
+
+    // Update table header based on current view
+    if (currentView === 'invoices') {
+        thead.innerHTML = `
+            <th>Číslo fakt.</th>
+            <th>Číslo obj.</th>
+            <th>Datum</th>
+            <th>Zákazník</th>
+            <th>Město</th>
+            <th>Kanál</th>
+            <th>Platba</th>
+            <th>Stav</th>
+            <th class="text-right">Částka</th>
+        `;
+    } else {
+        thead.innerHTML = `
+            <th>Číslo obj.</th>
+            <th>Datum</th>
+            <th>Zákazník</th>
+            <th>Město</th>
+            <th>Kanál</th>
+            <th>Obchodník</th>
+            <th>Platba</th>
+            <th>Stav</th>
+            <th class="text-right">Částka</th>
+        `;
+    }
 
     let html = '';
     limitedOrders.forEach(order => {
@@ -414,34 +458,59 @@ function updateOrdersTable(orders) {
                             order.channel.includes('ROYALBAY') ? 'badge-royalbay' : 'badge-b2b';
         const amount = order.currency === 'EUR' ? formatEUR(order.total_eur) : formatCZK(order.total_czk);
 
-        // Status indicator
+        // Status indicator - different for orders vs invoices
         let statusHtml = '';
-        if (order.is_delivered) {
-            statusHtml = '<span class="badge" style="background:#e8f5e9;color:#2e7d32;">Doručeno</span>';
-        } else if (order.is_executed) {
-            statusHtml = '<span class="badge" style="background:#fff3e0;color:#ef6c00;">Vyřízeno</span>';
+        if (currentView === 'invoices') {
+            if (order.is_paid) {
+                statusHtml = '<span class="badge" style="background:#e8f5e9;color:#2e7d32;">Uhrazeno</span>';
+            } else {
+                statusHtml = '<span class="badge" style="background:#ffebee;color:#c62828;">Neuhrazeno</span>';
+            }
         } else {
-            statusHtml = '<span class="badge" style="background:#ffebee;color:#c62828;">Čeká</span>';
+            if (order.is_delivered) {
+                statusHtml = '<span class="badge" style="background:#e8f5e9;color:#2e7d32;">Doručeno</span>';
+            } else if (order.is_executed) {
+                statusHtml = '<span class="badge" style="background:#fff3e0;color:#ef6c00;">Vyřízeno</span>';
+            } else {
+                statusHtml = '<span class="badge" style="background:#ffebee;color:#c62828;">Čeká</span>';
+            }
         }
 
-        html += `
-            <tr>
-                <td>${order.order_number}</td>
-                <td>${order.date}</td>
-                <td>${order.company || '-'}</td>
-                <td>${order.city || '-'}</td>
-                <td><span class="badge ${channelClass}">${order.channel}</span></td>
-                <td>${order.salesperson || '-'}</td>
-                <td>${order.payment_type || '-'}</td>
-                <td>${statusHtml}</td>
-                <td class="text-right">${amount}</td>
-            </tr>
-        `;
+        if (currentView === 'invoices') {
+            html += `
+                <tr>
+                    <td>${order.invoice_number}</td>
+                    <td>${order.order_number || '-'}</td>
+                    <td>${order.date}</td>
+                    <td>${order.company || '-'}</td>
+                    <td>${order.city || '-'}</td>
+                    <td><span class="badge ${channelClass}">${order.channel}</span></td>
+                    <td>${order.payment_type || '-'}</td>
+                    <td>${statusHtml}</td>
+                    <td class="text-right">${amount}</td>
+                </tr>
+            `;
+        } else {
+            html += `
+                <tr>
+                    <td>${order.order_number}</td>
+                    <td>${order.date}</td>
+                    <td>${order.company || '-'}</td>
+                    <td>${order.city || '-'}</td>
+                    <td><span class="badge ${channelClass}">${order.channel}</span></td>
+                    <td>${order.salesperson || '-'}</td>
+                    <td>${order.payment_type || '-'}</td>
+                    <td>${statusHtml}</td>
+                    <td class="text-right">${amount}</td>
+                </tr>
+            `;
+        }
     });
 
     tbody.innerHTML = html;
+    const label = currentView === 'invoices' ? 'faktúr' : 'objednávek';
     document.getElementById('ordersCount').textContent =
-        `Zobrazeno ${limitedOrders.length} z ${orders.length} objednávek`;
+        `Zobrazeno ${limitedOrders.length} z ${orders.length} ${label}`;
 }
 
 // Update Top 10 Customers table
@@ -741,8 +810,12 @@ function updateDisplay() {
 
 // Initialize month filter options
 function initMonthFilter() {
-    const months = [...new Set(ordersData.map(o => o.date.substring(0, 7)))].sort();
+    const data = getCurrentData();
+    const months = [...new Set(data.map(o => o.date.substring(0, 7)))].sort();
     const select = document.getElementById('monthFilter');
+
+    // Clear existing options except first
+    select.innerHTML = '<option value="all">Všechny měsíce</option>';
 
     months.forEach(month => {
         const option = document.createElement('option');
@@ -754,8 +827,12 @@ function initMonthFilter() {
 
 // Initialize payment filter options
 function initPaymentFilter() {
-    const payments = [...new Set(ordersData.map(o => o.payment_type).filter(p => p))].sort();
+    const data = getCurrentData();
+    const payments = [...new Set(data.map(o => o.payment_type).filter(p => p))].sort();
     const select = document.getElementById('paymentFilter');
+
+    // Clear existing options except first
+    select.innerHTML = '<option value="all">Všechny</option>';
 
     payments.forEach(payment => {
         const option = document.createElement('option');
@@ -767,8 +844,9 @@ function initPaymentFilter() {
 
 // Initialize city filter options (top 50 cities by order count)
 function initCityFilter() {
+    const data = getCurrentData();
     const cityCounts = {};
-    ordersData.forEach(o => {
+    data.forEach(o => {
         if (o.city) {
             cityCounts[o.city] = (cityCounts[o.city] || 0) + 1;
         }
@@ -782,11 +860,38 @@ function initCityFilter() {
 
     const select = document.getElementById('cityFilter');
 
+    // Clear existing options except first
+    select.innerHTML = '<option value="all">Všechna města</option>';
+
     topCities.forEach(city => {
         const option = document.createElement('option');
         option.value = city;
         option.textContent = `${city} (${cityCounts[city]})`;
         select.appendChild(option);
+    });
+}
+
+// Initialize view toggle
+function initViewToggle() {
+    document.querySelectorAll('.view-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const newView = btn.dataset.view;
+            if (newView !== currentView) {
+                currentView = newView;
+
+                // Update button states
+                document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Reinitialize filters for new data source
+                initMonthFilter();
+                initPaymentFilter();
+                initCityFilter();
+
+                // Update display
+                updateDisplay();
+            }
+        });
     });
 }
 
@@ -812,6 +917,7 @@ function initFilters() {
 
 // Initialize application
 document.addEventListener('DOMContentLoaded', () => {
+    initViewToggle();
     initMonthFilter();
     initPaymentFilter();
     initCityFilter();

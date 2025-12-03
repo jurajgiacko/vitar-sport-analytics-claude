@@ -30,6 +30,7 @@ import csv
 NS = {
     'dat': 'http://www.stormware.cz/schema/version_2/data.xsd',
     'ord': 'http://www.stormware.cz/schema/version_2/order.xsd',
+    'inv': 'http://www.stormware.cz/schema/version_2/invoice.xsd',
     'typ': 'http://www.stormware.cz/schema/version_2/type.xsd',
 }
 
@@ -276,6 +277,334 @@ def parse_order(order_element):
 
     return order_data, items
 
+
+# ============================================================================
+# INVOICE PARSING FUNCTIONS
+# ============================================================================
+
+def parse_invoice_items(invoice_element, invoice_info):
+    """Parse invoice items and return list of item data."""
+    items = []
+    detail = invoice_element.find('.//inv:invoiceDetail', NS)
+
+    if detail is None:
+        return items
+
+    for item in detail.findall('.//inv:invoiceItem', NS):
+        product_name = get_text(item, './/inv:text')
+        product_code = get_text(item, './/inv:code')
+        quantity = Decimal(get_text(item, './/inv:quantity', '0'))
+        unit = get_text(item, './/inv:unit')
+        discount = Decimal(get_text(item, './/inv:discountPercentage', '0'))
+
+        # Get EAN
+        ean = get_text(item, './/inv:stockItem//typ:stockItem//typ:EAN')
+
+        # Get price from homeCurrency
+        home_curr = item.find('.//inv:homeCurrency', NS)
+        if home_curr is not None:
+            unit_price = Decimal(get_text(home_curr, './/typ:unitPrice', '0'))
+            price_sum = Decimal(get_text(home_curr, './/typ:priceSum', '0'))
+        else:
+            unit_price = Decimal('0')
+            price_sum = Decimal('0')
+
+        # Get EUR price if available
+        foreign_curr = item.find('.//inv:foreignCurrency', NS)
+        price_sum_eur = Decimal('0')
+        if foreign_curr is not None:
+            price_sum_eur = Decimal(get_text(foreign_curr, './/typ:priceSum', '0'))
+
+        # Skip items with no product code (like shipping, discounts)
+        if not product_code:
+            continue
+
+        items.append({
+            'invoice_number': invoice_info['invoice_number'],
+            'order_number': invoice_info['order_number'],
+            'date': invoice_info['date'],
+            'company': invoice_info['company'],
+            'currency': invoice_info['currency'],
+            'channel': invoice_info['channel'],
+            'salesperson': invoice_info['salesperson'],
+            'country': invoice_info['country'],
+            'supplier': invoice_info['supplier'],
+            'product_code': product_code,
+            'product_name': product_name,
+            'ean': ean,
+            'quantity': quantity,
+            'unit': unit,
+            'unit_price': unit_price,
+            'discount_percent': discount,
+            'total_czk': price_sum if invoice_info['currency'] != 'EUR' else Decimal('0'),
+            'total_eur': price_sum_eur if invoice_info['currency'] == 'EUR' else Decimal('0'),
+        })
+
+    return items
+
+
+def parse_invoice(invoice_element):
+    """Parse a single invoice element and return invoice data."""
+    header = invoice_element.find('.//inv:invoiceHeader', NS)
+    summary = invoice_element.find('.//inv:invoiceSummary', NS)
+
+    if header is None:
+        return None, []
+
+    # Get invoice number
+    invoice_number = get_text(header, './/inv:number//typ:numberRequested')
+    sym_var = get_text(header, './/inv:symVar')
+
+    # Get linked order number
+    order_number = get_text(header, './/inv:numberOrder')
+
+    # Get dates
+    invoice_date = get_text(header, './/inv:date')
+    date_tax = get_text(header, './/inv:dateTax')
+    date_due = get_text(header, './/inv:dateDue')
+
+    # Get currency (check foreignCurrency for EUR)
+    currency = 'CZK'
+    if summary is not None:
+        foreign_curr = summary.find('.//inv:foreignCurrency//typ:currency//typ:ids', NS)
+        if foreign_curr is not None and foreign_curr.text:
+            if foreign_curr.text.strip() == 'EUR':
+                currency = 'EUR'
+
+    # Get centre (Kdo řeší) - invoices might not have this, use order number prefix
+    centre = get_text(header, './/inv:centre//typ:ids')
+
+    # Get customer info from partnerIdentity
+    partner = header.find('.//inv:partnerIdentity', NS)
+    company = ''
+    customer_name = ''
+    city = ''
+    street = ''
+    zip_code = ''
+    customer_country = ''
+    ico = ''
+    dic = ''
+    email = ''
+    phone = ''
+
+    if partner is not None:
+        address = partner.find('.//typ:address', NS)
+        if address is not None:
+            company = get_text(address, './/typ:company')
+            customer_name = get_text(address, './/typ:name')
+            city = get_text(address, './/typ:city')
+            street = get_text(address, './/typ:street')
+            zip_code = get_text(address, './/typ:zip')
+            customer_country = get_text(address, './/typ:country//typ:ids')
+            ico = get_text(address, './/typ:ico')
+            dic = get_text(address, './/typ:dic')
+            email = get_text(address, './/typ:email')
+            phone = get_text(address, './/typ:mobilPhone') or get_text(address, './/typ:phone')
+
+    # Get payment type
+    payment_type = get_text(header, './/inv:paymentType//typ:ids')
+
+    # Get accounting info
+    accounting = get_text(header, './/inv:accounting//typ:ids')
+
+    # Check if paid (liquidation date exists)
+    liquidation_date = get_text(header, './/inv:liquidation//typ:date')
+    is_paid = bool(liquidation_date)
+
+    # Get totals from summary
+    total_czk = Decimal('0')
+    total_eur = Decimal('0')
+
+    if summary is not None:
+        if currency == 'EUR':
+            # For EUR invoices, get the EUR amount from foreignCurrency
+            foreign_curr_sum = summary.find('.//inv:foreignCurrency', NS)
+            if foreign_curr_sum is not None:
+                eur_sum = get_text(foreign_curr_sum, './/typ:priceSum', '0')
+                total_eur = Decimal(eur_sum)
+            # Also get CZK equivalent from homeCurrency
+            home_curr = summary.find('.//inv:homeCurrency', NS)
+            if home_curr is not None:
+                price_none = Decimal(get_text(home_curr, './/typ:priceNone', '0'))
+                price_low = Decimal(get_text(home_curr, './/typ:priceLowSum', '0'))
+                price_high = Decimal(get_text(home_curr, './/typ:priceHighSum', '0'))
+                total_czk = price_none + price_low + price_high
+        else:
+            # For CZK invoices
+            home_curr = summary.find('.//inv:homeCurrency', NS)
+            if home_curr is not None:
+                price_none = Decimal(get_text(home_curr, './/typ:priceNone', '0'))
+                price_low = Decimal(get_text(home_curr, './/typ:priceLowSum', '0'))
+                price_high = Decimal(get_text(home_curr, './/typ:priceHighSum', '0'))
+                total_czk = price_none + price_low + price_high
+
+    # Classify invoice based on order number (same logic as orders)
+    channel, salesperson, country, supplier = classify_order(order_number, currency, centre)
+
+    invoice_data = {
+        'invoice_number': invoice_number,
+        'sym_var': sym_var,
+        'order_number': order_number,
+        'date': invoice_date,
+        'date_tax': date_tax,
+        'date_due': date_due,
+        'company': company,
+        'customer_name': customer_name,
+        'city': city,
+        'street': street,
+        'zip': zip_code,
+        'customer_country': customer_country,
+        'ico': ico,
+        'dic': dic,
+        'email': email,
+        'phone': phone,
+        'currency': currency,
+        'centre': centre,
+        'channel': channel,
+        'salesperson': salesperson,
+        'country': country,
+        'supplier': supplier,
+        'payment_type': payment_type,
+        'accounting': accounting,
+        'is_paid': is_paid,
+        'liquidation_date': liquidation_date,
+        'total_czk': total_czk,
+        'total_eur': total_eur,
+    }
+
+    # Parse invoice items
+    items = parse_invoice_items(invoice_element, invoice_data)
+
+    return invoice_data, items
+
+
+def parse_invoice_xml_file(filepath):
+    """Parse a Pohoda XML invoice export file and return list of invoices and items."""
+    invoices = []
+    all_items = []
+
+    # Read file with correct encoding
+    with open(filepath, 'rb') as f:
+        content = f.read()
+
+    # Try to parse
+    try:
+        root = ET.fromstring(content)
+    except ET.ParseError as e:
+        print(f"Error parsing {filepath}: {e}")
+        return invoices, all_items
+
+    # Find all invoices
+    for invoice in root.findall('.//inv:invoice', NS):
+        invoice_data, items = parse_invoice(invoice)
+        if invoice_data:
+            invoices.append(invoice_data)
+            all_items.extend(items)
+
+    return invoices, all_items
+
+
+def analyze_invoices(xml_dir):
+    """Analyze all invoice XML files in directory."""
+    all_invoices = []
+    all_items = []
+
+    # Parse all XML files
+    xml_files = sorted(glob.glob(os.path.join(xml_dir, '*.xml')))
+
+    for filepath in xml_files:
+        filename = os.path.basename(filepath)
+        print(f"Processing {filename}...")
+        invoices, items = parse_invoice_xml_file(filepath)
+        all_invoices.extend(invoices)
+        all_items.extend(items)
+        print(f"  Found {len(invoices)} invoices, {len(items)} items")
+
+    print(f"\nTotal invoices: {len(all_invoices)}")
+    print(f"Total items: {len(all_items)}")
+
+    return all_invoices, all_items
+
+
+def export_invoices_to_js(invoices, items, output_dir):
+    """Export invoice data to JavaScript files for web dashboard."""
+    import json
+
+    # Export invoices
+    invoices_file = os.path.join(output_dir, 'invoices_data.js')
+    invoices_list = []
+    for inv in invoices:
+        invoices_list.append({
+            'invoice_number': inv['invoice_number'],
+            'order_number': inv['order_number'],
+            'date': inv['date'],
+            'date_due': inv['date_due'],
+            'company': inv['company'],
+            'customer_name': inv['customer_name'],
+            'city': inv['city'],
+            'zip': inv['zip'],
+            'customer_country': inv['customer_country'],
+            'ico': inv['ico'],
+            'email': inv['email'],
+            'phone': inv['phone'],
+            'currency': inv['currency'],
+            'centre': inv['centre'],
+            'channel': inv['channel'],
+            'salesperson': inv['salesperson'] if inv['salesperson'] else None,
+            'country': inv['country'],
+            'supplier': inv['supplier'],
+            'payment_type': inv['payment_type'],
+            'is_paid': inv['is_paid'],
+            'liquidation_date': inv['liquidation_date'],
+            'total_czk': float(inv['total_czk']),
+            'total_eur': float(inv['total_eur'])
+        })
+
+    with open(invoices_file, 'w', encoding='utf-8') as f:
+        f.write('// VITAR Sport Analytics - Invoices Data\n')
+        f.write('// Generated from Pohoda XML exports\n\n')
+        f.write('const invoicesData = ')
+        f.write(json.dumps(invoices_list, ensure_ascii=False, indent=2))
+        f.write(';\n')
+    print(f"Exported {len(invoices_list)} invoices to: {invoices_file}")
+
+    # Export invoice items
+    items_file = os.path.join(output_dir, 'invoices_items.js')
+    items_list = []
+    for item in items:
+        items_list.append({
+            'invoice_number': item['invoice_number'],
+            'order_number': item['order_number'],
+            'date': item['date'],
+            'company': item['company'],
+            'currency': item['currency'],
+            'channel': item['channel'],
+            'salesperson': item['salesperson'] if item['salesperson'] else None,
+            'country': item['country'],
+            'supplier': item['supplier'],
+            'product_code': item['product_code'],
+            'product_name': item['product_name'],
+            'ean': item['ean'],
+            'quantity': float(item['quantity']),
+            'unit': item['unit'],
+            'unit_price': float(item['unit_price']),
+            'discount_percent': float(item['discount_percent']),
+            'total_czk': float(item['total_czk']),
+            'total_eur': float(item['total_eur']),
+        })
+
+    with open(items_file, 'w', encoding='utf-8') as f:
+        f.write('// VITAR Sport Analytics - Invoice Items Data\n')
+        f.write('// Generated from Pohoda XML exports\n\n')
+        f.write('const invoiceItemsData = ')
+        f.write(json.dumps(items_list, ensure_ascii=False, indent=2))
+        f.write(';\n')
+    print(f"Exported {len(items_list)} invoice items to: {items_file}")
+
+
+# ============================================================================
+# ORDER PARSING FUNCTIONS (existing)
+# ============================================================================
 
 def parse_xml_file(filepath):
     """Parse a Pohoda XML export file and return list of orders and items."""
@@ -720,27 +1049,57 @@ def main():
         print(f"Error: XML directory not found: {xml_dir}")
         return
 
+    # Check for subdirectories (new structure)
+    orders_dir = os.path.join(xml_dir, 'objednavky')
+    invoices_dir = os.path.join(xml_dir, 'faktury')
+
     print("VITAR Sport Analytics - Pohoda XML Analysis")
     print("="*50)
 
-    # Parse all orders and items
-    orders, items = analyze_orders(xml_dir)
+    # ========================================
+    # PROCESS ORDERS
+    # ========================================
+    if os.path.exists(orders_dir):
+        print("\n" + "="*50)
+        print("OBJEDNÁVKY (Orders)")
+        print("="*50)
 
-    if not orders:
-        print("No orders found!")
-        return
+        orders, order_items = analyze_orders(orders_dir)
 
-    # Generate reports
-    reports = generate_reports(orders)
+        if orders:
+            # Generate reports
+            reports = generate_reports(orders)
 
-    # Print reports
-    print_reports(reports)
+            # Print reports
+            print_reports(reports)
 
-    # Export to CSV
-    export_to_csv(orders, reports, script_dir)
+            # Export to CSV
+            export_to_csv(orders, reports, script_dir)
 
-    # Export to JavaScript for web dashboard
-    export_to_js(orders, items, script_dir)
+            # Export to JavaScript for web dashboard
+            export_to_js(orders, order_items, script_dir)
+        else:
+            print("No orders found!")
+    else:
+        print(f"Orders directory not found: {orders_dir}")
+
+    # ========================================
+    # PROCESS INVOICES
+    # ========================================
+    if os.path.exists(invoices_dir):
+        print("\n" + "="*50)
+        print("FAKTÚRY (Invoices)")
+        print("="*50)
+
+        invoices, invoice_items = analyze_invoices(invoices_dir)
+
+        if invoices:
+            # Export invoices to JavaScript for web dashboard
+            export_invoices_to_js(invoices, invoice_items, script_dir)
+        else:
+            print("No invoices found!")
+    else:
+        print(f"Invoices directory not found: {invoices_dir}")
 
     print("\n" + "="*50)
     print("Analýza dokončena!")

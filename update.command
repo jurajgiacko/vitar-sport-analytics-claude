@@ -10,12 +10,12 @@ echo "=========================================="
 echo ""
 
 # Spusti Python analytics
-echo "1. Spracovávam XML súbory..."
+echo "1. Spracovávam XML súbory (objednávky + faktúry)..."
 python3 analytics.py
 
 echo ""
 echo "2. Ukladám zmeny do Git..."
-git add data.js items.js
+git add data.js items.js invoices_data.js invoices_items.js
 
 # Skontroluj či sú zmeny
 if git diff --staged --quiet; then
