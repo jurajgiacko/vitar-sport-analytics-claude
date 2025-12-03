@@ -39,6 +39,41 @@ function getDiffClass(diff) {
     return 'neutral';
 }
 
+// Get filtered items based on current filter state
+function getFilteredItems() {
+    const monthFilter = document.getElementById('monthFilter').value;
+    const marketFilter = document.getElementById('marketFilter').value;
+    const channelFilter = document.getElementById('channelFilter').value;
+    const salespersonFilter = document.getElementById('salespersonFilter').value;
+
+    return itemsData.filter(item => {
+        // Month filter
+        if (monthFilter !== 'all' && item.date.substring(0, 7) !== monthFilter) {
+            return false;
+        }
+
+        // Market filter
+        if (marketFilter !== 'all') {
+            if (marketFilter === 'CZ' && item.currency === 'EUR') return false;
+            if (marketFilter === 'SK' && item.currency !== 'EUR') return false;
+        }
+
+        // Channel filter
+        if (channelFilter !== 'all') {
+            if (channelFilter === 'ESHOP_ENERVIT' && !item.channel.includes('ENERVIT')) return false;
+            if (channelFilter === 'ESHOP_ROYALBAY' && !item.channel.includes('ROYALBAY')) return false;
+            if (channelFilter === 'B2B' && item.channel !== 'B2B') return false;
+        }
+
+        // Salesperson filter
+        if (salespersonFilter !== 'all' && item.salesperson !== salespersonFilter) {
+            return false;
+        }
+
+        return true;
+    });
+}
+
 // Get filtered orders based on current filter state
 function getFilteredOrders() {
     const monthFilter = document.getElementById('monthFilter').value;
@@ -382,6 +417,85 @@ function updateOrdersTable(orders) {
         `Zobrazeno ${limitedOrders.length} z ${orders.length} objednávek`;
 }
 
+// Update Top 10 Customers table
+function updateTop10CustomersTable(orders) {
+    const tbody = document.querySelector('#top10CustomersTable tbody');
+
+    // Aggregate by customer
+    const customers = {};
+    orders.forEach(order => {
+        const company = order.company || 'Neznámý';
+        if (!customers[company]) {
+            customers[company] = { count: 0, total: 0 };
+        }
+        customers[company].count++;
+        customers[company].total += order.total_czk;
+    });
+
+    // Sort by total and get top 10
+    const sorted = Object.entries(customers)
+        .map(([name, data]) => ({ name, ...data }))
+        .sort((a, b) => b.total - a.total)
+        .slice(0, 10);
+
+    let html = '';
+    sorted.forEach((customer, index) => {
+        const avg = customer.count > 0 ? customer.total / customer.count : 0;
+        html += `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${customer.name}</td>
+                <td class="text-right">${customer.count}</td>
+                <td class="text-right">${formatCZK(customer.total)}</td>
+                <td class="text-right">${formatCZK(avg)}</td>
+            </tr>
+        `;
+    });
+
+    tbody.innerHTML = html || '<tr><td colspan="5" style="text-align:center;color:#999;">Žádná data</td></tr>';
+}
+
+// Update Top 10 Products table
+function updateTop10ProductsTable(items) {
+    const tbody = document.querySelector('#top10ProductsTable tbody');
+
+    // Aggregate by product
+    const products = {};
+    items.forEach(item => {
+        const key = item.product_code || item.product_name;
+        if (!products[key]) {
+            products[key] = {
+                code: item.product_code,
+                name: item.product_name,
+                quantity: 0,
+                total: 0
+            };
+        }
+        products[key].quantity += item.quantity;
+        products[key].total += item.total_czk;
+    });
+
+    // Sort by total and get top 10
+    const sorted = Object.values(products)
+        .sort((a, b) => b.total - a.total)
+        .slice(0, 10);
+
+    let html = '';
+    sorted.forEach((product, index) => {
+        html += `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${product.code || '-'}</td>
+                <td>${product.name}</td>
+                <td class="text-right">${product.quantity.toLocaleString('cs-CZ')}</td>
+                <td class="text-right">${formatCZK(product.total)}</td>
+            </tr>
+        `;
+    });
+
+    tbody.innerHTML = html || '<tr><td colspan="5" style="text-align:center;color:#999;">Žádná data</td></tr>';
+}
+
 // Update Plan vs Actual CZ table
 function updatePlanCZTable(orders) {
     const monthlyData = aggregateByMonth(orders);
@@ -583,6 +697,7 @@ function updatePlanB2BTable(orders) {
 // Update all displays
 function updateDisplay() {
     const filteredOrders = getFilteredOrders();
+    const filteredItems = getFilteredItems();
 
     updateSummaryCards(filteredOrders);
     updateCZTable(filteredOrders);
@@ -590,6 +705,8 @@ function updateDisplay() {
     updateMonthlyTable(filteredOrders);
     updateB2BTable(filteredOrders);
     updateOrdersTable(filteredOrders);
+    updateTop10CustomersTable(filteredOrders);
+    updateTop10ProductsTable(filteredItems);
     updatePlanCZTable(ordersData); // Use all orders for plan comparison
     updatePlanSKTable(ordersData);
     updatePlanB2BTable(ordersData);

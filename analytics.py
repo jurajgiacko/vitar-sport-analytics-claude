@@ -83,13 +83,55 @@ def classify_order(order_number, currency, centre):
     return ('B2B', salesperson, country, 'VITAR')
 
 
+def parse_order_items(order_element, order_info):
+    """Parse order items and return list of item data."""
+    items = []
+    detail = order_element.find('.//ord:orderDetail', NS)
+
+    if detail is None:
+        return items
+
+    for item in detail.findall('.//ord:orderItem', NS):
+        product_name = get_text(item, './/ord:text')
+        product_code = get_text(item, './/ord:code')
+        quantity = Decimal(get_text(item, './/ord:quantity', '0'))
+
+        # Get price
+        home_curr = item.find('.//ord:homeCurrency', NS)
+        if home_curr is not None:
+            price_sum = Decimal(get_text(home_curr, './/typ:priceSum', '0'))
+        else:
+            price_sum = Decimal('0')
+
+        # Skip items with no product name or zero/negative values (like shipping, discounts)
+        if not product_name or price_sum <= 0:
+            continue
+
+        items.append({
+            'order_number': order_info['order_number'],
+            'date': order_info['date'],
+            'company': order_info['company'],
+            'currency': order_info['currency'],
+            'channel': order_info['channel'],
+            'salesperson': order_info['salesperson'],
+            'country': order_info['country'],
+            'product_code': product_code,
+            'product_name': product_name,
+            'quantity': quantity,
+            'total_czk': price_sum if order_info['currency'] != 'EUR' else Decimal('0'),
+            'total_eur': Decimal('0'),  # Items don't have EUR breakdown in XML
+        })
+
+    return items
+
+
 def parse_order(order_element):
     """Parse a single order element and return order data."""
     header = order_element.find('.//ord:orderHeader', NS)
     summary = order_element.find('.//ord:orderSummary', NS)
 
     if header is None:
-        return None
+        return None, []
 
     # Get order number
     order_number = get_text(header, './/ord:numberOrder')
@@ -142,7 +184,7 @@ def parse_order(order_element):
     # Classify order
     channel, salesperson, country, supplier = classify_order(order_number, currency, centre)
 
-    return {
+    order_data = {
         'order_number': order_number,
         'date': order_date,
         'company': company,
@@ -156,10 +198,16 @@ def parse_order(order_element):
         'total_eur': total_eur,
     }
 
+    # Parse order items
+    items = parse_order_items(order_element, order_data)
+
+    return order_data, items
+
 
 def parse_xml_file(filepath):
-    """Parse a Pohoda XML export file and return list of orders."""
+    """Parse a Pohoda XML export file and return list of orders and items."""
     orders = []
+    all_items = []
 
     # Read file with correct encoding
     with open(filepath, 'rb') as f:
@@ -170,20 +218,22 @@ def parse_xml_file(filepath):
         root = ET.fromstring(content)
     except ET.ParseError as e:
         print(f"Error parsing {filepath}: {e}")
-        return orders
+        return orders, all_items
 
     # Find all orders
     for order in root.findall('.//ord:order', NS):
-        order_data = parse_order(order)
+        order_data, items = parse_order(order)
         if order_data:
             orders.append(order_data)
+            all_items.extend(items)
 
-    return orders
+    return orders, all_items
 
 
 def analyze_orders(xml_dir):
     """Analyze all XML files in directory and generate reports."""
     all_orders = []
+    all_items = []
 
     # Parse all XML files
     xml_files = sorted(glob.glob(os.path.join(xml_dir, '*.xml')))
@@ -191,13 +241,15 @@ def analyze_orders(xml_dir):
     for filepath in xml_files:
         filename = os.path.basename(filepath)
         print(f"Processing {filename}...")
-        orders = parse_xml_file(filepath)
+        orders, items = parse_xml_file(filepath)
         all_orders.extend(orders)
-        print(f"  Found {len(orders)} orders")
+        all_items.extend(items)
+        print(f"  Found {len(orders)} orders, {len(items)} items")
 
     print(f"\nTotal orders: {len(all_orders)}")
+    print(f"Total items: {len(all_items)}")
 
-    return all_orders
+    return all_orders, all_items
 
 
 def generate_reports(orders):
@@ -506,6 +558,63 @@ def export_to_csv(orders, reports, output_dir):
     print(f"Exported B2B breakdown to: {b2b_file}")
 
 
+def export_to_js(orders, items, output_dir):
+    """Export data to JavaScript files for web dashboard."""
+    import json
+
+    # Export orders
+    orders_file = os.path.join(output_dir, 'data.js')
+    orders_list = []
+    for order in orders:
+        orders_list.append({
+            'order_number': order['order_number'],
+            'date': order['date'],
+            'company': order['company'],
+            'currency': order['currency'],
+            'centre': order['centre'],
+            'channel': order['channel'],
+            'salesperson': order['salesperson'] if order['salesperson'] else None,
+            'country': order['country'],
+            'supplier': order['supplier'],
+            'total_czk': float(order['total_czk']),
+            'total_eur': float(order['total_eur'])
+        })
+
+    with open(orders_file, 'w', encoding='utf-8') as f:
+        f.write('// VITAR Sport Analytics - Orders Data\n')
+        f.write('// Generated from Pohoda XML exports\n\n')
+        f.write('const ordersData = ')
+        f.write(json.dumps(orders_list, ensure_ascii=False, indent=2))
+        f.write(';\n')
+    print(f"Exported {len(orders_list)} orders to: {orders_file}")
+
+    # Export items
+    items_file = os.path.join(output_dir, 'items.js')
+    items_list = []
+    for item in items:
+        items_list.append({
+            'order_number': item['order_number'],
+            'date': item['date'],
+            'company': item['company'],
+            'currency': item['currency'],
+            'channel': item['channel'],
+            'salesperson': item['salesperson'] if item['salesperson'] else None,
+            'country': item['country'],
+            'product_code': item['product_code'],
+            'product_name': item['product_name'],
+            'quantity': float(item['quantity']),
+            'total_czk': float(item['total_czk']),
+        })
+
+    with open(items_file, 'w', encoding='utf-8') as f:
+        f.write('// VITAR Sport Analytics - Order Items Data\n')
+        f.write('// Generated from Pohoda XML exports\n\n')
+        f.write('const itemsData = ')
+        f.write(json.dumps(items_list, ensure_ascii=False, indent=2))
+        f.write(';\n')
+    print(f"Exported {len(items_list)} items to: {items_file}")
+
+
 def main():
     """Main entry point."""
     # Directory with XML exports
@@ -519,8 +628,8 @@ def main():
     print("VITAR Sport Analytics - Pohoda XML Analysis")
     print("="*50)
 
-    # Parse all orders
-    orders = analyze_orders(xml_dir)
+    # Parse all orders and items
+    orders, items = analyze_orders(xml_dir)
 
     if not orders:
         print("No orders found!")
@@ -534,6 +643,9 @@ def main():
 
     # Export to CSV
     export_to_csv(orders, reports, script_dir)
+
+    # Export to JavaScript for web dashboard
+    export_to_js(orders, items, script_dir)
 
     print("\n" + "="*50)
     print("Analýza dokončena!")
