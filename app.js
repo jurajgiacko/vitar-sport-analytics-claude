@@ -3,6 +3,43 @@
 // Current view state: 'orders' or 'invoices'
 let currentView = 'orders';
 
+// Classify product brand based on product name
+function classifyBrand(productName) {
+    if (!productName) return 'VITAR';
+    const name = productName.toUpperCase();
+
+    if (name.includes('ENERVIT') ||
+        name.includes('ISOCARB') ||
+        name.includes('CARBO GEL') ||
+        name.includes('CARBO FLOW') ||
+        name.includes('CARBO BAR') ||
+        name.includes('CARBO CHEWS') ||
+        name.includes('CARBO JELLY') ||
+        name.includes('CARBO TABLETS') ||
+        name.includes('COMPETITION BAR') ||
+        name.includes('ISOTONIC') ||
+        name.includes('RECOVERY DRINK') ||
+        name.includes('LIQUID GEL') ||
+        name.includes('PRE SPORT') ||
+        name.includes('AFTER SPORT') ||
+        name.includes('PROTEIN BAR') ||
+        name.includes('C2:1') ||
+        name.includes('BCAA') ||
+        name.includes('CREATINA') ||
+        name.includes('CREATINE') ||
+        name.includes('MAGNESIUM SPORT') ||
+        name.includes('GEL (25') ||
+        name.includes('GEL (') && name.includes('ML)')) {
+        return 'ENERVIT';
+    }
+
+    if (name.includes('ROYAL BAY') || name.includes('ROYALBAY')) {
+        return 'ROYALBAY';
+    }
+
+    return 'VITAR';
+}
+
 // Format number as CZK
 function formatCZK(amount) {
     return new Intl.NumberFormat('cs-CZ', {
@@ -243,6 +280,31 @@ function aggregateByMonth(orders) {
     return months;
 }
 
+// Aggregate items by brand
+function aggregateByBrand(items) {
+    const months = {};
+
+    items.forEach(item => {
+        const month = item.date.substring(0, 7);
+        if (!months[month]) {
+            months[month] = {
+                ENERVIT: 0,
+                ROYALBAY: 0,
+                VITAR: 0,
+                total: 0
+            };
+        }
+
+        const brand = classifyBrand(item.product_name);
+        const amount = item.total_czk + (item.total_eur * 25); // Convert EUR to CZK approx
+
+        months[month][brand] += amount;
+        months[month].total += amount;
+    });
+
+    return months;
+}
+
 // Aggregate B2B by salesperson
 function aggregateB2BBySalesperson(orders) {
     const months = {};
@@ -423,6 +485,52 @@ function updateB2BTable(orders) {
     `;
 
     tbody.innerHTML = html;
+}
+
+// Update Brand table
+function updateBrandTable(items) {
+    const brandData = aggregateByBrand(items);
+    const tbody = document.querySelector('#brandTable tbody');
+    const sortedMonths = Object.keys(brandData).sort();
+
+    let totals = { ENERVIT: 0, ROYALBAY: 0, VITAR: 0, total: 0 };
+
+    let html = '';
+    sortedMonths.forEach(month => {
+        const data = brandData[month];
+        totals.ENERVIT += data.ENERVIT || 0;
+        totals.ROYALBAY += data.ROYALBAY || 0;
+        totals.VITAR += data.VITAR || 0;
+        totals.total += data.total || 0;
+
+        html += `
+            <tr>
+                <td>${month}</td>
+                <td class="text-right">${formatCZK(data.ENERVIT || 0)}</td>
+                <td class="text-right">${formatCZK(data.ROYALBAY || 0)}</td>
+                <td class="text-right">${formatCZK(data.VITAR || 0)}</td>
+                <td class="text-right">${formatCZK(data.total || 0)}</td>
+            </tr>
+        `;
+    });
+
+    html += `
+        <tr class="total-row">
+            <td>CELKEM</td>
+            <td class="text-right">${formatCZK(totals.ENERVIT)}</td>
+            <td class="text-right">${formatCZK(totals.ROYALBAY)}</td>
+            <td class="text-right">${formatCZK(totals.VITAR)}</td>
+            <td class="text-right">${formatCZK(totals.total)}</td>
+        </tr>
+    `;
+
+    tbody.innerHTML = html;
+
+    // Update title
+    let viewLabel = 'Objednávky';
+    if (currentView === 'invoices') viewLabel = 'Faktúry';
+    if (currentView === 'sponsoring') viewLabel = 'Sponzoring';
+    document.getElementById('brandTitle').textContent = `Obrat podle značky - ${viewLabel}`;
 }
 
 // Update orders/invoices table
@@ -812,9 +920,11 @@ function updateDisplay() {
     const filteredOrders = getFilteredOrders();
     const filteredItems = getFilteredItems();
     const allCurrentData = getCurrentData(); // All data from current view (orders or invoices)
+    const allCurrentItems = getCurrentItems(); // All items from current view
 
     updateTitles();
     updateSummaryCards(filteredOrders);
+    updateBrandTable(allCurrentItems); // Brand breakdown by items
     updateCZTable(filteredOrders);
     updateSKTable(filteredOrders);
     updateMonthlyTable(filteredOrders);
