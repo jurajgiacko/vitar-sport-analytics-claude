@@ -168,7 +168,7 @@ const sponsoringData = [
     "total_czk": 83033.37,
     "total_czk_bez_dph": 0.0,
     "total_eur": 3311.4,
-    "total_eur_bez_dph": 0.0
+    "total_eur_bez_dph": 3311.4
   },
   {
     "invoice_number": "250100780",
@@ -924,7 +924,7 @@ const sponsoringData = [
     "total_czk": 24641.32,
     "total_czk_bez_dph": 0.0,
     "total_eur": 1006.59,
-    "total_eur_bez_dph": 0.0
+    "total_eur_bez_dph": 1006.59
   },
   {
     "invoice_number": "250105181",
@@ -1288,7 +1288,7 @@ const sponsoringData = [
     "total_czk": 18625.53,
     "total_czk_bez_dph": 0.0,
     "total_eur": 766.01,
-    "total_eur_bez_dph": 0.0
+    "total_eur_bez_dph": 766.01
   },
   {
     "invoice_number": "250106738",
@@ -1596,7 +1596,7 @@ const sponsoringData = [
     "total_czk": 79055.12,
     "total_czk_bez_dph": 0.0,
     "total_eur": 3247.94,
-    "total_eur_bez_dph": 0.0
+    "total_eur_bez_dph": 3247.94
   },
   {
     "invoice_number": "250106922",
@@ -1736,7 +1736,7 @@ const sponsoringData = [
     "total_czk": 16925.26,
     "total_czk_bez_dph": 0.0,
     "total_eur": 699.68,
-    "total_eur_bez_dph": 0.0
+    "total_eur_bez_dph": 699.68
   },
   {
     "invoice_number": "250107207",

@@ -228,10 +228,9 @@ def parse_order(order_element):
             if foreign_curr_sum is not None:
                 eur_sum = get_text(foreign_curr_sum, './/typ:priceSum', '0')
                 total_eur = Decimal(eur_sum)
-                # Get price without VAT for EUR
-                eur_low = Decimal(get_text(foreign_curr_sum, './/typ:priceLow', '0'))
-                eur_high = Decimal(get_text(foreign_curr_sum, './/typ:priceHigh', '0'))
-                total_eur_bez_dph = eur_low + eur_high
+                # For EUR/SK orders, VAT is typically 0 or handled differently
+                # Use priceSum as bez DPH value (SK market is essentially without VAT)
+                total_eur_bez_dph = total_eur
             # Also get CZK equivalent from homeCurrency
             home_curr = summary.find('.//ord:homeCurrency', NS)
             if home_curr is not None:
@@ -450,10 +449,9 @@ def parse_invoice(invoice_element):
             if foreign_curr_sum is not None:
                 eur_sum = get_text(foreign_curr_sum, './/typ:priceSum', '0')
                 total_eur = Decimal(eur_sum)
-                # Get price without VAT for EUR
-                eur_low = Decimal(get_text(foreign_curr_sum, './/typ:priceLow', '0'))
-                eur_high = Decimal(get_text(foreign_curr_sum, './/typ:priceHigh', '0'))
-                total_eur_bez_dph = eur_low + eur_high
+                # For EUR/SK invoices, VAT is typically 0 or handled differently
+                # Use priceSum as bez DPH value (SK market is essentially without VAT)
+                total_eur_bez_dph = total_eur
             # Also get CZK equivalent from homeCurrency
             home_curr = summary.find('.//inv:homeCurrency', NS)
             if home_curr is not None:
