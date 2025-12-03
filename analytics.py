@@ -107,9 +107,11 @@ def parse_order_items(order_element, order_info):
         home_curr = item.find('.//ord:homeCurrency', NS)
         if home_curr is not None:
             unit_price = Decimal(get_text(home_curr, './/typ:unitPrice', '0'))
-            price_sum = Decimal(get_text(home_curr, './/typ:priceSum', '0'))
+            price_without_vat = Decimal(get_text(home_curr, './/typ:price', '0'))  # bez DPH
+            price_sum = Decimal(get_text(home_curr, './/typ:priceSum', '0'))  # s DPH
         else:
             unit_price = Decimal('0')
+            price_without_vat = Decimal('0')
             price_sum = Decimal('0')
 
         # Skip items with no product code (like shipping, discounts)
@@ -134,7 +136,9 @@ def parse_order_items(order_element, order_info):
             'unit_price': unit_price,
             'discount_percent': discount,
             'total_czk': price_sum if order_info['currency'] != 'EUR' else Decimal('0'),
+            'total_czk_bez_dph': price_without_vat if order_info['currency'] != 'EUR' else Decimal('0'),
             'total_eur': Decimal('0'),
+            'total_eur_bez_dph': Decimal('0'),
         })
 
     return items
@@ -304,16 +308,20 @@ def parse_invoice_items(invoice_element, invoice_info):
         home_curr = item.find('.//inv:homeCurrency', NS)
         if home_curr is not None:
             unit_price = Decimal(get_text(home_curr, './/typ:unitPrice', '0'))
-            price_sum = Decimal(get_text(home_curr, './/typ:priceSum', '0'))
+            price_without_vat = Decimal(get_text(home_curr, './/typ:price', '0'))  # bez DPH
+            price_sum = Decimal(get_text(home_curr, './/typ:priceSum', '0'))  # s DPH
         else:
             unit_price = Decimal('0')
+            price_without_vat = Decimal('0')
             price_sum = Decimal('0')
 
         # Get EUR price if available
         foreign_curr = item.find('.//inv:foreignCurrency', NS)
         price_sum_eur = Decimal('0')
+        price_without_vat_eur = Decimal('0')
         if foreign_curr is not None:
-            price_sum_eur = Decimal(get_text(foreign_curr, './/typ:priceSum', '0'))
+            price_without_vat_eur = Decimal(get_text(foreign_curr, './/typ:price', '0'))  # bez DPH
+            price_sum_eur = Decimal(get_text(foreign_curr, './/typ:priceSum', '0'))  # s DPH
 
         # Skip items with no product code (like shipping, discounts)
         if not product_code:
@@ -337,7 +345,9 @@ def parse_invoice_items(invoice_element, invoice_info):
             'unit_price': unit_price,
             'discount_percent': discount,
             'total_czk': price_sum if invoice_info['currency'] != 'EUR' else Decimal('0'),
+            'total_czk_bez_dph': price_without_vat if invoice_info['currency'] != 'EUR' else Decimal('0'),
             'total_eur': price_sum_eur if invoice_info['currency'] == 'EUR' else Decimal('0'),
+            'total_eur_bez_dph': price_without_vat_eur if invoice_info['currency'] == 'EUR' else Decimal('0'),
         })
 
     return items
@@ -592,7 +602,9 @@ def export_invoices_to_js(invoices, items, output_dir):
             'unit_price': float(item['unit_price']),
             'discount_percent': float(item['discount_percent']),
             'total_czk': float(item['total_czk']),
+            'total_czk_bez_dph': float(item.get('total_czk_bez_dph', 0)),
             'total_eur': float(item['total_eur']),
+            'total_eur_bez_dph': float(item.get('total_eur_bez_dph', 0)),
         }
 
     # Export regular invoices
@@ -1070,7 +1082,9 @@ def export_to_js(orders, items, output_dir):
             'unit_price': float(item['unit_price']),
             'discount_percent': float(item['discount_percent']),
             'total_czk': float(item['total_czk']),
+            'total_czk_bez_dph': float(item.get('total_czk_bez_dph', 0)),
             'total_eur': float(item.get('total_eur', 0)),
+            'total_eur_bez_dph': float(item.get('total_eur_bez_dph', 0)),
         })
 
     with open(items_file, 'w', encoding='utf-8') as f:

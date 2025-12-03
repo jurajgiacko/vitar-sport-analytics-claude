@@ -20,7 +20,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 5458.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4873.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100007",
@@ -40,7 +42,9 @@ const sponsoringItemsData = [
     "unit_price": 239.67,
     "discount_percent": 0.0,
     "total_czk": 8700.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 7190.1,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100007",
@@ -60,7 +64,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 5183.54,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4628.16,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100007",
@@ -80,7 +86,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 4460.06,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3982.2,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100007",
@@ -100,7 +108,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 100.0,
     "total_czk": 0.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100553",
@@ -120,7 +130,9 @@ const sponsoringItemsData = [
     "unit_price": 436.61,
     "discount_percent": 0.0,
     "total_czk": 17115.11,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 15281.35,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100553",
@@ -140,7 +152,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 4060.34,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3625.3,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100553",
@@ -160,7 +174,9 @@ const sponsoringItemsData = [
     "unit_price": 65.29,
     "discount_percent": 0.0,
     "total_czk": 2765.03,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2285.15,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100553",
@@ -180,7 +196,9 @@ const sponsoringItemsData = [
     "unit_price": 39.29,
     "discount_percent": 0.0,
     "total_czk": 1540.17,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1375.15,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -200,7 +218,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 40.0,
     "total_czk": 104.41,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 93.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -220,7 +240,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 40.0,
     "total_czk": 104.41,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 93.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -240,7 +262,9 @@ const sponsoringItemsData = [
     "unit_price": 50.0,
     "discount_percent": 40.0,
     "total_czk": 235.2,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 210.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -260,7 +284,9 @@ const sponsoringItemsData = [
     "unit_price": 50.0,
     "discount_percent": 40.0,
     "total_czk": 235.2,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 210.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -280,7 +306,9 @@ const sponsoringItemsData = [
     "unit_price": 52.68,
     "discount_percent": 40.0,
     "total_czk": 247.81,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 221.26,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -300,7 +328,9 @@ const sponsoringItemsData = [
     "unit_price": 86.61,
     "discount_percent": 40.0,
     "total_czk": 116.4,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 103.93,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -320,7 +350,9 @@ const sponsoringItemsData = [
     "unit_price": 86.61,
     "discount_percent": 40.0,
     "total_czk": 116.4,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 103.93,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -340,7 +372,9 @@ const sponsoringItemsData = [
     "unit_price": 86.6,
     "discount_percent": 40.0,
     "total_czk": 232.78,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 207.84,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -360,7 +394,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 40.0,
     "total_czk": 522.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 466.08,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -380,7 +416,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 40.0,
     "total_czk": 208.8,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 186.43,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -400,7 +438,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 40.0,
     "total_czk": 87.61,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 78.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -420,7 +460,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 40.0,
     "total_czk": 87.61,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 78.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -440,7 +482,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 40.0,
     "total_czk": 87.61,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 78.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -460,7 +504,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 40.0,
     "total_czk": 87.61,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 78.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -480,7 +526,9 @@ const sponsoringItemsData = [
     "unit_price": 302.68,
     "discount_percent": 40.0,
     "total_czk": 203.4,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 181.61,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -500,7 +548,9 @@ const sponsoringItemsData = [
     "unit_price": 782.14,
     "discount_percent": 40.0,
     "total_czk": 525.59,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 469.28,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -520,7 +570,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 40.0,
     "total_czk": 32.4,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 28.93,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -540,7 +592,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 40.0,
     "total_czk": 32.4,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 28.93,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -560,7 +614,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 40.0,
     "total_czk": 32.4,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 28.93,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -580,7 +636,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 40.0,
     "total_czk": 32.4,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 28.93,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -600,7 +658,9 @@ const sponsoringItemsData = [
     "unit_price": 436.61,
     "discount_percent": 40.0,
     "total_czk": 293.41,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 261.97,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -620,7 +680,9 @@ const sponsoringItemsData = [
     "unit_price": 191.96,
     "discount_percent": 40.0,
     "total_czk": 257.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 230.35,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -640,7 +702,9 @@ const sponsoringItemsData = [
     "unit_price": 52.68,
     "discount_percent": 40.0,
     "total_czk": 106.2,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 94.82,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -660,7 +724,9 @@ const sponsoringItemsData = [
     "unit_price": 50.0,
     "discount_percent": 40.0,
     "total_czk": 100.8,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 90.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -680,7 +746,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 40.0,
     "total_czk": 401.41,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 358.4,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -700,7 +768,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 40.0,
     "total_czk": 97.19,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 86.78,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -720,7 +790,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 40.0,
     "total_czk": 97.19,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 86.78,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -740,7 +812,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 40.0,
     "total_czk": 69.61,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 62.15,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -760,7 +834,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 40.0,
     "total_czk": 69.61,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 62.15,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -780,7 +856,9 @@ const sponsoringItemsData = [
     "unit_price": 86.61,
     "discount_percent": 40.0,
     "total_czk": 116.4,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 103.93,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -800,7 +878,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 40.0,
     "total_czk": 52.2,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 46.61,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100564",
@@ -820,7 +900,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 40.0,
     "total_czk": 52.2,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 46.61,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100645",
@@ -840,7 +922,9 @@ const sponsoringItemsData = [
     "unit_price": 3999.11,
     "discount_percent": 0.0,
     "total_czk": 26874.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 23994.66,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -860,7 +944,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 73.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 65.18,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -880,7 +966,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 48.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 42.86,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -900,7 +988,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 192.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 171.44,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -920,7 +1010,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 144.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 128.58,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -940,7 +1032,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 269.98,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 241.05,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -960,7 +1054,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 377.97,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 337.47,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -980,7 +1076,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 377.97,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 337.47,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1000,7 +1098,9 @@ const sponsoringItemsData = [
     "unit_price": 782.14,
     "discount_percent": 0.0,
     "total_czk": 9635.96,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 8603.54,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1020,7 +1120,9 @@ const sponsoringItemsData = [
     "unit_price": 112.5,
     "discount_percent": 0.0,
     "total_czk": 5922.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5287.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1040,7 +1142,9 @@ const sponsoringItemsData = [
     "unit_price": 302.68,
     "discount_percent": 0.0,
     "total_czk": 7458.04,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 6658.96,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1060,7 +1164,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 290.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 258.95,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1080,7 +1186,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 522.04,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 466.11,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1100,7 +1208,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 73.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 65.18,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1120,7 +1230,9 @@ const sponsoringItemsData = [
     "unit_price": 68.75,
     "discount_percent": 0.0,
     "total_czk": 1078.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 962.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1140,7 +1252,9 @@ const sponsoringItemsData = [
     "unit_price": 112.5,
     "discount_percent": 0.0,
     "total_czk": 252.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 225.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1160,7 +1274,9 @@ const sponsoringItemsData = [
     "unit_price": 112.5,
     "discount_percent": 0.0,
     "total_czk": 378.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 337.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1180,7 +1296,9 @@ const sponsoringItemsData = [
     "unit_price": 65.29,
     "discount_percent": 0.0,
     "total_czk": 395.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 326.45,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1200,7 +1318,9 @@ const sponsoringItemsData = [
     "unit_price": 73.55,
     "discount_percent": 0.0,
     "total_czk": 89.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 73.55,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1220,7 +1340,9 @@ const sponsoringItemsData = [
     "unit_price": 156.2,
     "discount_percent": 0.0,
     "total_czk": 378.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 312.4,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1240,7 +1362,9 @@ const sponsoringItemsData = [
     "unit_price": 50.0,
     "discount_percent": 0.0,
     "total_czk": 784.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 700.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1260,7 +1384,9 @@ const sponsoringItemsData = [
     "unit_price": 50.0,
     "discount_percent": 0.0,
     "total_czk": 2464.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2200.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1280,7 +1406,9 @@ const sponsoringItemsData = [
     "unit_price": 52.68,
     "discount_percent": 0.0,
     "total_czk": 2124.06,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1896.48,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1300,7 +1428,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 1784.03,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1592.88,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1320,7 +1450,9 @@ const sponsoringItemsData = [
     "unit_price": 218.75,
     "discount_percent": 0.0,
     "total_czk": 490.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 437.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1340,7 +1472,9 @@ const sponsoringItemsData = [
     "unit_price": 522.32,
     "discount_percent": 0.0,
     "total_czk": 585.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 522.32,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1360,7 +1494,9 @@ const sponsoringItemsData = [
     "unit_price": 66.96,
     "discount_percent": 0.0,
     "total_czk": 749.95,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 669.6,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1380,7 +1516,9 @@ const sponsoringItemsData = [
     "unit_price": 191.96,
     "discount_percent": 0.0,
     "total_czk": 859.98,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 767.84,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1400,7 +1538,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 73.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 65.18,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1420,7 +1560,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 539.95,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 482.1,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1440,7 +1582,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 1295.88,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1157.04,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1460,7 +1604,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 54.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 48.21,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1480,7 +1626,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 1781.84,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1590.93,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1500,7 +1648,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 232.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 207.16,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1520,7 +1670,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 0.0,
     "total_czk": 348.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 310.72,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1540,7 +1692,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 0.0,
     "total_czk": 696.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 621.44,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1560,7 +1714,9 @@ const sponsoringItemsData = [
     "unit_price": 86.6,
     "discount_percent": 0.0,
     "total_czk": 581.95,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 519.6,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1580,7 +1736,9 @@ const sponsoringItemsData = [
     "unit_price": 59.82,
     "discount_percent": 0.0,
     "total_czk": 134.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 119.64,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1600,7 +1758,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 0.0,
     "total_czk": 522.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 466.08,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1620,7 +1780,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 0.0,
     "total_czk": 435.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 388.4,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1640,7 +1802,9 @@ const sponsoringItemsData = [
     "unit_price": 86.61,
     "discount_percent": 0.0,
     "total_czk": 485.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 433.05,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1660,7 +1824,9 @@ const sponsoringItemsData = [
     "unit_price": 685.95,
     "discount_percent": 0.0,
     "total_czk": 830.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 685.95,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1680,7 +1846,9 @@ const sponsoringItemsData = [
     "unit_price": 607.44,
     "discount_percent": 0.0,
     "total_czk": 735.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 607.44,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1700,7 +1868,9 @@ const sponsoringItemsData = [
     "unit_price": 607.44,
     "discount_percent": 0.0,
     "total_czk": 1470.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1214.88,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1720,7 +1890,9 @@ const sponsoringItemsData = [
     "unit_price": 607.44,
     "discount_percent": 0.0,
     "total_czk": 1470.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1214.88,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1740,7 +1912,9 @@ const sponsoringItemsData = [
     "unit_price": 607.43,
     "discount_percent": 0.0,
     "total_czk": 734.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 607.43,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1760,7 +1934,9 @@ const sponsoringItemsData = [
     "unit_price": 607.43,
     "discount_percent": 0.0,
     "total_czk": 734.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 607.43,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1780,7 +1956,9 @@ const sponsoringItemsData = [
     "unit_price": 404.96,
     "discount_percent": 0.0,
     "total_czk": 980.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 809.92,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1800,7 +1978,9 @@ const sponsoringItemsData = [
     "unit_price": 404.96,
     "discount_percent": 0.0,
     "total_czk": 980.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 809.92,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1820,7 +2000,9 @@ const sponsoringItemsData = [
     "unit_price": 404.96,
     "discount_percent": 0.0,
     "total_czk": 1470.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1214.88,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1840,7 +2022,9 @@ const sponsoringItemsData = [
     "unit_price": 404.96,
     "discount_percent": 0.0,
     "total_czk": 490.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 404.96,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1860,7 +2044,9 @@ const sponsoringItemsData = [
     "unit_price": 404.96,
     "discount_percent": 0.0,
     "total_czk": 490.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 404.96,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1880,7 +2066,9 @@ const sponsoringItemsData = [
     "unit_price": 404.96,
     "discount_percent": 0.0,
     "total_czk": 490.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 404.96,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1900,7 +2088,9 @@ const sponsoringItemsData = [
     "unit_price": 404.96,
     "discount_percent": 0.0,
     "total_czk": 490.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 404.96,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1920,7 +2110,9 @@ const sponsoringItemsData = [
     "unit_price": 776.86,
     "discount_percent": 0.0,
     "total_czk": 940.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 776.86,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100688",
@@ -1940,7 +2132,9 @@ const sponsoringItemsData = [
     "unit_price": 925.62,
     "discount_percent": 0.0,
     "total_czk": 1120.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 925.62,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250200053",
@@ -1960,7 +2154,9 @@ const sponsoringItemsData = [
     "unit_price": 3999.21,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 318.98
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 318.98,
+    "total_eur_bez_dph": 318.98
   },
   {
     "invoice_number": "250200053",
@@ -1980,7 +2176,9 @@ const sponsoringItemsData = [
     "unit_price": 1.76,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 175.0
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 175.0,
+    "total_eur_bez_dph": 175.0
   },
   {
     "invoice_number": "250200053",
@@ -2000,7 +2198,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.54,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 583.02
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 583.02,
+    "total_eur_bez_dph": 583.02
   },
   {
     "invoice_number": "250200053",
@@ -2020,7 +2220,9 @@ const sponsoringItemsData = [
     "unit_price": 65.2,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 1019.2
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 1019.2,
+    "total_eur_bez_dph": 1019.2
   },
   {
     "invoice_number": "250200053",
@@ -2040,7 +2242,9 @@ const sponsoringItemsData = [
     "unit_price": 65.2,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 280.8
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 280.8,
+    "total_eur_bez_dph": 280.8
   },
   {
     "invoice_number": "250200053",
@@ -2060,7 +2264,9 @@ const sponsoringItemsData = [
     "unit_price": 48.14,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 384.0
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 384.0,
+    "total_eur_bez_dph": 384.0
   },
   {
     "invoice_number": "250200053",
@@ -2080,7 +2286,9 @@ const sponsoringItemsData = [
     "unit_price": 65.2,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 104.0
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 104.0,
+    "total_eur_bez_dph": 104.0
   },
   {
     "invoice_number": "250200053",
@@ -2100,7 +2308,9 @@ const sponsoringItemsData = [
     "unit_price": 25.83,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 41.2
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 41.2,
+    "total_eur_bez_dph": 41.2
   },
   {
     "invoice_number": "250200053",
@@ -2120,7 +2330,9 @@ const sponsoringItemsData = [
     "unit_price": 25.08,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 40.0
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 40.0,
+    "total_eur_bez_dph": 40.0
   },
   {
     "invoice_number": "250200053",
@@ -2140,7 +2352,9 @@ const sponsoringItemsData = [
     "unit_price": 65.2,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 39.0
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 39.0,
+    "total_eur_bez_dph": 39.0
   },
   {
     "invoice_number": "250200053",
@@ -2160,7 +2374,9 @@ const sponsoringItemsData = [
     "unit_price": 65.2,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 65.0
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 65.0,
+    "total_eur_bez_dph": 65.0
   },
   {
     "invoice_number": "250200053",
@@ -2180,7 +2396,9 @@ const sponsoringItemsData = [
     "unit_price": 51.91,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 82.8
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 82.8,
+    "total_eur_bez_dph": 82.8
   },
   {
     "invoice_number": "250200053",
@@ -2200,7 +2418,9 @@ const sponsoringItemsData = [
     "unit_price": 51.91,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 82.8
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 82.8,
+    "total_eur_bez_dph": 82.8
   },
   {
     "invoice_number": "250200053",
@@ -2220,7 +2440,9 @@ const sponsoringItemsData = [
     "unit_price": 59.93,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 95.6
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 95.6,
+    "total_eur_bez_dph": 95.6
   },
   {
     "invoice_number": "250100780",
@@ -2240,7 +2462,9 @@ const sponsoringItemsData = [
     "unit_price": 383.04,
     "discount_percent": 3.0,
     "total_czk": 17893.79,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 15976.6,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100780",
@@ -2260,7 +2484,9 @@ const sponsoringItemsData = [
     "unit_price": 436.61,
     "discount_percent": 3.0,
     "total_czk": 11858.32,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 10587.79,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100780",
@@ -2280,7 +2506,9 @@ const sponsoringItemsData = [
     "unit_price": 472.32,
     "discount_percent": 3.0,
     "total_czk": 21038.27,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 18784.17,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100780",
@@ -2300,7 +2528,9 @@ const sponsoringItemsData = [
     "unit_price": 508.04,
     "discount_percent": 3.0,
     "total_czk": 18765.78,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 16755.16,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100780",
@@ -2320,7 +2550,9 @@ const sponsoringItemsData = [
     "unit_price": 534.82,
     "discount_percent": 3.0,
     "total_czk": 37185.83,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 33201.63,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100780",
@@ -2340,7 +2572,9 @@ const sponsoringItemsData = [
     "unit_price": 338.39,
     "discount_percent": 3.0,
     "total_czk": 9925.92,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 8862.43,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100780",
@@ -2360,7 +2594,9 @@ const sponsoringItemsData = [
     "unit_price": 356.25,
     "discount_percent": 3.0,
     "total_czk": 10836.84,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 9675.75,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100780",
@@ -2380,7 +2616,9 @@ const sponsoringItemsData = [
     "unit_price": 204.46,
     "discount_percent": 3.0,
     "total_czk": 3776.14,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3371.55,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100780",
@@ -2400,7 +2638,9 @@ const sponsoringItemsData = [
     "unit_price": 249.11,
     "discount_percent": 3.0,
     "total_czk": 541.26,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 483.27,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100782",
@@ -2420,7 +2660,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 4014.06,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3583.98,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100782",
@@ -2440,7 +2682,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 0.0,
     "total_czk": 1996.5,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1650.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100782",
@@ -2460,7 +2704,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 5399.52,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4821.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100782",
@@ -2480,7 +2726,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 10950.24,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 9777.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100782",
@@ -2500,7 +2748,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 2729.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2436.61,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100782",
@@ -2520,7 +2770,9 @@ const sponsoringItemsData = [
     "unit_price": 65.29,
     "discount_percent": 0.0,
     "total_czk": 1422.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1175.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100782",
@@ -2540,7 +2792,9 @@ const sponsoringItemsData = [
     "unit_price": 25.89,
     "discount_percent": 0.0,
     "total_czk": 521.94,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 466.02,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100782",
@@ -2560,7 +2814,9 @@ const sponsoringItemsData = [
     "unit_price": 25.0,
     "discount_percent": 0.0,
     "total_czk": 504.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 450.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100782",
@@ -2580,7 +2836,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 971.91,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 867.78,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100782",
@@ -2600,7 +2858,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 864.06,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 771.48,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100782",
@@ -2620,7 +2880,9 @@ const sponsoringItemsData = [
     "unit_price": 59.82,
     "discount_percent": 0.0,
     "total_czk": 1205.97,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1076.76,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100848",
@@ -2640,7 +2902,9 @@ const sponsoringItemsData = [
     "unit_price": 606.25,
     "discount_percent": 0.0,
     "total_czk": 679.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 606.25,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100848",
@@ -2660,7 +2924,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 5798.08,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5176.86,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100848",
@@ -2680,7 +2946,9 @@ const sponsoringItemsData = [
     "unit_price": 3999.11,
     "discount_percent": 0.0,
     "total_czk": 22395.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 19995.55,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100848",
@@ -2700,7 +2968,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 5458.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4873.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100848",
@@ -2720,7 +2990,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 6479.42,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5785.2,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100848",
@@ -2740,7 +3012,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 6960.58,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 6214.8,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100848",
@@ -2760,7 +3034,9 @@ const sponsoringItemsData = [
     "unit_price": 86.6,
     "discount_percent": 0.0,
     "total_czk": 6983.42,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 6235.2,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100848",
@@ -2780,7 +3056,9 @@ const sponsoringItemsData = [
     "unit_price": 59.82,
     "discount_percent": 0.0,
     "total_czk": 4823.88,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4307.04,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100848",
@@ -2800,7 +3078,9 @@ const sponsoringItemsData = [
     "unit_price": 68.75,
     "discount_percent": 0.0,
     "total_czk": 5544.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4950.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100848",
@@ -2820,7 +3100,9 @@ const sponsoringItemsData = [
     "unit_price": 86.61,
     "discount_percent": 0.0,
     "total_czk": 6984.23,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 6235.92,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100848",
@@ -2840,7 +3122,9 @@ const sponsoringItemsData = [
     "unit_price": 86.61,
     "discount_percent": 0.0,
     "total_czk": 6984.23,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 6235.92,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100848",
@@ -2860,7 +3144,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 6000.4,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5357.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100848",
@@ -2880,7 +3166,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 3600.24,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3214.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100848",
@@ -2900,7 +3188,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 6000.4,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5357.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100848",
@@ -2920,7 +3210,9 @@ const sponsoringItemsData = [
     "unit_price": 782.14,
     "discount_percent": 0.0,
     "total_czk": 21023.92,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 18771.36,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100848",
@@ -2940,7 +3232,9 @@ const sponsoringItemsData = [
     "unit_price": 112.5,
     "discount_percent": 0.0,
     "total_czk": 2520.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2250.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250100848",
@@ -2960,7 +3254,9 @@ const sponsoringItemsData = [
     "unit_price": 81.82,
     "discount_percent": 0.0,
     "total_czk": 2376.05,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1963.68,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101228",
@@ -2980,7 +3276,9 @@ const sponsoringItemsData = [
     "unit_price": 782.14,
     "discount_percent": 0.0,
     "total_czk": 1751.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1564.28,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101228",
@@ -3000,7 +3298,9 @@ const sponsoringItemsData = [
     "unit_price": 86.61,
     "discount_percent": 0.0,
     "total_czk": 1746.06,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1558.98,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101228",
@@ -3020,7 +3320,9 @@ const sponsoringItemsData = [
     "unit_price": 68.75,
     "discount_percent": 0.0,
     "total_czk": 770.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 687.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101228",
@@ -3040,7 +3342,9 @@ const sponsoringItemsData = [
     "unit_price": 1346.96,
     "discount_percent": -2.68,
     "total_czk": 1549.03,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1383.06,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101228",
@@ -3060,7 +3364,9 @@ const sponsoringItemsData = [
     "unit_price": 50.0,
     "discount_percent": 0.0,
     "total_czk": 560.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 500.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102606",
@@ -3080,7 +3386,9 @@ const sponsoringItemsData = [
     "unit_price": 3999.11,
     "discount_percent": 0.0,
     "total_czk": 4479.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3999.11,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102606",
@@ -3100,7 +3408,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 2729.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2436.61,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102606",
@@ -3120,7 +3430,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 0.0,
     "total_czk": 798.6,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 660.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102756",
@@ -3140,7 +3452,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 1338.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1194.66,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102756",
@@ -3160,7 +3474,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 0.0,
     "total_czk": 798.6,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 660.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102756",
@@ -3180,7 +3496,9 @@ const sponsoringItemsData = [
     "unit_price": 25.89,
     "discount_percent": 0.0,
     "total_czk": 347.96,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 310.68,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102756",
@@ -3200,7 +3518,9 @@ const sponsoringItemsData = [
     "unit_price": 25.0,
     "discount_percent": 0.0,
     "total_czk": 336.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 300.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102756",
@@ -3220,7 +3540,9 @@ const sponsoringItemsData = [
     "unit_price": 39.29,
     "discount_percent": 0.0,
     "total_czk": 528.06,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 471.48,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102756",
@@ -3240,7 +3562,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 647.94,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 578.52,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102756",
@@ -3260,7 +3584,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 657.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 586.62,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102756",
@@ -3280,7 +3606,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 219.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 195.54,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102825",
@@ -3300,7 +3628,9 @@ const sponsoringItemsData = [
     "unit_price": 436.61,
     "discount_percent": 0.0,
     "total_czk": 1956.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1746.44,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102825",
@@ -3320,7 +3650,9 @@ const sponsoringItemsData = [
     "unit_price": 784.82,
     "discount_percent": 0.0,
     "total_czk": 879.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 784.82,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102825",
@@ -3340,7 +3672,9 @@ const sponsoringItemsData = [
     "unit_price": 86.61,
     "discount_percent": 0.0,
     "total_czk": 1164.04,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1039.32,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102825",
@@ -3360,7 +3694,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 0.0,
     "total_czk": 870.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 776.8,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102825",
@@ -3380,7 +3716,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 0.0,
     "total_czk": 1740.03,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1553.6,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102985",
@@ -3400,7 +3738,9 @@ const sponsoringItemsData = [
     "unit_price": 3999.11,
     "discount_percent": 0.0,
     "total_czk": 13437.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 11997.33,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102985",
@@ -3420,7 +3760,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": -0.17,
     "total_czk": 8999.52,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 7437.62,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102985",
@@ -3440,7 +3782,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 10799.04,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 9642.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102986",
@@ -3460,7 +3804,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 16374.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 14619.66,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102986",
@@ -3480,7 +3826,9 @@ const sponsoringItemsData = [
     "unit_price": 3999.11,
     "discount_percent": 0.0,
     "total_czk": 8958.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 7998.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102986",
@@ -3500,7 +3848,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": -0.17,
     "total_czk": 7999.58,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 6611.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102986",
@@ -3520,7 +3870,9 @@ const sponsoringItemsData = [
     "unit_price": 65.29,
     "discount_percent": 0.0,
     "total_czk": 1659.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1371.09,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102986",
@@ -3540,7 +3892,9 @@ const sponsoringItemsData = [
     "unit_price": 218.75,
     "discount_percent": 0.0,
     "total_czk": 245.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 218.75,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102986",
@@ -3560,7 +3914,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 1133.9,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1012.41,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102986",
@@ -3580,7 +3936,9 @@ const sponsoringItemsData = [
     "unit_price": 58.92,
     "discount_percent": 0.0,
     "total_czk": 1385.8,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1237.32,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102986",
@@ -3600,7 +3958,9 @@ const sponsoringItemsData = [
     "unit_price": 25.89,
     "discount_percent": 0.0,
     "total_czk": 579.94,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 517.8,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102986",
@@ -3620,7 +3980,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 73.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 65.18,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -3640,7 +4002,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 1349.88,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1205.25,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -3660,7 +4024,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 1349.88,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1205.25,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -3680,7 +4046,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 1079.9,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 964.2,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -3700,7 +4068,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 1079.9,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 964.2,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -3720,7 +4090,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 0.0,
     "total_czk": 870.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 776.8,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -3740,7 +4112,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 0.0,
     "total_czk": 870.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 776.8,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -3760,7 +4134,9 @@ const sponsoringItemsData = [
     "unit_price": 50.0,
     "discount_percent": 0.0,
     "total_czk": 12656.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 11300.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -3780,7 +4156,9 @@ const sponsoringItemsData = [
     "unit_price": 50.0,
     "discount_percent": 0.0,
     "total_czk": 12600.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 11250.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -3800,7 +4178,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 13826.2,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 12344.82,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -3820,7 +4200,9 @@ const sponsoringItemsData = [
     "unit_price": 302.68,
     "discount_percent": 0.0,
     "total_czk": 3729.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3329.48,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -3840,7 +4222,9 @@ const sponsoringItemsData = [
     "unit_price": 302.68,
     "discount_percent": 0.0,
     "total_czk": 3729.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3329.48,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -3860,7 +4244,9 @@ const sponsoringItemsData = [
     "unit_price": 218.75,
     "discount_percent": 0.0,
     "total_czk": 5390.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4812.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -3880,7 +4266,9 @@ const sponsoringItemsData = [
     "unit_price": 191.96,
     "discount_percent": 0.0,
     "total_czk": 644.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 575.88,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -3900,7 +4288,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 4234.09,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3780.44,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -3920,7 +4310,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 4161.09,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3715.26,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -3940,7 +4332,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 480.03,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 428.6,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -3960,7 +4354,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 480.03,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 428.6,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -3980,7 +4376,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 480.03,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 428.6,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -4000,7 +4398,9 @@ const sponsoringItemsData = [
     "unit_price": 782.14,
     "discount_percent": 0.0,
     "total_czk": 9635.96,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 8603.54,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -4020,7 +4420,9 @@ const sponsoringItemsData = [
     "unit_price": 1218.75,
     "discount_percent": 0.0,
     "total_czk": 16380.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 14625.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -4040,7 +4442,9 @@ const sponsoringItemsData = [
     "unit_price": 534.82,
     "discount_percent": 0.0,
     "total_czk": 599.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 534.82,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -4060,7 +4464,9 @@ const sponsoringItemsData = [
     "unit_price": 365.18,
     "discount_percent": 0.0,
     "total_czk": 818.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 730.36,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -4080,7 +4486,9 @@ const sponsoringItemsData = [
     "unit_price": 112.5,
     "discount_percent": 0.0,
     "total_czk": 6048.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5400.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -4100,7 +4508,9 @@ const sponsoringItemsData = [
     "unit_price": 112.5,
     "discount_percent": 0.0,
     "total_czk": 1764.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1575.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -4120,7 +4530,9 @@ const sponsoringItemsData = [
     "unit_price": 112.5,
     "discount_percent": 0.0,
     "total_czk": 9198.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 8212.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -4140,7 +4552,9 @@ const sponsoringItemsData = [
     "unit_price": 98.35,
     "discount_percent": 0.0,
     "total_czk": 1309.04,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1081.85,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102991",
@@ -4160,7 +4574,9 @@ const sponsoringItemsData = [
     "unit_price": 57.95,
     "discount_percent": 0.0,
     "total_czk": 4737.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4230.35,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103003",
@@ -4180,7 +4596,9 @@ const sponsoringItemsData = [
     "unit_price": 3999.11,
     "discount_percent": 0.0,
     "total_czk": 8958.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 7998.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103003",
@@ -4200,7 +4618,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 0.0,
     "total_czk": 7686.53,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 6352.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103003",
@@ -4220,7 +4640,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 8187.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 7309.83,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103003",
@@ -4240,7 +4662,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 23665.96,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 21130.32,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103003",
@@ -4260,7 +4684,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 20734.16,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 18512.64,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103003",
@@ -4280,7 +4706,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 10799.04,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 9642.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103003",
@@ -4300,7 +4728,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 12000.8,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 10715.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103003",
@@ -4320,7 +4750,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 960.06,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 857.2,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103003",
@@ -4340,7 +4772,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 288.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 257.16,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103003",
@@ -4360,7 +4794,9 @@ const sponsoringItemsData = [
     "unit_price": 59.82,
     "discount_percent": 0.0,
     "total_czk": 334.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 299.1,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103003",
@@ -4380,7 +4816,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 863.92,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 771.36,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103003",
@@ -4400,7 +4838,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 1079.9,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 964.2,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103003",
@@ -4420,7 +4860,9 @@ const sponsoringItemsData = [
     "unit_price": 39.29,
     "discount_percent": 0.0,
     "total_czk": 880.1,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 785.8,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103003",
@@ -4440,7 +4882,9 @@ const sponsoringItemsData = [
     "unit_price": 302.68,
     "discount_percent": 0.0,
     "total_czk": 678.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 605.36,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103003",
@@ -4460,7 +4904,9 @@ const sponsoringItemsData = [
     "unit_price": 25.89,
     "discount_percent": 0.0,
     "total_czk": 579.94,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 517.8,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103003",
@@ -4480,7 +4926,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 446.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 398.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103003",
@@ -4500,7 +4948,9 @@ const sponsoringItemsData = [
     "unit_price": 50.0,
     "discount_percent": 0.0,
     "total_czk": 1120.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1000.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103098",
@@ -4520,7 +4970,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 1338.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1194.66,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103098",
@@ -4540,7 +4992,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 0.0,
     "total_czk": 598.95,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 495.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103098",
@@ -4560,7 +5014,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 11878.94,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 10606.2,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103179",
@@ -4580,7 +5036,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 4014.06,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3583.98,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103179",
@@ -4600,7 +5058,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 0.0,
     "total_czk": 1197.9,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 990.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103179",
@@ -4620,7 +5080,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 2729.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2436.61,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103179",
@@ -4640,7 +5102,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 18142.39,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 16198.56,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103179",
@@ -4660,7 +5124,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 2088.17,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1864.44,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103179",
@@ -4680,7 +5146,9 @@ const sponsoringItemsData = [
     "unit_price": 25.89,
     "discount_percent": 0.0,
     "total_czk": 1043.88,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 932.04,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103179",
@@ -4700,7 +5168,9 @@ const sponsoringItemsData = [
     "unit_price": 50.0,
     "discount_percent": 0.0,
     "total_czk": 2016.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1800.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103349",
@@ -4720,7 +5190,9 @@ const sponsoringItemsData = [
     "unit_price": 3999.11,
     "discount_percent": 0.0,
     "total_czk": 13437.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 11997.33,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103349",
@@ -4740,7 +5212,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 32748.04,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 29239.32,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103349",
@@ -4760,7 +5234,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 43196.16,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 38568.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103349",
@@ -4780,7 +5256,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 16801.12,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 15001.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103349",
@@ -4800,7 +5278,9 @@ const sponsoringItemsData = [
     "unit_price": 65.29,
     "discount_percent": 0.0,
     "total_czk": 1896.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1566.96,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103349",
@@ -4820,7 +5300,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 0.0,
     "total_czk": 5051.15,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4174.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103350",
@@ -4840,7 +5322,9 @@ const sponsoringItemsData = [
     "unit_price": 3999.11,
     "discount_percent": 0.0,
     "total_czk": 4479.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3999.11,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103350",
@@ -4860,7 +5344,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 8187.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 7309.83,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103350",
@@ -4880,7 +5366,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 10799.04,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 9642.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103350",
@@ -4900,7 +5388,9 @@ const sponsoringItemsData = [
     "unit_price": 239.67,
     "discount_percent": 0.0,
     "total_czk": 290.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 239.67,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103350",
@@ -4920,7 +5410,9 @@ const sponsoringItemsData = [
     "unit_price": 65.29,
     "discount_percent": 0.0,
     "total_czk": 79.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 65.29,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103350",
@@ -4940,7 +5432,9 @@ const sponsoringItemsData = [
     "unit_price": 302.68,
     "discount_percent": 0.0,
     "total_czk": 339.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 302.68,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103350",
@@ -4960,7 +5454,9 @@ const sponsoringItemsData = [
     "unit_price": 66.96,
     "discount_percent": 0.0,
     "total_czk": 75.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 66.96,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103350",
@@ -4980,7 +5476,9 @@ const sponsoringItemsData = [
     "unit_price": 112.5,
     "discount_percent": 0.0,
     "total_czk": 126.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 112.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103350",
@@ -5000,7 +5498,9 @@ const sponsoringItemsData = [
     "unit_price": 61.61,
     "discount_percent": 0.0,
     "total_czk": 69.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 61.61,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103350",
@@ -5020,7 +5520,9 @@ const sponsoringItemsData = [
     "unit_price": 61.61,
     "discount_percent": 0.0,
     "total_czk": 69.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 61.61,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103350",
@@ -5040,7 +5542,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 73.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 65.18,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103359",
@@ -5060,7 +5564,9 @@ const sponsoringItemsData = [
     "unit_price": 3999.11,
     "discount_percent": 39.0,
     "total_czk": 2732.2,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2439.46,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103359",
@@ -5080,7 +5586,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 38.79,
     "total_czk": 733.24,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 605.98,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103386",
@@ -5100,7 +5608,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 12042.17,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 10751.94,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103386",
@@ -5120,7 +5630,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 2729.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2436.61,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103386",
@@ -5140,7 +5652,9 @@ const sponsoringItemsData = [
     "unit_price": 65.29,
     "discount_percent": 0.0,
     "total_czk": 7900.09,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 6529.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103386",
@@ -5160,7 +5674,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 2044.04,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1825.04,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103386",
@@ -5180,7 +5696,9 @@ const sponsoringItemsData = [
     "unit_price": 522.32,
     "discount_percent": 0.0,
     "total_czk": 2339.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2089.28,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103386",
@@ -5200,7 +5718,9 @@ const sponsoringItemsData = [
     "unit_price": 16.87,
     "discount_percent": 0.0,
     "total_czk": 1020.3,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 910.98,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103386",
@@ -5220,7 +5740,9 @@ const sponsoringItemsData = [
     "unit_price": 16.87,
     "discount_percent": 0.0,
     "total_czk": 1020.3,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 910.98,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103386",
@@ -5240,7 +5762,9 @@ const sponsoringItemsData = [
     "unit_price": 16.87,
     "discount_percent": 0.0,
     "total_czk": 1020.3,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 910.98,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103386",
@@ -5260,7 +5784,9 @@ const sponsoringItemsData = [
     "unit_price": 16.87,
     "discount_percent": 0.0,
     "total_czk": 510.15,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 455.49,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103386",
@@ -5280,7 +5806,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 0.0,
     "total_czk": 399.3,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 330.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103471",
@@ -5300,7 +5828,9 @@ const sponsoringItemsData = [
     "unit_price": 3999.11,
     "discount_percent": 0.0,
     "total_czk": 8958.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 7998.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103471",
@@ -5320,7 +5850,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 0.0,
     "total_czk": 2994.75,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2475.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103471",
@@ -5340,7 +5872,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 5458.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4873.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103471",
@@ -5360,7 +5894,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 5399.52,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4821.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103925",
@@ -5380,7 +5916,9 @@ const sponsoringItemsData = [
     "unit_price": 4249.1,
     "discount_percent": 0.0,
     "total_czk": 9517.98,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 8498.2,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250103925",
@@ -5400,7 +5938,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 0.0,
     "total_czk": 3993.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3300.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104245",
@@ -5420,7 +5960,9 @@ const sponsoringItemsData = [
     "unit_price": 784.82,
     "discount_percent": 0.0,
     "total_czk": 14942.97,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 13341.94,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104245",
@@ -5440,7 +5982,9 @@ const sponsoringItemsData = [
     "unit_price": 156.16,
     "discount_percent": 0.0,
     "total_czk": 2973.29,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2654.72,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104266",
@@ -5460,7 +6004,9 @@ const sponsoringItemsData = [
     "unit_price": 4249.1,
     "discount_percent": 0.0,
     "total_czk": 4758.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4249.1,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104266",
@@ -5480,7 +6026,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 0.0,
     "total_czk": 2395.8,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1980.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104266",
@@ -5500,7 +6048,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 5458.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4873.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104266",
@@ -5520,7 +6070,9 @@ const sponsoringItemsData = [
     "unit_price": 25.89,
     "discount_percent": 0.0,
     "total_czk": 289.97,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 258.9,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104266",
@@ -5540,7 +6092,9 @@ const sponsoringItemsData = [
     "unit_price": 61.61,
     "discount_percent": 0.0,
     "total_czk": 690.03,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 616.1,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104266",
@@ -5560,7 +6114,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 730.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 651.8,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104266",
@@ -5580,7 +6136,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 580.05,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 517.9,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104335",
@@ -5600,7 +6158,9 @@ const sponsoringItemsData = [
     "unit_price": 302.68,
     "discount_percent": 0.0,
     "total_czk": 1695.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1513.4,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104335",
@@ -5620,7 +6180,9 @@ const sponsoringItemsData = [
     "unit_price": 302.68,
     "discount_percent": 0.0,
     "total_czk": 2373.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2118.76,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104335",
@@ -5640,7 +6202,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 0.0,
     "total_czk": 609.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 543.76,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104335",
@@ -5660,7 +6224,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 0.0,
     "total_czk": 609.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 543.76,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104335",
@@ -5680,7 +6246,9 @@ const sponsoringItemsData = [
     "unit_price": 86.61,
     "discount_percent": 0.0,
     "total_czk": 2910.1,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2598.3,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104335",
@@ -5700,7 +6268,9 @@ const sponsoringItemsData = [
     "unit_price": 86.61,
     "discount_percent": 0.0,
     "total_czk": 1455.05,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1299.15,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104335",
@@ -5720,7 +6290,9 @@ const sponsoringItemsData = [
     "unit_price": 50.0,
     "discount_percent": 0.0,
     "total_czk": 1120.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1000.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104335",
@@ -5740,7 +6312,9 @@ const sponsoringItemsData = [
     "unit_price": 50.0,
     "discount_percent": 0.0,
     "total_czk": 280.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 250.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104335",
@@ -5760,7 +6334,9 @@ const sponsoringItemsData = [
     "unit_price": 52.68,
     "discount_percent": 0.0,
     "total_czk": 354.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 316.08,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104335",
@@ -5780,7 +6356,9 @@ const sponsoringItemsData = [
     "unit_price": 302.68,
     "discount_percent": 0.0,
     "total_czk": 678.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 605.36,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104335",
@@ -5800,7 +6378,9 @@ const sponsoringItemsData = [
     "unit_price": 61.61,
     "discount_percent": 0.0,
     "total_czk": 1035.05,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 924.15,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104335",
@@ -5820,7 +6400,9 @@ const sponsoringItemsData = [
     "unit_price": 61.61,
     "discount_percent": 0.0,
     "total_czk": 138.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 123.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104335",
@@ -5840,7 +6422,9 @@ const sponsoringItemsData = [
     "unit_price": 61.61,
     "discount_percent": 0.0,
     "total_czk": 138.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 123.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104335",
@@ -5860,7 +6444,9 @@ const sponsoringItemsData = [
     "unit_price": 61.61,
     "discount_percent": 0.0,
     "total_czk": 138.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 123.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104335",
@@ -5880,7 +6466,9 @@ const sponsoringItemsData = [
     "unit_price": 61.61,
     "discount_percent": 0.0,
     "total_czk": 138.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 123.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104500",
@@ -5900,7 +6488,9 @@ const sponsoringItemsData = [
     "unit_price": 223.0,
     "discount_percent": 0.0,
     "total_czk": 5352.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4778.57,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104500",
@@ -5920,7 +6510,9 @@ const sponsoringItemsData = [
     "unit_price": 4759.0,
     "discount_percent": 0.0,
     "total_czk": 19036.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 16996.43,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104500",
@@ -5940,7 +6532,9 @@ const sponsoringItemsData = [
     "unit_price": 3499.0,
     "discount_percent": 0.0,
     "total_czk": 3499.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3124.11,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104500",
@@ -5960,7 +6554,9 @@ const sponsoringItemsData = [
     "unit_price": 2729.0,
     "discount_percent": 0.0,
     "total_czk": 5458.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4873.21,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104500",
@@ -5980,7 +6576,9 @@ const sponsoringItemsData = [
     "unit_price": 48.0,
     "discount_percent": 0.0,
     "total_czk": 6000.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5357.14,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104500",
@@ -6000,7 +6598,9 @@ const sponsoringItemsData = [
     "unit_price": 48.0,
     "discount_percent": 0.0,
     "total_czk": 6000.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5357.14,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104500",
@@ -6020,7 +6620,9 @@ const sponsoringItemsData = [
     "unit_price": 48.0,
     "discount_percent": 0.0,
     "total_czk": 6000.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5357.14,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104500",
@@ -6040,7 +6642,9 @@ const sponsoringItemsData = [
     "unit_price": 126.0,
     "discount_percent": 0.0,
     "total_czk": 1512.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1350.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104559",
@@ -6060,7 +6664,9 @@ const sponsoringItemsData = [
     "unit_price": 4249.1,
     "discount_percent": 0.0,
     "total_czk": 4758.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4249.1,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104559",
@@ -6080,7 +6686,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 0.0,
     "total_czk": 1996.5,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1650.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104972",
@@ -6100,7 +6708,9 @@ const sponsoringItemsData = [
     "unit_price": 52.68,
     "discount_percent": 0.0,
     "total_czk": 295.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 263.4,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104972",
@@ -6120,7 +6730,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 223.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 199.11,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104972",
@@ -6140,7 +6752,9 @@ const sponsoringItemsData = [
     "unit_price": 302.68,
     "discount_percent": 0.0,
     "total_czk": 339.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 302.68,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104972",
@@ -6160,7 +6774,9 @@ const sponsoringItemsData = [
     "unit_price": 302.68,
     "discount_percent": 0.0,
     "total_czk": 678.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 605.36,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104972",
@@ -6180,7 +6796,9 @@ const sponsoringItemsData = [
     "unit_price": 191.96,
     "discount_percent": 0.0,
     "total_czk": 215.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 191.96,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104972",
@@ -6200,7 +6818,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 0.0,
     "total_czk": 348.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 310.72,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104972",
@@ -6220,7 +6840,9 @@ const sponsoringItemsData = [
     "unit_price": 86.61,
     "discount_percent": 0.0,
     "total_czk": 194.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 173.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104972",
@@ -6240,7 +6862,9 @@ const sponsoringItemsData = [
     "unit_price": 112.5,
     "discount_percent": 0.0,
     "total_czk": 252.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 225.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250104972",
@@ -6260,7 +6884,9 @@ const sponsoringItemsData = [
     "unit_price": 1142.86,
     "discount_percent": 0.0,
     "total_czk": 1280.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1142.86,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250200584",
@@ -6280,7 +6906,9 @@ const sponsoringItemsData = [
     "unit_price": 4155.48,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 169.75
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 169.75,
+    "total_eur_bez_dph": 169.75
   },
   {
     "invoice_number": "250200584",
@@ -6300,7 +6928,9 @@ const sponsoringItemsData = [
     "unit_price": 1.71,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 56.0
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 56.0,
+    "total_eur_bez_dph": 56.0
   },
   {
     "invoice_number": "250200584",
@@ -6320,7 +6950,9 @@ const sponsoringItemsData = [
     "unit_price": 50.18,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 512.5
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 512.5,
+    "total_eur_bez_dph": 512.5
   },
   {
     "invoice_number": "250200584",
@@ -6340,7 +6972,9 @@ const sponsoringItemsData = [
     "unit_price": 2383.37,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 194.72
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 194.72,
+    "total_eur_bez_dph": 194.72
   },
   {
     "invoice_number": "250200584",
@@ -6360,7 +6994,9 @@ const sponsoringItemsData = [
     "unit_price": 252.88,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 30.99
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 30.99,
+    "total_eur_bez_dph": 30.99
   },
   {
     "invoice_number": "250200584",
@@ -6380,7 +7016,9 @@ const sponsoringItemsData = [
     "unit_price": 186.54,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 22.86
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 22.86,
+    "total_eur_bez_dph": 22.86
   },
   {
     "invoice_number": "250200584",
@@ -6400,7 +7038,9 @@ const sponsoringItemsData = [
     "unit_price": 50.18,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 6.15
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 6.15,
+    "total_eur_bez_dph": 6.15
   },
   {
     "invoice_number": "250200584",
@@ -6420,7 +7060,9 @@ const sponsoringItemsData = [
     "unit_price": 46.76,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 5.73
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 5.73,
+    "total_eur_bez_dph": 5.73
   },
   {
     "invoice_number": "250105181",
@@ -6440,7 +7082,9 @@ const sponsoringItemsData = [
     "unit_price": 4249.1,
     "discount_percent": 0.0,
     "total_czk": 4758.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4249.1,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105181",
@@ -6460,7 +7104,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 0.0,
     "total_czk": 219.62,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 181.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105181",
@@ -6480,7 +7126,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 11600.96,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 10358.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105275",
@@ -6500,7 +7148,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 892.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 796.44,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105275",
@@ -6520,7 +7170,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 0.0,
     "total_czk": 399.3,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 330.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105275",
@@ -6540,7 +7192,9 @@ const sponsoringItemsData = [
     "unit_price": 239.67,
     "discount_percent": 0.0,
     "total_czk": 290.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 239.67,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105275",
@@ -6560,7 +7214,9 @@ const sponsoringItemsData = [
     "unit_price": 35.71,
     "discount_percent": 0.0,
     "total_czk": 40.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 35.71,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105275",
@@ -6580,7 +7236,9 @@ const sponsoringItemsData = [
     "unit_price": 25.0,
     "discount_percent": 0.0,
     "total_czk": 28.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 25.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105275",
@@ -6600,7 +7258,9 @@ const sponsoringItemsData = [
     "unit_price": 25.89,
     "discount_percent": 0.0,
     "total_czk": 29.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 25.89,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105275",
@@ -6620,7 +7280,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 58.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 51.79,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105275",
@@ -6640,7 +7302,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 54.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 48.21,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105373",
@@ -6660,7 +7324,9 @@ const sponsoringItemsData = [
     "unit_price": 4759.0,
     "discount_percent": 0.0,
     "total_czk": 4759.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4249.11,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105421",
@@ -6680,7 +7346,9 @@ const sponsoringItemsData = [
     "unit_price": 2530.0,
     "discount_percent": 0.0,
     "total_czk": 2530.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2258.93,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105461",
@@ -6700,7 +7368,9 @@ const sponsoringItemsData = [
     "unit_price": 65.29,
     "discount_percent": 0.0,
     "total_czk": 4424.05,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3656.24,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105461",
@@ -6720,7 +7390,9 @@ const sponsoringItemsData = [
     "unit_price": 25.89,
     "discount_percent": 0.0,
     "total_czk": 1623.82,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1449.84,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105461",
@@ -6740,7 +7412,9 @@ const sponsoringItemsData = [
     "unit_price": 25.0,
     "discount_percent": 0.0,
     "total_czk": 1568.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1400.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105461",
@@ -6760,7 +7434,9 @@ const sponsoringItemsData = [
     "unit_price": 39.29,
     "discount_percent": 0.0,
     "total_czk": 2464.27,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2200.24,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105461",
@@ -6780,7 +7456,9 @@ const sponsoringItemsData = [
     "unit_price": 61.61,
     "discount_percent": 0.0,
     "total_czk": 3864.18,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3450.16,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105461",
@@ -6800,7 +7478,9 @@ const sponsoringItemsData = [
     "unit_price": 239.67,
     "discount_percent": 0.0,
     "total_czk": 5800.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4793.4,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105461",
@@ -6820,7 +7500,9 @@ const sponsoringItemsData = [
     "unit_price": 35.71,
     "discount_percent": 0.0,
     "total_czk": 799.9,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 714.2,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105482",
@@ -6840,7 +7522,9 @@ const sponsoringItemsData = [
     "unit_price": 4249.11,
     "discount_percent": 0.0,
     "total_czk": 4759.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4249.11,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105482",
@@ -6860,7 +7544,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 0.0,
     "total_czk": 1996.5,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1650.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105744",
@@ -6880,7 +7566,9 @@ const sponsoringItemsData = [
     "unit_price": 876.0,
     "discount_percent": 0.0,
     "total_czk": 52560.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 46928.57,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105744",
@@ -6900,7 +7588,9 @@ const sponsoringItemsData = [
     "unit_price": 4759.0,
     "discount_percent": 0.0,
     "total_czk": 19036.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 16996.43,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105744",
@@ -6920,7 +7610,9 @@ const sponsoringItemsData = [
     "unit_price": 223.0,
     "discount_percent": 0.0,
     "total_czk": 13380.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 11946.43,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105744",
@@ -6940,7 +7632,9 @@ const sponsoringItemsData = [
     "unit_price": 73.0,
     "discount_percent": 0.0,
     "total_czk": 2920.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2607.14,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105744",
@@ -6960,7 +7654,9 @@ const sponsoringItemsData = [
     "unit_price": 73.0,
     "discount_percent": 0.0,
     "total_czk": 2190.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1955.36,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105744",
@@ -6980,7 +7676,9 @@ const sponsoringItemsData = [
     "unit_price": 73.0,
     "discount_percent": 0.0,
     "total_czk": 2920.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2607.14,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105744",
@@ -7000,7 +7698,9 @@ const sponsoringItemsData = [
     "unit_price": 73.0,
     "discount_percent": 0.0,
     "total_czk": 2920.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2607.14,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105744",
@@ -7020,7 +7720,9 @@ const sponsoringItemsData = [
     "unit_price": 2729.0,
     "discount_percent": 0.0,
     "total_czk": 10916.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 9746.43,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105744",
@@ -7040,7 +7742,9 @@ const sponsoringItemsData = [
     "unit_price": 58.0,
     "discount_percent": 0.0,
     "total_czk": 8700.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 7767.86,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105744",
@@ -7060,7 +7764,9 @@ const sponsoringItemsData = [
     "unit_price": 58.0,
     "discount_percent": 0.0,
     "total_czk": 8700.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 7767.86,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250105744",
@@ -7080,7 +7786,9 @@ const sponsoringItemsData = [
     "unit_price": 1140.0,
     "discount_percent": 0.0,
     "total_czk": 5700.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5089.29,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106080",
@@ -7100,7 +7808,9 @@ const sponsoringItemsData = [
     "unit_price": 4759.0,
     "discount_percent": 0.0,
     "total_czk": 23795.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 21245.54,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106080",
@@ -7120,7 +7830,9 @@ const sponsoringItemsData = [
     "unit_price": 2729.0,
     "discount_percent": 0.0,
     "total_czk": 5458.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4873.21,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106080",
@@ -7140,7 +7852,9 @@ const sponsoringItemsData = [
     "unit_price": 54.0,
     "discount_percent": 0.0,
     "total_czk": 3888.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3471.43,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106080",
@@ -7160,7 +7874,9 @@ const sponsoringItemsData = [
     "unit_price": 58.0,
     "discount_percent": 0.0,
     "total_czk": 2784.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2485.71,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106080",
@@ -7180,7 +7896,9 @@ const sponsoringItemsData = [
     "unit_price": 87.0,
     "discount_percent": 0.0,
     "total_czk": 4176.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3728.57,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106080",
@@ -7200,7 +7918,9 @@ const sponsoringItemsData = [
     "unit_price": 48.0,
     "discount_percent": 0.0,
     "total_czk": 6000.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5357.14,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106080",
@@ -7220,7 +7940,9 @@ const sponsoringItemsData = [
     "unit_price": 48.0,
     "discount_percent": 0.0,
     "total_czk": 6000.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5357.14,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106080",
@@ -7240,7 +7962,9 @@ const sponsoringItemsData = [
     "unit_price": 48.0,
     "discount_percent": 0.0,
     "total_czk": 6000.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5357.14,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106080",
@@ -7260,7 +7984,9 @@ const sponsoringItemsData = [
     "unit_price": 58.0,
     "discount_percent": 0.0,
     "total_czk": 2900.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2589.29,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106080",
@@ -7280,7 +8006,9 @@ const sponsoringItemsData = [
     "unit_price": 58.0,
     "discount_percent": 0.0,
     "total_czk": 2900.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2589.29,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106080",
@@ -7300,7 +8028,9 @@ const sponsoringItemsData = [
     "unit_price": 126.0,
     "discount_percent": 0.0,
     "total_czk": 1512.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1350.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106080",
@@ -7320,7 +8050,9 @@ const sponsoringItemsData = [
     "unit_price": 1190.0,
     "discount_percent": 0.0,
     "total_czk": 1190.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1062.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106080",
@@ -7340,7 +8072,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 100.0,
     "total_czk": 0.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106464",
@@ -7360,7 +8094,9 @@ const sponsoringItemsData = [
     "unit_price": 388.43,
     "discount_percent": 0.0,
     "total_czk": 2350.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1942.15,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106464",
@@ -7380,7 +8116,9 @@ const sponsoringItemsData = [
     "unit_price": 388.43,
     "discount_percent": 0.0,
     "total_czk": 1880.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1553.72,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106464",
@@ -7400,7 +8138,9 @@ const sponsoringItemsData = [
     "unit_price": 388.43,
     "discount_percent": 0.0,
     "total_czk": 1410.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1165.29,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106464",
@@ -7420,7 +8160,9 @@ const sponsoringItemsData = [
     "unit_price": 363.64,
     "discount_percent": 0.0,
     "total_czk": 440.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 363.64,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106464",
@@ -7440,7 +8182,9 @@ const sponsoringItemsData = [
     "unit_price": 388.43,
     "discount_percent": 0.0,
     "total_czk": 2820.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2330.58,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106464",
@@ -7460,7 +8204,9 @@ const sponsoringItemsData = [
     "unit_price": 388.43,
     "discount_percent": 0.0,
     "total_czk": 1880.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1553.72,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106464",
@@ -7480,7 +8226,9 @@ const sponsoringItemsData = [
     "unit_price": 388.43,
     "discount_percent": 0.0,
     "total_czk": 2820.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2330.58,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106464",
@@ -7500,7 +8248,9 @@ const sponsoringItemsData = [
     "unit_price": 363.64,
     "discount_percent": 0.0,
     "total_czk": 440.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 363.64,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -7520,7 +8270,9 @@ const sponsoringItemsData = [
     "unit_price": 112.5,
     "discount_percent": 20.0,
     "total_czk": 10080.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 9000.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -7540,7 +8292,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 20.0,
     "total_czk": 14272.2,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 12743.04,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -7560,7 +8314,9 @@ const sponsoringItemsData = [
     "unit_price": 782.14,
     "discount_percent": 20.0,
     "total_czk": 2102.4,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1877.14,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -7580,7 +8336,9 @@ const sponsoringItemsData = [
     "unit_price": 365.18,
     "discount_percent": 20.0,
     "total_czk": 327.2,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 292.14,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -7600,7 +8358,9 @@ const sponsoringItemsData = [
     "unit_price": 1142.86,
     "discount_percent": 20.0,
     "total_czk": 1024.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 914.29,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -7620,7 +8380,9 @@ const sponsoringItemsData = [
     "unit_price": 218.75,
     "discount_percent": 20.0,
     "total_czk": 3136.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2800.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -7640,7 +8402,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 20.0,
     "total_czk": 1392.12,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1242.96,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -7660,7 +8424,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 20.0,
     "total_czk": 1392.12,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1242.96,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -7680,7 +8446,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 20.0,
     "total_czk": 1392.12,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1242.96,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -7700,7 +8468,9 @@ const sponsoringItemsData = [
     "unit_price": 98.35,
     "discount_percent": 20.0,
     "total_czk": 1428.04,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1180.2,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -7720,7 +8490,9 @@ const sponsoringItemsData = [
     "unit_price": 16.88,
     "discount_percent": 20.0,
     "total_czk": 408.36,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 364.61,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -7740,7 +8512,9 @@ const sponsoringItemsData = [
     "unit_price": 16.88,
     "discount_percent": 20.0,
     "total_czk": 408.36,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 364.61,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -7760,7 +8534,9 @@ const sponsoringItemsData = [
     "unit_price": 112.5,
     "discount_percent": 20.0,
     "total_czk": 10080.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 9000.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -7780,7 +8556,9 @@ const sponsoringItemsData = [
     "unit_price": 57.95,
     "discount_percent": 21.2,
     "total_czk": 1534.33,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1369.94,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -7800,7 +8578,9 @@ const sponsoringItemsData = [
     "unit_price": 165.09,
     "discount_percent": 40.0,
     "total_czk": 3328.21,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2971.62,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -7820,7 +8600,9 @@ const sponsoringItemsData = [
     "unit_price": 97.23,
     "discount_percent": 40.0,
     "total_czk": 653.39,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 583.38,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -7840,7 +8622,9 @@ const sponsoringItemsData = [
     "unit_price": 69.55,
     "discount_percent": 40.0,
     "total_czk": 467.38,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 417.3,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106489",
@@ -7860,7 +8644,9 @@ const sponsoringItemsData = [
     "unit_price": 126.79,
     "discount_percent": 40.0,
     "total_czk": 1022.44,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 912.89,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106687",
@@ -7880,7 +8666,9 @@ const sponsoringItemsData = [
     "unit_price": 933.88,
     "discount_percent": 0.0,
     "total_czk": 1129.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 933.88,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106687",
@@ -7900,7 +8688,9 @@ const sponsoringItemsData = [
     "unit_price": 2049.59,
     "discount_percent": 0.0,
     "total_czk": 2480.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2049.59,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106687",
@@ -7920,7 +8710,9 @@ const sponsoringItemsData = [
     "unit_price": 404.96,
     "discount_percent": 0.0,
     "total_czk": 490.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 404.96,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106687",
@@ -7940,7 +8732,9 @@ const sponsoringItemsData = [
     "unit_price": 950.41,
     "discount_percent": 0.0,
     "total_czk": 1150.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 950.41,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250200745",
@@ -7960,7 +8754,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 380.68
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 380.68,
+    "total_eur_bez_dph": 380.68
   },
   {
     "invoice_number": "250200745",
@@ -7980,7 +8776,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 65.51
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 65.51,
+    "total_eur_bez_dph": 65.51
   },
   {
     "invoice_number": "250200745",
@@ -8000,7 +8798,9 @@ const sponsoringItemsData = [
     "unit_price": 25.89,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 19.17
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 19.17,
+    "total_eur_bez_dph": 19.17
   },
   {
     "invoice_number": "250200745",
@@ -8020,7 +8820,9 @@ const sponsoringItemsData = [
     "unit_price": 25.0,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 18.51
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 18.51,
+    "total_eur_bez_dph": 18.51
   },
   {
     "invoice_number": "250200745",
@@ -8040,7 +8842,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 35.69
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 35.69,
+    "total_eur_bez_dph": 35.69
   },
   {
     "invoice_number": "250200745",
@@ -8060,7 +8864,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 48.25
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 48.25,
+    "total_eur_bez_dph": 48.25
   },
   {
     "invoice_number": "250200745",
@@ -8080,7 +8886,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 35.69
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 35.69,
+    "total_eur_bez_dph": 35.69
   },
   {
     "invoice_number": "250200745",
@@ -8100,7 +8908,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": -0.17,
     "total_czk": 0.0,
-    "total_eur": 40.81
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 40.81,
+    "total_eur_bez_dph": 40.81
   },
   {
     "invoice_number": "250200745",
@@ -8120,7 +8930,9 @@ const sponsoringItemsData = [
     "unit_price": 39.29,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 29.09
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 29.09,
+    "total_eur_bez_dph": 29.09
   },
   {
     "invoice_number": "250200745",
@@ -8140,7 +8952,9 @@ const sponsoringItemsData = [
     "unit_price": 59.82,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 44.28
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 44.28,
+    "total_eur_bez_dph": 44.28
   },
   {
     "invoice_number": "250106740",
@@ -8160,7 +8974,9 @@ const sponsoringItemsData = [
     "unit_price": 782.14,
     "discount_percent": 40.0,
     "total_czk": 525.59,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 469.28,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106740",
@@ -8180,7 +8996,9 @@ const sponsoringItemsData = [
     "unit_price": 59.82,
     "discount_percent": 40.0,
     "total_czk": 80.39,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 71.78,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106740",
@@ -8200,7 +9018,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 40.0,
     "total_czk": 104.41,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 93.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106740",
@@ -8220,7 +9040,9 @@ const sponsoringItemsData = [
     "unit_price": 86.6,
     "discount_percent": 40.0,
     "total_czk": 290.98,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 259.8,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106740",
@@ -8240,7 +9062,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 40.0,
     "total_czk": 104.41,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 93.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106740",
@@ -8260,7 +9084,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 40.0,
     "total_czk": 104.41,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 93.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106740",
@@ -8280,7 +9106,9 @@ const sponsoringItemsData = [
     "unit_price": 65.29,
     "discount_percent": 40.0,
     "total_czk": 47.4,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 39.17,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106740",
@@ -8300,7 +9128,9 @@ const sponsoringItemsData = [
     "unit_price": 73.55,
     "discount_percent": 40.0,
     "total_czk": 53.4,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 44.13,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106740",
@@ -8320,7 +9150,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 40.0,
     "total_czk": 226.78,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 202.48,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106740",
@@ -8340,7 +9172,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 40.0,
     "total_czk": 226.78,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 202.48,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106740",
@@ -8360,7 +9194,9 @@ const sponsoringItemsData = [
     "unit_price": 66.96,
     "discount_percent": 40.0,
     "total_czk": 89.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 80.35,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106740",
@@ -8380,7 +9216,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 40.0,
     "total_czk": 261.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 233.04,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106740",
@@ -8400,7 +9238,9 @@ const sponsoringItemsData = [
     "unit_price": 86.61,
     "discount_percent": 40.0,
     "total_czk": 232.8,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 207.86,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106740",
@@ -8420,7 +9260,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 40.0,
     "total_czk": 43.8,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 39.11,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106740",
@@ -8440,7 +9282,9 @@ const sponsoringItemsData = [
     "unit_price": 112.5,
     "discount_percent": 40.0,
     "total_czk": 378.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 337.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106740",
@@ -8460,7 +9304,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 40.0,
     "total_czk": 64.79,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 57.85,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106743",
@@ -8480,7 +9326,9 @@ const sponsoringItemsData = [
     "unit_price": 4249.11,
     "discount_percent": 0.0,
     "total_czk": 9518.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 8498.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106743",
@@ -8500,7 +9348,9 @@ const sponsoringItemsData = [
     "unit_price": 25.0,
     "discount_percent": 0.0,
     "total_czk": 672.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 600.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106743",
@@ -8520,7 +9370,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 1752.04,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1564.32,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106743",
@@ -8540,7 +9392,9 @@ const sponsoringItemsData = [
     "unit_price": 39.29,
     "discount_percent": 0.0,
     "total_czk": 1056.12,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 942.96,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106743",
@@ -8560,7 +9414,9 @@ const sponsoringItemsData = [
     "unit_price": 25.89,
     "discount_percent": 0.0,
     "total_czk": 695.92,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 621.36,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106743",
@@ -8580,7 +9436,9 @@ const sponsoringItemsData = [
     "unit_price": 61.61,
     "discount_percent": 0.0,
     "total_czk": 1656.08,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1478.64,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8600,7 +9458,9 @@ const sponsoringItemsData = [
     "unit_price": 4249.1,
     "discount_percent": 0.0,
     "total_czk": 4758.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4249.1,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8620,7 +9480,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": -0.17,
     "total_czk": 999.94,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 826.4,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8640,7 +9502,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 6960.58,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 6214.8,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8660,7 +9524,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 2729.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2436.61,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8680,7 +9546,9 @@ const sponsoringItemsData = [
     "unit_price": 25.89,
     "discount_percent": 0.0,
     "total_czk": 289.97,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 258.9,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8700,7 +9568,9 @@ const sponsoringItemsData = [
     "unit_price": 61.61,
     "discount_percent": 0.0,
     "total_czk": 690.03,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 616.1,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8720,7 +9590,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 730.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 651.8,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8740,7 +9612,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 580.05,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 517.9,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8760,7 +9634,9 @@ const sponsoringItemsData = [
     "unit_price": 3999.11,
     "discount_percent": 0.0,
     "total_czk": 4479.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3999.11,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8780,7 +9656,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": -0.17,
     "total_czk": 3999.79,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3305.61,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8800,7 +9678,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 5399.52,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4821.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8820,7 +9700,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 2729.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2436.61,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8840,7 +9722,9 @@ const sponsoringItemsData = [
     "unit_price": 65.29,
     "discount_percent": 0.0,
     "total_czk": 1422.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1175.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8860,7 +9744,9 @@ const sponsoringItemsData = [
     "unit_price": 25.89,
     "discount_percent": 0.0,
     "total_czk": 521.94,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 466.02,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8880,7 +9766,9 @@ const sponsoringItemsData = [
     "unit_price": 58.92,
     "discount_percent": 0.0,
     "total_czk": 1187.83,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1060.56,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8900,7 +9788,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 971.91,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 867.78,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8920,7 +9810,9 @@ const sponsoringItemsData = [
     "unit_price": 39.29,
     "discount_percent": 0.0,
     "total_czk": 792.09,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 707.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8940,7 +9832,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 5800.48,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5179.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8960,7 +9854,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 1619.86,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1446.3,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -8980,7 +9876,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 1619.86,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1446.3,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -9000,7 +9898,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 1440.1,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1285.8,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -9020,7 +9920,9 @@ const sponsoringItemsData = [
     "unit_price": 25.89,
     "discount_percent": 0.0,
     "total_czk": 869.9,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 776.7,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -9040,7 +9942,9 @@ const sponsoringItemsData = [
     "unit_price": 61.61,
     "discount_percent": 0.0,
     "total_czk": 2070.1,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1848.3,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106821",
@@ -9060,7 +9964,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 2729.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2436.61,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106840",
@@ -9080,7 +9986,9 @@ const sponsoringItemsData = [
     "unit_price": 3999.11,
     "discount_percent": 0.0,
     "total_czk": 8958.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 7998.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106840",
@@ -9100,7 +10008,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 2729.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2436.61,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106840",
@@ -9120,7 +10030,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 29002.4,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 25895.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106840",
@@ -9140,7 +10052,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": -0.17,
     "total_czk": 7999.58,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 6611.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106840",
@@ -9160,7 +10074,9 @@ const sponsoringItemsData = [
     "unit_price": 4249.1,
     "discount_percent": 0.0,
     "total_czk": 4758.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4249.1,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106840",
@@ -9180,7 +10096,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 5458.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4873.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106840",
@@ -9200,7 +10118,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": -0.17,
     "total_czk": 1899.89,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1570.16,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106841",
@@ -9220,7 +10140,9 @@ const sponsoringItemsData = [
     "unit_price": 4249.1,
     "discount_percent": 0.0,
     "total_czk": 14276.98,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 12747.3,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106841",
@@ -9240,7 +10162,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 8187.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 7309.83,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106841",
@@ -9260,7 +10184,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 5800.48,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5179.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106873",
@@ -9280,7 +10206,9 @@ const sponsoringItemsData = [
     "unit_price": 284.82,
     "discount_percent": 18.0,
     "total_czk": 1046.32,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 934.21,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106873",
@@ -9300,7 +10228,9 @@ const sponsoringItemsData = [
     "unit_price": 311.6,
     "discount_percent": 18.0,
     "total_czk": 4578.77,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4088.19,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106873",
@@ -9320,7 +10250,9 @@ const sponsoringItemsData = [
     "unit_price": 347.32,
     "discount_percent": 18.0,
     "total_czk": 4146.72,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3702.43,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106873",
@@ -9340,7 +10272,9 @@ const sponsoringItemsData = [
     "unit_price": 400.89,
     "discount_percent": 18.0,
     "total_czk": 1472.71,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1314.92,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106873",
@@ -9360,7 +10294,9 @@ const sponsoringItemsData = [
     "unit_price": 436.61,
     "discount_percent": 18.0,
     "total_czk": 801.96,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 716.04,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106873",
@@ -9380,7 +10316,9 @@ const sponsoringItemsData = [
     "unit_price": 490.17,
     "discount_percent": 18.0,
     "total_czk": 450.17,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 401.94,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106876",
@@ -9400,7 +10338,9 @@ const sponsoringItemsData = [
     "unit_price": 4249.1,
     "discount_percent": 0.0,
     "total_czk": 28553.95,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 25494.6,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106876",
@@ -9420,7 +10360,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": -0.17,
     "total_czk": 15999.15,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 13222.44,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106876",
@@ -9440,7 +10382,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 54580.06,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 48732.2,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106876",
@@ -9460,7 +10404,9 @@ const sponsoringItemsData = [
     "unit_price": 65.29,
     "discount_percent": 0.0,
     "total_czk": 4266.05,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3525.66,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106876",
@@ -9480,7 +10426,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 3132.26,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2796.66,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106876",
@@ -9500,7 +10448,9 @@ const sponsoringItemsData = [
     "unit_price": 25.0,
     "discount_percent": 0.0,
     "total_czk": 1512.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1350.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106876",
@@ -9520,7 +10470,9 @@ const sponsoringItemsData = [
     "unit_price": 35.71,
     "discount_percent": 0.0,
     "total_czk": 2159.74,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1928.34,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106876",
@@ -9540,7 +10492,9 @@ const sponsoringItemsData = [
     "unit_price": 61.61,
     "discount_percent": 0.0,
     "total_czk": 3726.17,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3326.94,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106876",
@@ -9560,7 +10514,9 @@ const sponsoringItemsData = [
     "unit_price": 25.89,
     "discount_percent": 0.0,
     "total_czk": 1565.83,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1398.06,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106887",
@@ -9580,7 +10536,9 @@ const sponsoringItemsData = [
     "unit_price": 400.89,
     "discount_percent": 5.0,
     "total_czk": 426.55,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 380.85,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106887",
@@ -9600,7 +10558,9 @@ const sponsoringItemsData = [
     "unit_price": 490.17,
     "discount_percent": 5.0,
     "total_czk": 1564.62,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1396.98,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106887",
@@ -9620,7 +10580,9 @@ const sponsoringItemsData = [
     "unit_price": 677.68,
     "discount_percent": 5.0,
     "total_czk": 1442.1,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1287.59,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250200766",
@@ -9640,7 +10602,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 119.13
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 119.13,
+    "total_eur_bez_dph": 100.11
   },
   {
     "invoice_number": "250200766",
@@ -9660,7 +10624,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 58.41
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 58.41,
+    "total_eur_bez_dph": 49.08
   },
   {
     "invoice_number": "250200766",
@@ -9680,7 +10646,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": -0.17,
     "total_czk": 0.0,
-    "total_eur": 64.65
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 64.65,
+    "total_eur_bez_dph": 54.33
   },
   {
     "invoice_number": "250200766",
@@ -9700,7 +10668,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 623.02
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 623.02,
+    "total_eur_bez_dph": 523.55
   },
   {
     "invoice_number": "250200766",
@@ -9720,7 +10690,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 119.13
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 119.13,
+    "total_eur_bez_dph": 100.11
   },
   {
     "invoice_number": "250200766",
@@ -9740,7 +10712,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 1397.71
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 1397.71,
+    "total_eur_bez_dph": 1174.55
   },
   {
     "invoice_number": "250200766",
@@ -9760,7 +10734,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 535.37
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 535.37,
+    "total_eur_bez_dph": 449.89
   },
   {
     "invoice_number": "250200766",
@@ -9780,7 +10756,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": -0.17,
     "total_czk": 0.0,
-    "total_eur": 161.64
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 161.64,
+    "total_eur_bez_dph": 135.83
   },
   {
     "invoice_number": "250200766",
@@ -9800,7 +10778,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 70.1
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 70.1,
+    "total_eur_bez_dph": 58.91
   },
   {
     "invoice_number": "250200766",
@@ -9820,7 +10800,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 98.78
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 98.78,
+    "total_eur_bez_dph": 83.01
   },
   {
     "invoice_number": "250106922",
@@ -9840,7 +10822,9 @@ const sponsoringItemsData = [
     "unit_price": 311.6,
     "discount_percent": 5.0,
     "total_czk": 331.54,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 296.02,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106922",
@@ -9860,7 +10844,9 @@ const sponsoringItemsData = [
     "unit_price": 347.32,
     "discount_percent": 5.0,
     "total_czk": 369.54,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 329.95,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106922",
@@ -9880,7 +10866,9 @@ const sponsoringItemsData = [
     "unit_price": 311.6,
     "discount_percent": 5.0,
     "total_czk": 331.54,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 296.02,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106923",
@@ -9900,7 +10888,9 @@ const sponsoringItemsData = [
     "unit_price": 86.6,
     "discount_percent": 40.0,
     "total_czk": 116.39,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 103.92,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106923",
@@ -9920,7 +10910,9 @@ const sponsoringItemsData = [
     "unit_price": 86.61,
     "discount_percent": 40.0,
     "total_czk": 58.21,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 51.97,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106923",
@@ -9940,7 +10932,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 40.0,
     "total_czk": 52.2,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 46.61,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106923",
@@ -9960,7 +10954,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 40.0,
     "total_czk": 97.19,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 86.78,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106923",
@@ -9980,7 +10976,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 40.0,
     "total_czk": 97.19,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 86.78,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106923",
@@ -10000,7 +10998,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 40.0,
     "total_czk": 139.22,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 124.3,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106923",
@@ -10020,7 +11020,9 @@ const sponsoringItemsData = [
     "unit_price": 77.68,
     "discount_percent": 40.0,
     "total_czk": 365.41,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 326.26,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106923",
@@ -10040,7 +11042,9 @@ const sponsoringItemsData = [
     "unit_price": 86.61,
     "discount_percent": 40.0,
     "total_czk": 291.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 259.83,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106924",
@@ -10060,7 +11064,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 0.0,
     "total_czk": 798.6,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 660.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106924",
@@ -10080,7 +11086,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 1784.03,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1592.88,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106924",
@@ -10100,7 +11108,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 8187.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 7309.83,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250106965",
@@ -10120,7 +11130,9 @@ const sponsoringItemsData = [
     "unit_price": 4759.0,
     "discount_percent": 0.0,
     "total_czk": 19036.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 16996.43,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250200775",
@@ -10140,7 +11152,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 88.59
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 88.59,
+    "total_eur_bez_dph": 88.59
   },
   {
     "invoice_number": "250200775",
@@ -10160,7 +11174,9 @@ const sponsoringItemsData = [
     "unit_price": 3999.11,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 165.32
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 165.32,
+    "total_eur_bez_dph": 165.32
   },
   {
     "invoice_number": "250200775",
@@ -10180,7 +11196,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 201.46
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 201.46,
+    "total_eur_bez_dph": 201.46
   },
   {
     "invoice_number": "250200775",
@@ -10200,7 +11218,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 199.3
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 199.3,
+    "total_eur_bez_dph": 199.3
   },
   {
     "invoice_number": "250200775",
@@ -10220,7 +11240,9 @@ const sponsoringItemsData = [
     "unit_price": 1.65,
     "discount_percent": 0.0,
     "total_czk": 0.0,
-    "total_eur": 45.01
+    "total_czk_bez_dph": 0.0,
+    "total_eur": 45.01,
+    "total_eur_bez_dph": 45.01
   },
   {
     "invoice_number": "250107207",
@@ -10240,7 +11262,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 1160.1,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1035.8,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250107207",
@@ -10260,7 +11284,9 @@ const sponsoringItemsData = [
     "unit_price": 302.68,
     "discount_percent": 0.0,
     "total_czk": 3051.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2724.12,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250107207",
@@ -10280,7 +11306,9 @@ const sponsoringItemsData = [
     "unit_price": 75.0,
     "discount_percent": 0.0,
     "total_czk": 3360.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3000.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250107207",
@@ -10300,7 +11328,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 960.06,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 857.2,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250107207",
@@ -10320,7 +11350,9 @@ const sponsoringItemsData = [
     "unit_price": 1142.86,
     "discount_percent": 0.0,
     "total_czk": 2560.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2285.72,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250107207",
@@ -10340,7 +11372,9 @@ const sponsoringItemsData = [
     "unit_price": 98.35,
     "discount_percent": 0.0,
     "total_czk": 119.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 98.35,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250107209",
@@ -10360,7 +11394,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 21598.08,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 19284.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250107209",
@@ -10380,7 +11416,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 5458.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4873.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250107209",
@@ -10400,7 +11438,9 @@ const sponsoringItemsData = [
     "unit_price": 3999.11,
     "discount_percent": 0.0,
     "total_czk": 4479.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3999.11,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250107209",
@@ -10420,7 +11460,9 @@ const sponsoringItemsData = [
     "unit_price": 65.29,
     "discount_percent": 0.0,
     "total_czk": 948.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 783.48,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250107209",
@@ -10440,7 +11482,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 876.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 782.16,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250107209",
@@ -10460,7 +11504,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 647.94,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 578.52,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250107209",
@@ -10480,7 +11526,9 @@ const sponsoringItemsData = [
     "unit_price": 39.29,
     "discount_percent": 0.0,
     "total_czk": 528.06,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 471.48,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250107209",
@@ -10500,7 +11548,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 647.94,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 578.52,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250107209",
@@ -10520,7 +11570,9 @@ const sponsoringItemsData = [
     "unit_price": 25.0,
     "discount_percent": 0.0,
     "total_czk": 336.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 300.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101688",
@@ -10540,7 +11592,9 @@ const sponsoringItemsData = [
     "unit_price": 39.29,
     "discount_percent": 0.0,
     "total_czk": 968.11,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 864.38,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101688",
@@ -10560,7 +11614,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 3239.71,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 2892.6,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101688",
@@ -10580,7 +11636,9 @@ const sponsoringItemsData = [
     "unit_price": 59.82,
     "discount_percent": 0.0,
     "total_czk": 4019.9,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3589.2,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101688",
@@ -10600,7 +11658,9 @@ const sponsoringItemsData = [
     "unit_price": 58.92,
     "discount_percent": 0.0,
     "total_czk": 1451.79,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1296.24,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101688",
@@ -10620,7 +11680,9 @@ const sponsoringItemsData = [
     "unit_price": 25.89,
     "discount_percent": 0.0,
     "total_czk": 637.93,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 569.58,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101688",
@@ -10640,7 +11702,9 @@ const sponsoringItemsData = [
     "unit_price": 25.0,
     "discount_percent": 0.0,
     "total_czk": 616.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 550.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101688",
@@ -10660,7 +11724,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 803.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 716.98,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101688",
@@ -10680,7 +11746,9 @@ const sponsoringItemsData = [
     "unit_price": 302.68,
     "discount_percent": 0.0,
     "total_czk": 339.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 302.68,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101688",
@@ -10700,7 +11768,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 223.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 199.11,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101795",
@@ -10720,7 +11790,9 @@ const sponsoringItemsData = [
     "unit_price": 3999.11,
     "discount_percent": 0.0,
     "total_czk": 4479.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 3999.11,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101795",
@@ -10740,7 +11812,9 @@ const sponsoringItemsData = [
     "unit_price": 2436.61,
     "discount_percent": 0.0,
     "total_czk": 5458.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4873.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101795",
@@ -10760,7 +11834,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 16198.56,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 14463.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101795",
@@ -10780,7 +11856,9 @@ const sponsoringItemsData = [
     "unit_price": 59.82,
     "discount_percent": 0.0,
     "total_czk": 12059.71,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 10767.6,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101795",
@@ -10800,7 +11878,9 @@ const sponsoringItemsData = [
     "unit_price": 65.29,
     "discount_percent": 0.0,
     "total_czk": 1185.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 979.35,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101795",
@@ -10820,7 +11900,9 @@ const sponsoringItemsData = [
     "unit_price": 25.89,
     "discount_percent": 0.0,
     "total_czk": 434.95,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 388.35,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101795",
@@ -10840,7 +11922,9 @@ const sponsoringItemsData = [
     "unit_price": 25.0,
     "discount_percent": 0.0,
     "total_czk": 420.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 375.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101795",
@@ -10860,7 +11944,9 @@ const sponsoringItemsData = [
     "unit_price": 58.92,
     "discount_percent": 0.0,
     "total_czk": 989.86,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 883.8,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101795",
@@ -10880,7 +11966,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 809.93,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 723.15,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101795",
@@ -10900,7 +11988,9 @@ const sponsoringItemsData = [
     "unit_price": 39.29,
     "discount_percent": 0.0,
     "total_czk": 660.07,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 589.35,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101795",
@@ -10920,7 +12010,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 1095.02,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 977.7,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101817",
@@ -10940,7 +12032,9 @@ const sponsoringItemsData = [
     "unit_price": 86.61,
     "discount_percent": 0.0,
     "total_czk": 388.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 346.44,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101817",
@@ -10960,7 +12054,9 @@ const sponsoringItemsData = [
     "unit_price": 86.61,
     "discount_percent": 0.0,
     "total_czk": 388.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 346.44,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101817",
@@ -10980,7 +12076,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 323.97,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 289.26,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101817",
@@ -11000,7 +12098,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 323.97,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 289.26,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101817",
@@ -11020,7 +12120,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 480.03,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 428.6,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101817",
@@ -11040,7 +12142,9 @@ const sponsoringItemsData = [
     "unit_price": 218.75,
     "discount_percent": 0.0,
     "total_czk": 490.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 437.5,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101817",
@@ -11060,7 +12164,9 @@ const sponsoringItemsData = [
     "unit_price": 112.5,
     "discount_percent": 0.0,
     "total_czk": 6048.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 5400.0,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250101817",
@@ -11080,7 +12186,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 5352.08,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 4778.64,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11100,7 +12208,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 446.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 398.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11120,7 +12230,9 @@ const sponsoringItemsData = [
     "unit_price": 302.68,
     "discount_percent": 0.0,
     "total_czk": 339.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 302.68,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11140,7 +12252,9 @@ const sponsoringItemsData = [
     "unit_price": 191.96,
     "discount_percent": 0.0,
     "total_czk": 215.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 191.96,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11160,7 +12274,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 107.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 96.42,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11180,7 +12296,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 107.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 96.42,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11200,7 +12318,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 73.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 65.18,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11220,7 +12340,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 73.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 65.18,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11240,7 +12362,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 73.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 65.18,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11260,7 +12384,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 73.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 65.18,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11280,7 +12406,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 48.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 42.86,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11300,7 +12428,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 48.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 42.86,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11320,7 +12450,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 48.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 42.86,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11340,7 +12472,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 48.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 42.86,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11360,7 +12494,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 107.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 96.42,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11380,7 +12516,9 @@ const sponsoringItemsData = [
     "unit_price": 56.25,
     "discount_percent": 0.0,
     "total_czk": 63.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 56.25,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11400,7 +12538,9 @@ const sponsoringItemsData = [
     "unit_price": 51.79,
     "discount_percent": 0.0,
     "total_czk": 58.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 51.79,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11420,7 +12560,9 @@ const sponsoringItemsData = [
     "unit_price": 58.92,
     "discount_percent": 0.0,
     "total_czk": 65.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 58.92,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11440,7 +12582,9 @@ const sponsoringItemsData = [
     "unit_price": 58.92,
     "discount_percent": 0.0,
     "total_czk": 65.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 58.92,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11460,7 +12604,9 @@ const sponsoringItemsData = [
     "unit_price": 68.75,
     "discount_percent": 0.0,
     "total_czk": 77.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 68.75,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11480,7 +12626,9 @@ const sponsoringItemsData = [
     "unit_price": 65.29,
     "discount_percent": 0.0,
     "total_czk": 79.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 65.29,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11500,7 +12648,9 @@ const sponsoringItemsData = [
     "unit_price": 73.55,
     "discount_percent": 0.0,
     "total_czk": 89.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 73.55,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102263",
@@ -11520,7 +12670,9 @@ const sponsoringItemsData = [
     "unit_price": 98.35,
     "discount_percent": 0.0,
     "total_czk": 119.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 98.35,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102444",
@@ -11540,7 +12692,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 647.94,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 578.52,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102444",
@@ -11560,7 +12714,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 647.94,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 578.52,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102444",
@@ -11580,7 +12736,9 @@ const sponsoringItemsData = [
     "unit_price": 48.21,
     "discount_percent": 0.0,
     "total_czk": 647.94,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 578.52,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102444",
@@ -11600,7 +12758,9 @@ const sponsoringItemsData = [
     "unit_price": 59.82,
     "discount_percent": 0.0,
     "total_czk": 1607.96,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1435.68,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102444",
@@ -11620,7 +12780,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 219.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 195.54,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102444",
@@ -11640,7 +12802,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 219.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 195.54,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102444",
@@ -11660,7 +12824,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 219.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 195.54,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102444",
@@ -11680,7 +12846,9 @@ const sponsoringItemsData = [
     "unit_price": 65.18,
     "discount_percent": 0.0,
     "total_czk": 219.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 195.54,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102444",
@@ -11700,7 +12868,9 @@ const sponsoringItemsData = [
     "unit_price": 42.86,
     "discount_percent": 0.0,
     "total_czk": 720.05,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 642.9,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102444",
@@ -11720,7 +12890,9 @@ const sponsoringItemsData = [
     "unit_price": 59.82,
     "discount_percent": 0.0,
     "total_czk": 669.98,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 598.2,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102444",
@@ -11740,7 +12912,9 @@ const sponsoringItemsData = [
     "unit_price": 213.39,
     "discount_percent": 0.0,
     "total_czk": 477.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 426.78,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102444",
@@ -11760,7 +12934,9 @@ const sponsoringItemsData = [
     "unit_price": 302.68,
     "discount_percent": 0.0,
     "total_czk": 678.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 605.36,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102444",
@@ -11780,7 +12956,9 @@ const sponsoringItemsData = [
     "unit_price": 302.68,
     "discount_percent": 0.0,
     "total_czk": 678.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 605.36,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102444",
@@ -11800,7 +12978,9 @@ const sponsoringItemsData = [
     "unit_price": 436.61,
     "discount_percent": 0.0,
     "total_czk": 489.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 436.61,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102444",
@@ -11820,7 +13000,9 @@ const sponsoringItemsData = [
     "unit_price": 782.14,
     "discount_percent": 0.0,
     "total_czk": 1751.99,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 1564.28,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102444",
@@ -11840,7 +13022,9 @@ const sponsoringItemsData = [
     "unit_price": 199.11,
     "discount_percent": 0.0,
     "total_czk": 446.01,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 398.22,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   },
   {
     "invoice_number": "250102444",
@@ -11860,6 +13044,8 @@ const sponsoringItemsData = [
     "unit_price": 275.89,
     "discount_percent": 0.0,
     "total_czk": 309.0,
-    "total_eur": 0.0
+    "total_czk_bez_dph": 275.89,
+    "total_eur": 0.0,
+    "total_eur_bez_dph": 0.0
   }
 ];

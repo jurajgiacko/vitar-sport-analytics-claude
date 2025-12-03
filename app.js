@@ -3,6 +3,26 @@
 // Current view state: 'orders' or 'invoices'
 let currentView = 'orders';
 
+// Get VAT mode: 'with_vat' or 'without_vat'
+function getVatMode() {
+    const vatFilter = document.getElementById('vatFilter');
+    return vatFilter ? vatFilter.value : 'with_vat';
+}
+
+// Get price fields based on VAT mode
+function getPriceField(item, currency) {
+    const vatMode = getVatMode();
+    if (currency === 'EUR') {
+        return vatMode === 'without_vat' ?
+            (item.total_eur_bez_dph || 0) :
+            (item.total_eur || 0);
+    } else {
+        return vatMode === 'without_vat' ?
+            (item.total_czk_bez_dph || 0) :
+            (item.total_czk || 0);
+    }
+}
+
 // Classify product brand based on product name
 function classifyBrand(productName) {
     if (!productName) return 'VITAR';
@@ -193,12 +213,15 @@ function calculateSummary(orders) {
     };
 
     orders.forEach(order => {
+        const eurAmount = getPriceField(order, 'EUR');
+        const czkAmount = getPriceField(order, 'CZK');
+
         if (order.currency === 'EUR') {
-            summary.totalEUR += order.total_eur;
-            if (order.channel === 'B2B') summary.b2bEUR += order.total_eur;
+            summary.totalEUR += eurAmount;
+            if (order.channel === 'B2B') summary.b2bEUR += eurAmount;
         } else {
-            summary.totalCZK += order.total_czk;
-            if (order.channel === 'B2B') summary.b2bCZK += order.total_czk;
+            summary.totalCZK += czkAmount;
+            if (order.channel === 'B2B') summary.b2bCZK += czkAmount;
         }
     });
 
@@ -254,24 +277,27 @@ function aggregateByMonth(orders) {
 
         months[month].totalCount++;
 
+        const czkAmount = getPriceField(order, 'CZK');
+        const eurAmount = getPriceField(order, 'EUR');
+
         if (order.channel === 'ESHOP_ENERVIT_CZ') {
-            months[month].ESHOP_ENERVIT_CZ.czk += order.total_czk;
+            months[month].ESHOP_ENERVIT_CZ.czk += czkAmount;
             months[month].ESHOP_ENERVIT_CZ.count++;
         } else if (order.channel === 'ESHOP_ENERVIT_SK') {
-            months[month].ESHOP_ENERVIT_SK.eur += order.total_eur;
+            months[month].ESHOP_ENERVIT_SK.eur += eurAmount;
             months[month].ESHOP_ENERVIT_SK.count++;
         } else if (order.channel === 'ESHOP_ROYALBAY_CZ') {
-            months[month].ESHOP_ROYALBAY_CZ.czk += order.total_czk;
+            months[month].ESHOP_ROYALBAY_CZ.czk += czkAmount;
             months[month].ESHOP_ROYALBAY_CZ.count++;
         } else if (order.channel === 'ESHOP_ROYALBAY_SK') {
-            months[month].ESHOP_ROYALBAY_SK.eur += order.total_eur;
+            months[month].ESHOP_ROYALBAY_SK.eur += eurAmount;
             months[month].ESHOP_ROYALBAY_SK.count++;
         } else if (order.channel === 'B2B') {
             if (order.currency === 'EUR') {
-                months[month].B2B_SK.eur += order.total_eur;
+                months[month].B2B_SK.eur += eurAmount;
                 months[month].B2B_SK.count++;
             } else {
-                months[month].B2B_CZ.czk += order.total_czk;
+                months[month].B2B_CZ.czk += czkAmount;
                 months[month].B2B_CZ.count++;
             }
         }
@@ -296,8 +322,9 @@ function aggregateByBrand(items) {
         }
 
         const brand = classifyBrand(item.product_name);
-        const eurAmount = item.total_eur || 0;
-        const amount = item.total_czk + (eurAmount * 25); // Convert EUR to CZK approx
+        const czkAmount = getPriceField(item, 'CZK');
+        const eurAmount = getPriceField(item, 'EUR');
+        const amount = czkAmount + (eurAmount * 25); // Convert EUR to CZK approx
 
         months[month][brand] += amount;
         months[month].total += amount;
@@ -324,8 +351,9 @@ function aggregateB2BBySalesperson(orders) {
         }
 
         const sp = order.salesperson || 'VITAR Sport';
-        months[month][sp] = (months[month][sp] || 0) + order.total_czk;
-        months[month].total += order.total_czk;
+        const czkAmount = getPriceField(order, 'CZK');
+        months[month][sp] = (months[month][sp] || 0) + czkAmount;
+        months[month].total += czkAmount;
     });
 
     return months;
@@ -570,7 +598,9 @@ function updateOrdersTable(orders) {
     limitedOrders.forEach(order => {
         const channelClass = order.channel.includes('ENERVIT') ? 'badge-enervit' :
                             order.channel.includes('ROYALBAY') ? 'badge-royalbay' : 'badge-b2b';
-        const amount = order.currency === 'EUR' ? formatEUR(order.total_eur) : formatCZK(order.total_czk);
+        const amount = order.currency === 'EUR' ?
+            formatEUR(getPriceField(order, 'EUR')) :
+            formatCZK(getPriceField(order, 'CZK'));
 
         // Status indicator - different for orders vs invoices/sponsoring
         let statusHtml = '';
@@ -640,7 +670,7 @@ function updateTop10CustomersTable(orders) {
             customers[company] = { count: 0, total: 0 };
         }
         customers[company].count++;
-        customers[company].total += order.total_czk;
+        customers[company].total += getPriceField(order, 'CZK');
     });
 
     // Sort by total and get top 10
@@ -683,7 +713,7 @@ function updateTop10ProductsTable(items) {
             };
         }
         products[key].quantity += item.quantity;
-        products[key].total += item.total_czk;
+        products[key].total += getPriceField(item, 'CZK');
     });
 
     // Sort by total and get top 10
@@ -1040,7 +1070,7 @@ function initTabs() {
 
 // Initialize filters
 function initFilters() {
-    ['monthFilter', 'marketFilter', 'channelFilter', 'salespersonFilter', 'paymentFilter', 'cityFilter'].forEach(id => {
+    ['monthFilter', 'marketFilter', 'channelFilter', 'salespersonFilter', 'paymentFilter', 'cityFilter', 'vatFilter'].forEach(id => {
         document.getElementById(id).addEventListener('change', updateDisplay);
     });
 }
