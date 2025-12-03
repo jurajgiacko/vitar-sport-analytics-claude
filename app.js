@@ -44,11 +44,17 @@ function getDiffClass(diff) {
 
 // Get current data based on view
 function getCurrentData() {
-    return currentView === 'orders' ? ordersData : invoicesData;
+    if (currentView === 'orders') return ordersData;
+    if (currentView === 'invoices') return invoicesData;
+    if (currentView === 'sponsoring') return sponsoringData;
+    return ordersData;
 }
 
 function getCurrentItems() {
-    return currentView === 'orders' ? itemsData : invoiceItemsData;
+    if (currentView === 'orders') return itemsData;
+    if (currentView === 'invoices') return invoiceItemsData;
+    if (currentView === 'sponsoring') return sponsoringItemsData;
+    return itemsData;
 }
 
 // Get filtered items based on current filter state
@@ -426,10 +432,9 @@ function updateOrdersTable(orders) {
     const limitedOrders = orders.slice(0, 500); // Limit to 500 for performance
 
     // Update table header based on current view
-    if (currentView === 'invoices') {
+    if (currentView === 'invoices' || currentView === 'sponsoring') {
         thead.innerHTML = `
             <th>Číslo fakt.</th>
-            <th>Číslo obj.</th>
             <th>Datum</th>
             <th>Zákazník</th>
             <th>Město</th>
@@ -458,9 +463,9 @@ function updateOrdersTable(orders) {
                             order.channel.includes('ROYALBAY') ? 'badge-royalbay' : 'badge-b2b';
         const amount = order.currency === 'EUR' ? formatEUR(order.total_eur) : formatCZK(order.total_czk);
 
-        // Status indicator - different for orders vs invoices
+        // Status indicator - different for orders vs invoices/sponsoring
         let statusHtml = '';
-        if (currentView === 'invoices') {
+        if (currentView === 'invoices' || currentView === 'sponsoring') {
             if (order.is_paid) {
                 statusHtml = '<span class="badge" style="background:#e8f5e9;color:#2e7d32;">Uhrazeno</span>';
             } else {
@@ -476,11 +481,10 @@ function updateOrdersTable(orders) {
             }
         }
 
-        if (currentView === 'invoices') {
+        if (currentView === 'invoices' || currentView === 'sponsoring') {
             html += `
                 <tr>
                     <td>${order.invoice_number}</td>
-                    <td>${order.order_number || '-'}</td>
                     <td>${order.date}</td>
                     <td>${order.company || '-'}</td>
                     <td>${order.city || '-'}</td>
@@ -508,7 +512,9 @@ function updateOrdersTable(orders) {
     });
 
     tbody.innerHTML = html;
-    const label = currentView === 'invoices' ? 'faktúr' : 'objednávek';
+    let label = 'objednávek';
+    if (currentView === 'invoices') label = 'faktúr';
+    if (currentView === 'sponsoring') label = 'sponzoringových faktúr';
     document.getElementById('ordersCount').textContent =
         `Zobrazeno ${limitedOrders.length} z ${orders.length} ${label}`;
 }
@@ -792,7 +798,9 @@ function updatePlanB2BTable(orders) {
 
 // Update section titles based on current view
 function updateTitles() {
-    const viewLabel = currentView === 'invoices' ? 'Faktúry' : 'Objednávky';
+    let viewLabel = 'Objednávky';
+    if (currentView === 'invoices') viewLabel = 'Faktúry';
+    if (currentView === 'sponsoring') viewLabel = 'Sponzoring';
 
     document.getElementById('planCZTitle').textContent = `Plán vs Skutečnost - CZ Market (CZK) - ${viewLabel}`;
     document.getElementById('planSKTitle').textContent = `Plán vs Skutečnost - SK Market (EUR) - ${viewLabel}`;

@@ -15,7 +15,7 @@ python3 analytics.py
 
 echo ""
 echo "2. Ukladám zmeny do Git..."
-git add data.js items.js invoices_data.js invoices_items.js
+git add data.js items.js invoices_data.js invoices_items.js sponsoring_data.js sponsoring_items.js
 
 # Skontroluj či sú zmeny
 if git diff --staged --quiet; then

@@ -404,6 +404,9 @@ def parse_invoice(invoice_element):
     # Get payment type
     payment_type = get_text(header, './/inv:paymentType//typ:ids')
 
+    # Get price level (important for identifying Sponzoring)
+    price_level = get_text(header, './/inv:priceLevel//typ:ids')
+
     # Get accounting info
     accounting = get_text(header, './/inv:accounting//typ:ids')
 
@@ -465,6 +468,7 @@ def parse_invoice(invoice_element):
         'country': country,
         'supplier': supplier,
         'payment_type': payment_type,
+        'price_level': price_level,
         'accounting': accounting,
         'is_paid': is_paid,
         'liquidation_date': liquidation_date,
@@ -530,11 +534,19 @@ def export_invoices_to_js(invoices, items, output_dir):
     """Export invoice data to JavaScript files for web dashboard."""
     import json
 
-    # Export invoices
-    invoices_file = os.path.join(output_dir, 'invoices_data.js')
-    invoices_list = []
-    for inv in invoices:
-        invoices_list.append({
+    # Separate regular invoices from sponsoring
+    regular_invoices = [inv for inv in invoices if inv['price_level'] != 'Sponzoring']
+    sponsoring_invoices = [inv for inv in invoices if inv['price_level'] == 'Sponzoring']
+
+    # Get invoice numbers for filtering items
+    regular_inv_numbers = set(inv['invoice_number'] for inv in regular_invoices)
+    sponsoring_inv_numbers = set(inv['invoice_number'] for inv in sponsoring_invoices)
+
+    regular_items = [item for item in items if item['invoice_number'] in regular_inv_numbers]
+    sponsoring_items = [item for item in items if item['invoice_number'] in sponsoring_inv_numbers]
+
+    def invoice_to_dict(inv):
+        return {
             'invoice_number': inv['invoice_number'],
             'order_number': inv['order_number'],
             'date': inv['date'],
@@ -554,25 +566,15 @@ def export_invoices_to_js(invoices, items, output_dir):
             'country': inv['country'],
             'supplier': inv['supplier'],
             'payment_type': inv['payment_type'],
+            'price_level': inv['price_level'],
             'is_paid': inv['is_paid'],
             'liquidation_date': inv['liquidation_date'],
             'total_czk': float(inv['total_czk']),
             'total_eur': float(inv['total_eur'])
-        })
+        }
 
-    with open(invoices_file, 'w', encoding='utf-8') as f:
-        f.write('// VITAR Sport Analytics - Invoices Data\n')
-        f.write('// Generated from Pohoda XML exports\n\n')
-        f.write('const invoicesData = ')
-        f.write(json.dumps(invoices_list, ensure_ascii=False, indent=2))
-        f.write(';\n')
-    print(f"Exported {len(invoices_list)} invoices to: {invoices_file}")
-
-    # Export invoice items
-    items_file = os.path.join(output_dir, 'invoices_items.js')
-    items_list = []
-    for item in items:
-        items_list.append({
+    def item_to_dict(item):
+        return {
             'invoice_number': item['invoice_number'],
             'order_number': item['order_number'],
             'date': item['date'],
@@ -591,15 +593,55 @@ def export_invoices_to_js(invoices, items, output_dir):
             'discount_percent': float(item['discount_percent']),
             'total_czk': float(item['total_czk']),
             'total_eur': float(item['total_eur']),
-        })
+        }
+
+    # Export regular invoices
+    invoices_file = os.path.join(output_dir, 'invoices_data.js')
+    invoices_list = [invoice_to_dict(inv) for inv in regular_invoices]
+
+    with open(invoices_file, 'w', encoding='utf-8') as f:
+        f.write('// VITAR Sport Analytics - Invoices Data (excluding Sponzoring)\n')
+        f.write('// Generated from Pohoda XML exports\n\n')
+        f.write('const invoicesData = ')
+        f.write(json.dumps(invoices_list, ensure_ascii=False, indent=2))
+        f.write(';\n')
+    print(f"Exported {len(invoices_list)} regular invoices to: {invoices_file}")
+
+    # Export regular invoice items
+    items_file = os.path.join(output_dir, 'invoices_items.js')
+    items_list = [item_to_dict(item) for item in regular_items]
 
     with open(items_file, 'w', encoding='utf-8') as f:
-        f.write('// VITAR Sport Analytics - Invoice Items Data\n')
+        f.write('// VITAR Sport Analytics - Invoice Items Data (excluding Sponzoring)\n')
         f.write('// Generated from Pohoda XML exports\n\n')
         f.write('const invoiceItemsData = ')
         f.write(json.dumps(items_list, ensure_ascii=False, indent=2))
         f.write(';\n')
-    print(f"Exported {len(items_list)} invoice items to: {items_file}")
+    print(f"Exported {len(items_list)} regular invoice items to: {items_file}")
+
+    # Export sponsoring invoices
+    sponsoring_file = os.path.join(output_dir, 'sponsoring_data.js')
+    sponsoring_list = [invoice_to_dict(inv) for inv in sponsoring_invoices]
+
+    with open(sponsoring_file, 'w', encoding='utf-8') as f:
+        f.write('// VITAR Sport Analytics - Sponsoring Invoices Data\n')
+        f.write('// Generated from Pohoda XML exports\n\n')
+        f.write('const sponsoringData = ')
+        f.write(json.dumps(sponsoring_list, ensure_ascii=False, indent=2))
+        f.write(';\n')
+    print(f"Exported {len(sponsoring_list)} sponsoring invoices to: {sponsoring_file}")
+
+    # Export sponsoring items
+    sponsoring_items_file = os.path.join(output_dir, 'sponsoring_items.js')
+    sponsoring_items_list = [item_to_dict(item) for item in sponsoring_items]
+
+    with open(sponsoring_items_file, 'w', encoding='utf-8') as f:
+        f.write('// VITAR Sport Analytics - Sponsoring Items Data\n')
+        f.write('// Generated from Pohoda XML exports\n\n')
+        f.write('const sponsoringItemsData = ')
+        f.write(json.dumps(sponsoring_items_list, ensure_ascii=False, indent=2))
+        f.write(';\n')
+    print(f"Exported {len(sponsoring_items_list)} sponsoring items to: {sponsoring_items_file}")
 
 
 # ============================================================================
