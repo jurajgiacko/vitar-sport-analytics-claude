@@ -228,21 +228,70 @@ function calculateSummary(orders) {
     return summary;
 }
 
+// Calculate plan totals for selected period
+function calculatePlanTotals(monthFilter) {
+    let planCZK = 0;
+    let planEUR = 0;
+
+    if (monthFilter === 'all') {
+        // Sum all months
+        Object.values(planData).forEach(month => {
+            planCZK += month.celkomCZ || 0;
+            planEUR += month.celkomSK || 0;
+        });
+    } else {
+        // Single month
+        const monthPlan = planData[monthFilter];
+        if (monthPlan) {
+            planCZK = monthPlan.celkomCZ || 0;
+            planEUR = monthPlan.celkomSK || 0;
+        }
+    }
+
+    return { planCZK, planEUR };
+}
+
 // Update summary cards
 function updateSummaryCards(orders) {
     const summary = calculateSummary(orders);
     const container = document.getElementById('summaryCards');
+    const monthFilter = document.getElementById('monthFilter').value;
+
+    // Calculate plan values for the selected period
+    const { planCZK, planEUR } = calculatePlanTotals(monthFilter);
+
+    // Calculate fulfillment percentages
+    const percentCZK = planCZK > 0 ? (summary.totalCZK / planCZK) * 100 : 0;
+    const percentEUR = planEUR > 0 ? (summary.totalEUR / planEUR) * 100 : 0;
+
+    // Get progress bar classes
+    const progressClassCZK = getProgressClass(percentCZK);
+    const progressClassEUR = getProgressClass(percentEUR);
 
     container.innerHTML = `
         <div class="card cz">
             <h3>CZ Market</h3>
             <div class="value">${formatCZK(summary.totalCZK)}</div>
             <div class="subtitle">Obrat v CZK</div>
+            <div class="plan-info">
+                <span class="plan-label">Plán: ${formatCZK(planCZK)}</span>
+                <span class="plan-percent ${progressClassCZK}">${formatPercent(percentCZK)}</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill ${progressClassCZK}" style="width: ${Math.min(percentCZK, 100)}%"></div>
+            </div>
         </div>
         <div class="card sk">
             <h3>SK Market</h3>
             <div class="value">${formatEUR(summary.totalEUR)}</div>
             <div class="subtitle">Obrat v EUR</div>
+            <div class="plan-info">
+                <span class="plan-label">Plán: ${formatEUR(planEUR)}</span>
+                <span class="plan-percent ${progressClassEUR}">${formatPercent(percentEUR)}</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill ${progressClassEUR}" style="width: ${Math.min(percentEUR, 100)}%"></div>
+            </div>
         </div>
         <div class="card b2b">
             <h3>B2B</h3>
