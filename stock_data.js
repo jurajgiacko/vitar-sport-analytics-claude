@@ -12,9 +12,9 @@ const stockData = [
     "count": 3901.0,
     "selling_price": 48.21,
     "purchase_price": 17.07,
-    "total_sold_90d": 3273.0,
-    "avg_daily_sales": 36.36666666666667,
-    "days_remaining": 107
+    "total_sold_90d": 3225.0,
+    "avg_daily_sales": 35.833333333333336,
+    "days_remaining": 108
   },
   {
     "code": "98687",
@@ -26,9 +26,9 @@ const stockData = [
     "count": 3906.0,
     "selling_price": 48.21,
     "purchase_price": 17.07,
-    "total_sold_90d": 3077.0,
-    "avg_daily_sales": 34.18888888888889,
-    "days_remaining": 114
+    "total_sold_90d": 3022.0,
+    "avg_daily_sales": 33.577777777777776,
+    "days_remaining": 116
   },
   {
     "code": "96613",
@@ -40,9 +40,9 @@ const stockData = [
     "count": 729.0,
     "selling_price": 68.75,
     "purchase_price": 22.09,
-    "total_sold_90d": 955.0,
-    "avg_daily_sales": 10.61111111111111,
-    "days_remaining": 68
+    "total_sold_90d": 902.0,
+    "avg_daily_sales": 10.022222222222222,
+    "days_remaining": 72
   },
   {
     "code": "98620",
@@ -54,9 +54,9 @@ const stockData = [
     "count": 1714.0,
     "selling_price": 86.61,
     "purchase_price": 27.61,
-    "total_sold_90d": 2302.0,
-    "avg_daily_sales": 25.57777777777778,
-    "days_remaining": 67
+    "total_sold_90d": 2221.0,
+    "avg_daily_sales": 24.677777777777777,
+    "days_remaining": 69
   },
   {
     "code": "98226",
@@ -68,9 +68,9 @@ const stockData = [
     "count": 1365.0,
     "selling_price": 77.68,
     "purchase_price": 27.61,
-    "total_sold_90d": 1948.0,
-    "avg_daily_sales": 21.644444444444446,
-    "days_remaining": 63
+    "total_sold_90d": 1884.0,
+    "avg_daily_sales": 20.933333333333334,
+    "days_remaining": 65
   },
   {
     "code": "98616",
@@ -82,9 +82,9 @@ const stockData = [
     "count": 1709.0,
     "selling_price": 77.68,
     "purchase_price": 27.61,
-    "total_sold_90d": 1684.0,
-    "avg_daily_sales": 18.711111111111112,
-    "days_remaining": 91
+    "total_sold_90d": 1595.0,
+    "avg_daily_sales": 17.72222222222222,
+    "days_remaining": 96
   },
   {
     "code": "98755",
@@ -96,9 +96,9 @@ const stockData = [
     "count": 1602.0,
     "selling_price": 65.18,
     "purchase_price": 24.35,
-    "total_sold_90d": 747.0,
-    "avg_daily_sales": 8.3,
-    "days_remaining": 193
+    "total_sold_90d": 659.0,
+    "avg_daily_sales": 7.322222222222222,
+    "days_remaining": 218
   },
   {
     "code": "97921",
@@ -110,9 +110,9 @@ const stockData = [
     "count": 1112.0,
     "selling_price": 65.18,
     "purchase_price": 24.35,
-    "total_sold_90d": 395.0,
-    "avg_daily_sales": 4.388888888888889,
-    "days_remaining": 253
+    "total_sold_90d": 367.0,
+    "avg_daily_sales": 4.0777777777777775,
+    "days_remaining": 272
   },
   {
     "code": "98598",
@@ -124,9 +124,9 @@ const stockData = [
     "count": 930.0,
     "selling_price": 65.18,
     "purchase_price": 24.35,
-    "total_sold_90d": 311.0,
-    "avg_daily_sales": 3.4555555555555557,
-    "days_remaining": 269
+    "total_sold_90d": 301.0,
+    "avg_daily_sales": 3.3444444444444446,
+    "days_remaining": 278
   },
   {
     "code": "97926",
@@ -166,9 +166,9 @@ const stockData = [
     "count": 1658.0,
     "selling_price": 42.86,
     "purchase_price": 15.06,
-    "total_sold_90d": 1338.0,
-    "avg_daily_sales": 14.866666666666667,
-    "days_remaining": 111
+    "total_sold_90d": 1328.0,
+    "avg_daily_sales": 14.755555555555556,
+    "days_remaining": 112
   },
   {
     "code": "99115",
@@ -180,8 +180,8 @@ const stockData = [
     "count": 272.0,
     "selling_price": 42.86,
     "purchase_price": 15.06,
-    "total_sold_90d": 1131.0,
-    "avg_daily_sales": 12.566666666666666,
+    "total_sold_90d": 1126.0,
+    "avg_daily_sales": 12.511111111111111,
     "days_remaining": 21
   },
   {
@@ -194,9 +194,9 @@ const stockData = [
     "count": 1063.0,
     "selling_price": 42.86,
     "purchase_price": 16.32,
-    "total_sold_90d": 1327.0,
-    "avg_daily_sales": 14.744444444444444,
-    "days_remaining": 72
+    "total_sold_90d": 1283.0,
+    "avg_daily_sales": 14.255555555555556,
+    "days_remaining": 74
   },
   {
     "code": "99118",
@@ -208,9 +208,9 @@ const stockData = [
     "count": 1431.0,
     "selling_price": 42.86,
     "purchase_price": 16.32,
-    "total_sold_90d": 1463.0,
-    "avg_daily_sales": 16.255555555555556,
-    "days_remaining": 88
+    "total_sold_90d": 1412.0,
+    "avg_daily_sales": 15.688888888888888,
+    "days_remaining": 91
   },
   {
     "code": "98588",
@@ -222,9 +222,9 @@ const stockData = [
     "count": 223.0,
     "selling_price": 48.21,
     "purchase_price": 18.07,
-    "total_sold_90d": 259.0,
-    "avg_daily_sales": 2.8777777777777778,
-    "days_remaining": 77
+    "total_sold_90d": 261.0,
+    "avg_daily_sales": 2.9,
+    "days_remaining": 76
   },
   {
     "code": "98752",
@@ -236,8 +236,8 @@ const stockData = [
     "count": 111.0,
     "selling_price": 48.21,
     "purchase_price": 18.07,
-    "total_sold_90d": 326.0,
-    "avg_daily_sales": 3.6222222222222222,
+    "total_sold_90d": 330.0,
+    "avg_daily_sales": 3.6666666666666665,
     "days_remaining": 30
   },
   {
@@ -250,9 +250,9 @@ const stockData = [
     "count": 655.0,
     "selling_price": 77.68,
     "purchase_price": 27.61,
-    "total_sold_90d": 1341.0,
-    "avg_daily_sales": 14.9,
-    "days_remaining": 43
+    "total_sold_90d": 1339.0,
+    "avg_daily_sales": 14.877777777777778,
+    "days_remaining": 44
   },
   {
     "code": "90935",
@@ -292,9 +292,9 @@ const stockData = [
     "count": 3926.0,
     "selling_price": 77.68,
     "purchase_price": 27.61,
-    "total_sold_90d": 2356.0,
-    "avg_daily_sales": 26.177777777777777,
-    "days_remaining": 149
+    "total_sold_90d": 2344.0,
+    "avg_daily_sales": 26.044444444444444,
+    "days_remaining": 150
   },
   {
     "code": "96625",
@@ -334,9 +334,9 @@ const stockData = [
     "count": 1234.0,
     "selling_price": 59.82,
     "purchase_price": 21.34,
-    "total_sold_90d": 293.0,
-    "avg_daily_sales": 3.2555555555555555,
-    "days_remaining": 379
+    "total_sold_90d": 263.0,
+    "avg_daily_sales": 2.922222222222222,
+    "days_remaining": 422
   },
   {
     "code": "99606",
@@ -348,9 +348,9 @@ const stockData = [
     "count": 821.0,
     "selling_price": 51.79,
     "purchase_price": 18.07,
-    "total_sold_90d": 689.0,
-    "avg_daily_sales": 7.655555555555556,
-    "days_remaining": 107
+    "total_sold_90d": 639.0,
+    "avg_daily_sales": 7.1,
+    "days_remaining": 115
   },
   {
     "code": "99611",
@@ -362,9 +362,9 @@ const stockData = [
     "count": 632.0,
     "selling_price": 75.0,
     "purchase_price": 26.26,
-    "total_sold_90d": 305.0,
-    "avg_daily_sales": 3.388888888888889,
-    "days_remaining": 186
+    "total_sold_90d": 287.0,
+    "avg_daily_sales": 3.188888888888889,
+    "days_remaining": 198
   },
   {
     "code": "98091",
@@ -376,8 +376,8 @@ const stockData = [
     "count": 1770.0,
     "selling_price": 782.14,
     "purchase_price": 288.65,
-    "total_sold_90d": 1403.0,
-    "avg_daily_sales": 15.588888888888889,
+    "total_sold_90d": 1409.0,
+    "avg_daily_sales": 15.655555555555555,
     "days_remaining": 113
   },
   {
@@ -390,9 +390,9 @@ const stockData = [
     "count": 214.0,
     "selling_price": 436.61,
     "purchase_price": 150.6,
-    "total_sold_90d": 65.0,
-    "avg_daily_sales": 0.7222222222222222,
-    "days_remaining": 296
+    "total_sold_90d": 64.0,
+    "avg_daily_sales": 0.7111111111111111,
+    "days_remaining": 300
   },
   {
     "code": "99020",
@@ -418,9 +418,9 @@ const stockData = [
     "count": 4465.0,
     "selling_price": 77.68,
     "purchase_price": 27.61,
-    "total_sold_90d": 2196.0,
-    "avg_daily_sales": 24.4,
-    "days_remaining": 182
+    "total_sold_90d": 2193.0,
+    "avg_daily_sales": 24.366666666666667,
+    "days_remaining": 183
   },
   {
     "code": "92777",
@@ -432,9 +432,9 @@ const stockData = [
     "count": 1131.0,
     "selling_price": 213.39,
     "purchase_price": 80.32,
-    "total_sold_90d": 575.0,
-    "avg_daily_sales": 6.388888888888889,
-    "days_remaining": 177
+    "total_sold_90d": 581.0,
+    "avg_daily_sales": 6.455555555555556,
+    "days_remaining": 175
   },
   {
     "code": "92773",
@@ -502,9 +502,9 @@ const stockData = [
     "count": 22.0,
     "selling_price": 784.82,
     "purchase_price": 288.65,
-    "total_sold_90d": 59.0,
-    "avg_daily_sales": 0.6555555555555556,
-    "days_remaining": 33
+    "total_sold_90d": 58.0,
+    "avg_daily_sales": 0.6444444444444445,
+    "days_remaining": 34
   },
   {
     "code": "96634",
@@ -544,8 +544,8 @@ const stockData = [
     "count": 54.0,
     "selling_price": 48.21,
     "purchase_price": 18.07,
-    "total_sold_90d": 444.0,
-    "avg_daily_sales": 4.933333333333334,
+    "total_sold_90d": 446.0,
+    "avg_daily_sales": 4.955555555555556,
     "days_remaining": 10
   },
   {
@@ -586,9 +586,9 @@ const stockData = [
     "count": 391.0,
     "selling_price": 81.82,
     "purchase_price": 32.88,
-    "total_sold_90d": 519.0,
-    "avg_daily_sales": 5.766666666666667,
-    "days_remaining": 67
+    "total_sold_90d": 499.0,
+    "avg_daily_sales": 5.544444444444444,
+    "days_remaining": 70
   },
   {
     "code": "98106",
@@ -600,9 +600,9 @@ const stockData = [
     "count": 827.0,
     "selling_price": 302.68,
     "purchase_price": 105.42,
-    "total_sold_90d": 454.0,
-    "avg_daily_sales": 5.044444444444444,
-    "days_remaining": 163
+    "total_sold_90d": 453.0,
+    "avg_daily_sales": 5.033333333333333,
+    "days_remaining": 164
   },
   {
     "code": "92650",
@@ -628,9 +628,9 @@ const stockData = [
     "count": 163.0,
     "selling_price": 4249.11,
     "purchase_price": 1255.0,
-    "total_sold_90d": 67.0,
-    "avg_daily_sales": 0.7444444444444445,
-    "days_remaining": 218
+    "total_sold_90d": 66.0,
+    "avg_daily_sales": 0.7333333333333333,
+    "days_remaining": 222
   },
   {
     "code": "92887",
@@ -712,9 +712,9 @@ const stockData = [
     "count": 3196.0,
     "selling_price": 50.0,
     "purchase_price": 18.0,
-    "total_sold_90d": 3742.0,
-    "avg_daily_sales": 41.577777777777776,
-    "days_remaining": 76
+    "total_sold_90d": 3661.0,
+    "avg_daily_sales": 40.67777777777778,
+    "days_remaining": 78
   },
   {
     "code": "98742",
@@ -726,9 +726,9 @@ const stockData = [
     "count": 2070.0,
     "selling_price": 52.68,
     "purchase_price": 18.0,
-    "total_sold_90d": 2508.0,
-    "avg_daily_sales": 27.866666666666667,
-    "days_remaining": 74
+    "total_sold_90d": 2433.0,
+    "avg_daily_sales": 27.033333333333335,
+    "days_remaining": 76
   },
   {
     "code": "90531",
@@ -740,9 +740,9 @@ const stockData = [
     "count": 1775.0,
     "selling_price": 50.0,
     "purchase_price": 18.0,
-    "total_sold_90d": 1749.0,
-    "avg_daily_sales": 19.433333333333334,
-    "days_remaining": 91
+    "total_sold_90d": 1757.0,
+    "avg_daily_sales": 19.522222222222222,
+    "days_remaining": 90
   },
   {
     "code": "96940",
@@ -768,9 +768,9 @@ const stockData = [
     "count": 92.0,
     "selling_price": 606.25,
     "purchase_price": 227.55,
-    "total_sold_90d": 51.0,
-    "avg_daily_sales": 0.5666666666666667,
-    "days_remaining": 162
+    "total_sold_90d": 47.0,
+    "avg_daily_sales": 0.5222222222222223,
+    "days_remaining": 176
   },
   {
     "code": "98054",
@@ -782,9 +782,9 @@ const stockData = [
     "count": 2569.0,
     "selling_price": 302.68,
     "purchase_price": 114.77,
-    "total_sold_90d": 845.0,
-    "avg_daily_sales": 9.38888888888889,
-    "days_remaining": 273
+    "total_sold_90d": 838.0,
+    "avg_daily_sales": 9.311111111111112,
+    "days_remaining": 275
   },
   {
     "code": "98053",
@@ -796,8 +796,8 @@ const stockData = [
     "count": 2242.0,
     "selling_price": 302.68,
     "purchase_price": 114.77,
-    "total_sold_90d": 1327.0,
-    "avg_daily_sales": 14.744444444444444,
+    "total_sold_90d": 1320.0,
+    "avg_daily_sales": 14.666666666666666,
     "days_remaining": 152
   },
   {
@@ -810,9 +810,9 @@ const stockData = [
     "count": 999.0,
     "selling_price": 199.11,
     "purchase_price": 63.26,
-    "total_sold_90d": 300.0,
-    "avg_daily_sales": 3.3333333333333335,
-    "days_remaining": 299
+    "total_sold_90d": 295.0,
+    "avg_daily_sales": 3.2777777777777777,
+    "days_remaining": 304
   },
   {
     "code": "90937",
@@ -824,9 +824,9 @@ const stockData = [
     "count": 700.0,
     "selling_price": 218.75,
     "purchase_price": 78.77,
-    "total_sold_90d": 114.0,
-    "avg_daily_sales": 1.2666666666666666,
-    "days_remaining": 552
+    "total_sold_90d": 102.0,
+    "avg_daily_sales": 1.1333333333333333,
+    "days_remaining": 617
   },
   {
     "code": "98038",
@@ -838,9 +838,9 @@ const stockData = [
     "count": 1642.0,
     "selling_price": 199.11,
     "purchase_price": 72.51,
-    "total_sold_90d": 752.0,
-    "avg_daily_sales": 8.355555555555556,
-    "days_remaining": 196
+    "total_sold_90d": 729.0,
+    "avg_daily_sales": 8.1,
+    "days_remaining": 202
   },
   {
     "code": "98016",
@@ -852,9 +852,9 @@ const stockData = [
     "count": 225.0,
     "selling_price": 102.68,
     "purchase_price": 36.26,
-    "total_sold_90d": 243.0,
-    "avg_daily_sales": 2.7,
-    "days_remaining": 83
+    "total_sold_90d": 228.0,
+    "avg_daily_sales": 2.533333333333333,
+    "days_remaining": 88
   },
   {
     "code": "98014",
@@ -866,9 +866,9 @@ const stockData = [
     "count": 2014.0,
     "selling_price": 191.96,
     "purchase_price": 71.26,
-    "total_sold_90d": 1241.0,
-    "avg_daily_sales": 13.78888888888889,
-    "days_remaining": 146
+    "total_sold_90d": 1242.0,
+    "avg_daily_sales": 13.8,
+    "days_remaining": 145
   },
   {
     "code": "98891",
@@ -880,9 +880,9 @@ const stockData = [
     "count": 2395.0,
     "selling_price": 51.79,
     "purchase_price": 17.0,
-    "total_sold_90d": 1460.0,
-    "avg_daily_sales": 16.22222222222222,
-    "days_remaining": 147
+    "total_sold_90d": 1421.0,
+    "avg_daily_sales": 15.78888888888889,
+    "days_remaining": 151
   },
   {
     "code": "98674",
@@ -894,9 +894,9 @@ const stockData = [
     "count": 3345.0,
     "selling_price": 48.21,
     "purchase_price": 17.0,
-    "total_sold_90d": 2148.0,
-    "avg_daily_sales": 23.866666666666667,
-    "days_remaining": 140
+    "total_sold_90d": 2072.0,
+    "avg_daily_sales": 23.022222222222222,
+    "days_remaining": 145
   },
   {
     "code": "96533",
@@ -908,9 +908,9 @@ const stockData = [
     "count": 2800.0,
     "selling_price": 51.79,
     "purchase_price": 17.0,
-    "total_sold_90d": 1107.0,
-    "avg_daily_sales": 12.3,
-    "days_remaining": 227
+    "total_sold_90d": 1083.0,
+    "avg_daily_sales": 12.033333333333333,
+    "days_remaining": 232
   },
   {
     "code": "96534",
@@ -922,9 +922,9 @@ const stockData = [
     "count": 1185.0,
     "selling_price": 48.21,
     "purchase_price": 17.0,
-    "total_sold_90d": 1939.0,
-    "avg_daily_sales": 21.544444444444444,
-    "days_remaining": 55
+    "total_sold_90d": 1861.0,
+    "avg_daily_sales": 20.677777777777777,
+    "days_remaining": 57
   },
   {
     "code": "99203",
@@ -1146,9 +1146,9 @@ const stockData = [
     "count": 1.0,
     "selling_price": 552.68,
     "purchase_price": 173.61,
-    "total_sold_90d": 11.0,
-    "avg_daily_sales": 0.12222222222222222,
-    "days_remaining": 8
+    "total_sold_90d": 12.0,
+    "avg_daily_sales": 0.13333333333333333,
+    "days_remaining": 7
   },
   {
     "code": "1128A",
@@ -1160,9 +1160,9 @@ const stockData = [
     "count": 50.0,
     "selling_price": 145.54,
     "purchase_price": 62.76,
-    "total_sold_90d": 168.0,
-    "avg_daily_sales": 1.8666666666666667,
-    "days_remaining": 26
+    "total_sold_90d": 166.0,
+    "avg_daily_sales": 1.8444444444444446,
+    "days_remaining": 27
   },
   {
     "code": "98740+",
@@ -1594,8 +1594,8 @@ const stockData = [
     "count": 50.0,
     "selling_price": 164.29,
     "purchase_price": 68.14,
-    "total_sold_90d": 329.0,
-    "avg_daily_sales": 3.6555555555555554,
+    "total_sold_90d": 330.0,
+    "avg_daily_sales": 3.6666666666666665,
     "days_remaining": 13
   },
   {
@@ -1734,8 +1734,8 @@ const stockData = [
     "count": 246.0,
     "selling_price": 51.79,
     "purchase_price": 16.8504,
-    "total_sold_90d": 1107.0,
-    "avg_daily_sales": 12.3,
+    "total_sold_90d": 1083.0,
+    "avg_daily_sales": 12.033333333333333,
     "days_remaining": 20
   },
   {
@@ -1748,9 +1748,9 @@ const stockData = [
     "count": 132.0,
     "selling_price": 2436.61,
     "purchase_price": 867.3,
-    "total_sold_90d": 22.0,
-    "avg_daily_sales": 0.24444444444444444,
-    "days_remaining": 540
+    "total_sold_90d": 21.0,
+    "avg_daily_sales": 0.23333333333333334,
+    "days_remaining": 565
   },
   {
     "code": "98127+",
@@ -1944,9 +1944,9 @@ const stockData = [
     "count": 73.0,
     "selling_price": 59.82,
     "purchase_price": 21.8064,
-    "total_sold_90d": 188.0,
-    "avg_daily_sales": 2.088888888888889,
-    "days_remaining": 34
+    "total_sold_90d": 111.0,
+    "avg_daily_sales": 1.2333333333333334,
+    "days_remaining": 59
   },
   {
     "code": "96612",
@@ -2028,9 +2028,9 @@ const stockData = [
     "count": 30.0,
     "selling_price": 264.29,
     "purchase_price": 110.44,
-    "total_sold_90d": 78.0,
-    "avg_daily_sales": 0.8666666666666667,
-    "days_remaining": 34
+    "total_sold_90d": 77.0,
+    "avg_daily_sales": 0.8555555555555555,
+    "days_remaining": 35
   },
   {
     "code": "98616Cp",
@@ -2070,9 +2070,9 @@ const stockData = [
     "count": 6.0,
     "selling_price": 525.0,
     "purchase_price": 223.82,
-    "total_sold_90d": 18.0,
-    "avg_daily_sales": 0.2,
-    "days_remaining": 30
+    "total_sold_90d": 17.0,
+    "avg_daily_sales": 0.18888888888888888,
+    "days_remaining": 31
   },
   {
     "code": "98038+",
@@ -2154,8 +2154,8 @@ const stockData = [
     "count": 38.0,
     "selling_price": 188.0,
     "purchase_price": 97.4,
-    "total_sold_90d": 119.0,
-    "avg_daily_sales": 1.3222222222222222,
+    "total_sold_90d": 118.0,
+    "avg_daily_sales": 1.3111111111111111,
     "days_remaining": 28
   },
   {
@@ -2182,9 +2182,9 @@ const stockData = [
     "count": 207.0,
     "selling_price": 48.21,
     "purchase_price": 17.8416,
-    "total_sold_90d": 281.0,
-    "avg_daily_sales": 3.1222222222222222,
-    "days_remaining": 66
+    "total_sold_90d": 285.0,
+    "avg_daily_sales": 3.1666666666666665,
+    "days_remaining": 65
   },
   {
     "code": "1124A",
@@ -2252,8 +2252,8 @@ const stockData = [
     "count": 46.0,
     "selling_price": 129.46,
     "purchase_price": 54.0,
-    "total_sold_90d": 279.0,
-    "avg_daily_sales": 3.1,
+    "total_sold_90d": 282.0,
+    "avg_daily_sales": 3.1333333333333333,
     "days_remaining": 14
   },
   {
@@ -2266,9 +2266,9 @@ const stockData = [
     "count": 16.0,
     "selling_price": 850.0,
     "purchase_price": 360.0,
-    "total_sold_90d": 46.0,
-    "avg_daily_sales": 0.5111111111111111,
-    "days_remaining": 31
+    "total_sold_90d": 47.0,
+    "avg_daily_sales": 0.5222222222222223,
+    "days_remaining": 30
   },
   {
     "code": "97900",
@@ -2350,9 +2350,9 @@ const stockData = [
     "count": 2.0,
     "selling_price": 157.14,
     "purchase_price": 94.14,
-    "total_sold_90d": 5.0,
-    "avg_daily_sales": 0.05555555555555555,
-    "days_remaining": 36
+    "total_sold_90d": 6.0,
+    "avg_daily_sales": 0.06666666666666667,
+    "days_remaining": 30
   },
   {
     "code": "92898T",
@@ -2364,9 +2364,9 @@ const stockData = [
     "count": 9.0,
     "selling_price": 157.14,
     "purchase_price": 86.61,
-    "total_sold_90d": 26.0,
-    "avg_daily_sales": 0.28888888888888886,
-    "days_remaining": 31
+    "total_sold_90d": 27.0,
+    "avg_daily_sales": 0.3,
+    "days_remaining": 30
   },
   {
     "code": "92887T",
@@ -2392,9 +2392,9 @@ const stockData = [
     "count": 3.0,
     "selling_price": 157.14,
     "purchase_price": 94.14,
-    "total_sold_90d": 7.0,
-    "avg_daily_sales": 0.07777777777777778,
-    "days_remaining": 38
+    "total_sold_90d": 8.0,
+    "avg_daily_sales": 0.08888888888888889,
+    "days_remaining": 33
   },
   {
     "code": "92891T",
@@ -2420,8 +2420,8 @@ const stockData = [
     "count": 28.0,
     "selling_price": 261.61,
     "purchase_price": 149.37,
-    "total_sold_90d": 67.0,
-    "avg_daily_sales": 0.7444444444444445,
+    "total_sold_90d": 68.0,
+    "avg_daily_sales": 0.7555555555555555,
     "days_remaining": 37
   },
   {
@@ -2476,9 +2476,9 @@ const stockData = [
     "count": 1087.0,
     "selling_price": 112.5,
     "purchase_price": 34.692,
-    "total_sold_90d": 818.0,
-    "avg_daily_sales": 9.088888888888889,
-    "days_remaining": 119
+    "total_sold_90d": 810.0,
+    "avg_daily_sales": 9.0,
+    "days_remaining": 120
   },
   {
     "code": "95401",
@@ -2490,9 +2490,9 @@ const stockData = [
     "count": 342.0,
     "selling_price": 418.75,
     "purchase_price": 151.31,
-    "total_sold_90d": 83.0,
-    "avg_daily_sales": 0.9222222222222223,
-    "days_remaining": 370
+    "total_sold_90d": 84.0,
+    "avg_daily_sales": 0.9333333333333333,
+    "days_remaining": 366
   },
   {
     "code": "10004",
@@ -2630,9 +2630,9 @@ const stockData = [
     "count": 4.0,
     "selling_price": 284.82,
     "purchase_price": 105.29,
-    "total_sold_90d": 6.0,
-    "avg_daily_sales": 0.06666666666666667,
-    "days_remaining": 60
+    "total_sold_90d": 4.0,
+    "avg_daily_sales": 0.044444444444444446,
+    "days_remaining": 90
   },
   {
     "code": "6302",
@@ -2728,9 +2728,9 @@ const stockData = [
     "count": 384.0,
     "selling_price": 112.5,
     "purchase_price": 37.17,
-    "total_sold_90d": 231.0,
-    "avg_daily_sales": 2.566666666666667,
-    "days_remaining": 149
+    "total_sold_90d": 235.0,
+    "avg_daily_sales": 2.611111111111111,
+    "days_remaining": 147
   },
   {
     "code": "90542",
@@ -2980,9 +2980,9 @@ const stockData = [
     "count": 16.0,
     "selling_price": 1142.86,
     "purchase_price": 471.3,
-    "total_sold_90d": 47.0,
-    "avg_daily_sales": 0.5222222222222223,
-    "days_remaining": 30
+    "total_sold_90d": 46.0,
+    "avg_daily_sales": 0.5111111111111111,
+    "days_remaining": 31
   },
   {
     "code": "92727",
@@ -2994,9 +2994,9 @@ const stockData = [
     "count": 16.0,
     "selling_price": 891.96,
     "purchase_price": 389.44,
-    "total_sold_90d": 28.0,
-    "avg_daily_sales": 0.3111111111111111,
-    "days_remaining": 51
+    "total_sold_90d": 27.0,
+    "avg_daily_sales": 0.3,
+    "days_remaining": 53
   },
   {
     "code": "99657",
@@ -3008,8 +3008,8 @@ const stockData = [
     "count": 567.0,
     "selling_price": 51.79,
     "purchase_price": 16.85,
-    "total_sold_90d": 694.0,
-    "avg_daily_sales": 7.711111111111111,
+    "total_sold_90d": 699.0,
+    "avg_daily_sales": 7.766666666666667,
     "days_remaining": 73
   },
   {
@@ -3022,9 +3022,9 @@ const stockData = [
     "count": 709.0,
     "selling_price": 51.79,
     "purchase_price": 16.75,
-    "total_sold_90d": 440.0,
-    "avg_daily_sales": 4.888888888888889,
-    "days_remaining": 145
+    "total_sold_90d": 422.0,
+    "avg_daily_sales": 4.688888888888889,
+    "days_remaining": 151
   },
   {
     "code": "99655",
@@ -3036,9 +3036,9 @@ const stockData = [
     "count": 461.0,
     "selling_price": 75.0,
     "purchase_price": 26.35,
-    "total_sold_90d": 84.0,
-    "avg_daily_sales": 0.9333333333333333,
-    "days_remaining": 493
+    "total_sold_90d": 59.0,
+    "avg_daily_sales": 0.6555555555555556,
+    "days_remaining": 703
   },
   {
     "code": "99649",
@@ -3050,9 +3050,9 @@ const stockData = [
     "count": 386.0,
     "selling_price": 75.0,
     "purchase_price": 26.35,
-    "total_sold_90d": 141.0,
-    "avg_daily_sales": 1.5666666666666667,
-    "days_remaining": 246
+    "total_sold_90d": 114.0,
+    "avg_daily_sales": 1.2666666666666666,
+    "days_remaining": 304
   },
   {
     "code": "801000",
@@ -3680,9 +3680,9 @@ const stockData = [
     "count": 10.0,
     "selling_price": 933.88,
     "purchase_price": 375.0,
-    "total_sold_90d": 1.0,
-    "avg_daily_sales": 0.011111111111111112,
-    "days_remaining": 900
+    "total_sold_90d": 3.0,
+    "avg_daily_sales": 0.03333333333333333,
+    "days_remaining": 300
   },
   {
     "code": "40774",
@@ -4198,9 +4198,9 @@ const stockData = [
     "count": 17.0,
     "selling_price": 871.9,
     "purchase_price": 341.0,
-    "total_sold_90d": 1.0,
-    "avg_daily_sales": 0.011111111111111112,
-    "days_remaining": 1530
+    "total_sold_90d": 0.0,
+    "avg_daily_sales": 0.0,
+    "days_remaining": -1
   },
   {
     "code": "20852",
@@ -4212,9 +4212,9 @@ const stockData = [
     "count": 12.0,
     "selling_price": 871.9,
     "purchase_price": 341.0,
-    "total_sold_90d": 4.0,
-    "avg_daily_sales": 0.044444444444444446,
-    "days_remaining": 270
+    "total_sold_90d": 1.0,
+    "avg_daily_sales": 0.011111111111111112,
+    "days_remaining": 1080
   },
   {
     "code": "20853",
@@ -4226,9 +4226,9 @@ const stockData = [
     "count": 10.0,
     "selling_price": 871.9,
     "purchase_price": 341.0,
-    "total_sold_90d": 4.0,
-    "avg_daily_sales": 0.044444444444444446,
-    "days_remaining": 225
+    "total_sold_90d": 3.0,
+    "avg_daily_sales": 0.03333333333333333,
+    "days_remaining": 300
   },
   {
     "code": "20854",
@@ -4240,9 +4240,9 @@ const stockData = [
     "count": 4.0,
     "selling_price": 871.9,
     "purchase_price": 341.0,
-    "total_sold_90d": 7.0,
-    "avg_daily_sales": 0.07777777777777778,
-    "days_remaining": 51
+    "total_sold_90d": 6.0,
+    "avg_daily_sales": 0.06666666666666667,
+    "days_remaining": 60
   },
   {
     "code": "20855",
@@ -4254,9 +4254,9 @@ const stockData = [
     "count": 10.0,
     "selling_price": 871.9,
     "purchase_price": 341.0,
-    "total_sold_90d": 3.0,
-    "avg_daily_sales": 0.03333333333333333,
-    "days_remaining": 300
+    "total_sold_90d": 2.0,
+    "avg_daily_sales": 0.022222222222222223,
+    "days_remaining": 450
   },
   {
     "code": "20856",
@@ -4268,9 +4268,9 @@ const stockData = [
     "count": 8.0,
     "selling_price": 871.9,
     "purchase_price": 341.0,
-    "total_sold_90d": 3.0,
-    "avg_daily_sales": 0.03333333333333333,
-    "days_remaining": 240
+    "total_sold_90d": 1.0,
+    "avg_daily_sales": 0.011111111111111112,
+    "days_remaining": 720
   },
   {
     "code": "20814",
@@ -4436,9 +4436,9 @@ const stockData = [
     "count": 8.0,
     "selling_price": 871.9,
     "purchase_price": 341.0,
-    "total_sold_90d": 2.0,
-    "avg_daily_sales": 0.022222222222222223,
-    "days_remaining": 360
+    "total_sold_90d": 1.0,
+    "avg_daily_sales": 0.011111111111111112,
+    "days_remaining": 720
   },
   {
     "code": "20830",
@@ -5094,9 +5094,9 @@ const stockData = [
     "count": 7.0,
     "selling_price": 607.44,
     "purchase_price": 247.0,
-    "total_sold_90d": 7.0,
-    "avg_daily_sales": 0.07777777777777778,
-    "days_remaining": 90
+    "total_sold_90d": 6.0,
+    "avg_daily_sales": 0.06666666666666667,
+    "days_remaining": 105
   },
   {
     "code": "S0000",
@@ -5108,9 +5108,9 @@ const stockData = [
     "count": 6.0,
     "selling_price": 607.44,
     "purchase_price": 247.0,
-    "total_sold_90d": 1.0,
-    "avg_daily_sales": 0.011111111111111112,
-    "days_remaining": 540
+    "total_sold_90d": 2.0,
+    "avg_daily_sales": 0.022222222222222223,
+    "days_remaining": 270
   },
   {
     "code": "XL0000",
@@ -5150,8 +5150,8 @@ const stockData = [
     "count": 3.0,
     "selling_price": 607.44,
     "purchase_price": 247.0,
-    "total_sold_90d": 69.0,
-    "avg_daily_sales": 0.7666666666666667,
+    "total_sold_90d": 68.0,
+    "avg_daily_sales": 0.7555555555555555,
     "days_remaining": 3
   },
   {
@@ -5290,9 +5290,9 @@ const stockData = [
     "count": 12.0,
     "selling_price": 607.44,
     "purchase_price": 247.0,
-    "total_sold_90d": 7.0,
-    "avg_daily_sales": 0.07777777777777778,
-    "days_remaining": 154
+    "total_sold_90d": 6.0,
+    "avg_daily_sales": 0.06666666666666667,
+    "days_remaining": 180
   },
   {
     "code": "20708",
@@ -5556,9 +5556,9 @@ const stockData = [
     "count": 2.0,
     "selling_price": 1082.64,
     "purchase_price": 437.0,
-    "total_sold_90d": 8.0,
-    "avg_daily_sales": 0.08888888888888889,
-    "days_remaining": 22
+    "total_sold_90d": 7.0,
+    "avg_daily_sales": 0.07777777777777778,
+    "days_remaining": 25
   },
   {
     "code": "31200303",
@@ -6172,9 +6172,9 @@ const stockData = [
     "count": 7.0,
     "selling_price": 607.44,
     "purchase_price": 247.0,
-    "total_sold_90d": 1.0,
-    "avg_daily_sales": 0.011111111111111112,
-    "days_remaining": 630
+    "total_sold_90d": 2.0,
+    "avg_daily_sales": 0.022222222222222223,
+    "days_remaining": 315
   },
   {
     "code": "40600",
@@ -6270,9 +6270,9 @@ const stockData = [
     "count": 14.0,
     "selling_price": 607.44,
     "purchase_price": 247.0,
-    "total_sold_90d": 1.0,
-    "avg_daily_sales": 0.011111111111111112,
-    "days_remaining": 1260
+    "total_sold_90d": 0.0,
+    "avg_daily_sales": 0.0,
+    "days_remaining": -1
   },
   {
     "code": "20561",
@@ -6284,9 +6284,9 @@ const stockData = [
     "count": 11.0,
     "selling_price": 607.44,
     "purchase_price": 247.0,
-    "total_sold_90d": 1.0,
-    "avg_daily_sales": 0.011111111111111112,
-    "days_remaining": 990
+    "total_sold_90d": 0.0,
+    "avg_daily_sales": 0.0,
+    "days_remaining": -1
   },
   {
     "code": "20559",
@@ -6354,9 +6354,9 @@ const stockData = [
     "count": 2.0,
     "selling_price": 607.44,
     "purchase_price": 247.0,
-    "total_sold_90d": 8.0,
-    "avg_daily_sales": 0.08888888888888889,
-    "days_remaining": 22
+    "total_sold_90d": 6.0,
+    "avg_daily_sales": 0.06666666666666667,
+    "days_remaining": 30
   },
   {
     "code": "20576",
@@ -6690,9 +6690,9 @@ const stockData = [
     "count": 0.0,
     "selling_price": 776.86,
     "purchase_price": 310.0,
-    "total_sold_90d": 1.0,
-    "avg_daily_sales": 0.011111111111111112,
-    "days_remaining": 0
+    "total_sold_90d": 0.0,
+    "avg_daily_sales": 0.0,
+    "days_remaining": -1
   },
   {
     "code": "35100305",
@@ -8454,9 +8454,9 @@ const stockData = [
     "count": 18.0,
     "selling_price": 925.62,
     "purchase_price": 388.0,
-    "total_sold_90d": 1.0,
-    "avg_daily_sales": 0.011111111111111112,
-    "days_remaining": 1620
+    "total_sold_90d": 2.0,
+    "avg_daily_sales": 0.022222222222222223,
+    "days_remaining": 810
   },
   {
     "code": "34100322",
