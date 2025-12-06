@@ -399,6 +399,196 @@
         .stock-row-critical { background: #ffcdd2 !important; }
         .stock-row-low { background: #fff3e0 !important; }
 
+        /* Monthly Summary styles */
+        .monthly-summary {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .summary-report {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .summary-report h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .summary-section {
+            margin-bottom: 30px;
+        }
+
+        .summary-section h3 {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .summary-section h3::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 20px;
+            background: #3498db;
+            border-radius: 2px;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .summary-stat {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .summary-stat .label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .summary-stat .value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .summary-stat .sub {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 3px;
+        }
+
+        .summary-stat.good { border-left: 4px solid #27ae60; }
+        .summary-stat.warning { border-left: 4px solid #f39c12; }
+        .summary-stat.bad { border-left: 4px solid #e74c3c; }
+        .summary-stat.info { border-left: 4px solid #3498db; }
+
+        .summary-text {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        .summary-text p {
+            margin-bottom: 10px;
+        }
+
+        .summary-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .summary-text strong {
+            color: #2c3e50;
+        }
+
+        .summary-text .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .summary-text .positive {
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .summary-text .negative {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .insight-box h4 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .insight-box p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .salesperson-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .salesperson-section h4 {
+            font-size: 1rem;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .salesperson-section .stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .salesperson-section .stat-item {
+            font-size: 0.9rem;
+        }
+
+        .salesperson-section .stat-item .label {
+            color: #666;
+        }
+
+        .salesperson-section .stat-item .value {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .top-product, .top-customer {
+            background: white;
+            border: 1px solid #eee;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .top-product .name, .top-customer .name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .top-product .details, .top-customer .details {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
         .stock-summary {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -465,6 +655,7 @@
                 <button class="view-btn" data-view="sponsoring">Sponzoring</button>
                 <button class="view-btn" data-view="overdue">Po splatnosti</button>
                 <button class="view-btn" data-view="stock">Sklad</button>
+                <button class="view-btn" data-view="summary">Zhrnutie</button>
             </div>
         </header>
 
@@ -548,6 +739,23 @@
                     <option value="ok">OK (60-120 dní)</option>
                     <option value="high">Vysoké (&gt;120 dní)</option>
                     <option value="no_sales">Bez predaja</option>
+                </select>
+            </div>
+            <div class="filter-group" id="summaryMonthFilterGroup" style="display: none;">
+                <label>Mesiac zhrnutia</label>
+                <select id="summaryMonthFilter">
+                    <option value="2025-11">November 2025</option>
+                    <option value="2025-12">December 2025</option>
+                    <option value="2025-10">Október 2025</option>
+                    <option value="2025-09">September 2025</option>
+                    <option value="2025-08">August 2025</option>
+                    <option value="2025-07">Júl 2025</option>
+                    <option value="2025-06">Jún 2025</option>
+                    <option value="2025-05">Máj 2025</option>
+                    <option value="2025-04">Apríl 2025</option>
+                    <option value="2025-03">Marec 2025</option>
+                    <option value="2025-02">Február 2025</option>
+                    <option value="2025-01">Január 2025</option>
                 </select>
             </div>
         </div>
@@ -846,6 +1054,13 @@
                     </table>
                 </div>
                 <p id="stockCount" style="margin-top: 15px; color: #666; font-size: 0.9rem;"></p>
+            </div>
+        </div>
+
+        <!-- Monthly Summary section (shown only when summary view is active) -->
+        <div id="summarySection" style="display: none;">
+            <div id="summaryContent" class="monthly-summary">
+                <!-- Dynamically populated -->
             </div>
         </div>
     </div>

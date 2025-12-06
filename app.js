@@ -1413,6 +1413,10 @@ function initViewToggle() {
                 if (stockBrandFilterGroup) stockBrandFilterGroup.style.display = 'none';
                 if (stockStatusFilterGroup) stockStatusFilterGroup.style.display = 'none';
                 if (stockSection) stockSection.style.display = 'none';
+                const summaryMonthFilterGroup = document.getElementById('summaryMonthFilterGroup');
+                const summarySection = document.getElementById('summarySection');
+                if (summaryMonthFilterGroup) summaryMonthFilterGroup.style.display = 'none';
+                if (summarySection) summarySection.style.display = 'none';
 
                 if (newView === 'overdue') {
                     // Show overdue-specific UI
@@ -1439,6 +1443,17 @@ function initViewToggle() {
                     updateStockSummary();
                     const filteredStock = getFilteredStock();
                     updateStockTable(filteredStock);
+                } else if (newView === 'summary') {
+                    // Show summary-specific UI
+                    if (summaryMonthFilterGroup) summaryMonthFilterGroup.style.display = 'flex';
+                    if (summarySection) summarySection.style.display = 'block';
+                    if (summaryCards) summaryCards.style.display = 'none';
+                    if (tabsDiv) tabsDiv.style.display = 'none';
+                    tabContents.forEach(tc => tc.style.display = 'none');
+
+                    // Generate monthly summary
+                    const selectedMonth = document.getElementById('summaryMonthFilter')?.value || '2025-11';
+                    generateMonthlySummary(selectedMonth);
                 } else {
                     // Show normal UI
                     if (summaryCards) summaryCards.style.display = 'grid';
@@ -1508,6 +1523,366 @@ function initFilters() {
             }
         });
     }
+
+    // Summary month filter
+    const summaryMonthFilter = document.getElementById('summaryMonthFilter');
+    if (summaryMonthFilter) {
+        summaryMonthFilter.addEventListener('change', () => {
+            if (currentView === 'summary') {
+                generateMonthlySummary(summaryMonthFilter.value);
+            }
+        });
+    }
+}
+
+// ============================================================================
+// MONTHLY SUMMARY FUNCTIONS
+// ============================================================================
+
+// Get month name in Slovak
+function getMonthNameSK(monthStr) {
+    const months = {
+        '01': 'Január', '02': 'Február', '03': 'Marec', '04': 'Apríl',
+        '05': 'Máj', '06': 'Jún', '07': 'Júl', '08': 'August',
+        '09': 'September', '10': 'Október', '11': 'November', '12': 'December'
+    };
+    const [year, month] = monthStr.split('-');
+    return `${months[month]} ${year}`;
+}
+
+// Generate monthly summary report
+function generateMonthlySummary(selectedMonth) {
+    const container = document.getElementById('summaryContent');
+    if (!container) return;
+
+    // Filter data for selected month
+    const monthOrders = ordersData.filter(o => o.date.startsWith(selectedMonth));
+    const monthInvoices = invoicesData.filter(i => i.date.startsWith(selectedMonth));
+    const monthItems = itemsData.filter(i => i.date.startsWith(selectedMonth));
+    const monthInvoiceItems = invoiceItemsData.filter(i => i.date.startsWith(selectedMonth));
+
+    // Get previous month for comparison
+    const [year, month] = selectedMonth.split('-');
+    const prevMonth = month === '01'
+        ? `${parseInt(year) - 1}-12`
+        : `${year}-${String(parseInt(month) - 1).padStart(2, '0')}`;
+    const prevMonthOrders = ordersData.filter(o => o.date.startsWith(prevMonth));
+
+    // === ORDERS STATS ===
+    const ordersCZ = monthOrders.filter(o => o.currency !== 'EUR');
+    const ordersSK = monthOrders.filter(o => o.currency === 'EUR');
+    const totalCZK = ordersCZ.reduce((sum, o) => sum + (o.total_czk || 0), 0);
+    const totalEUR = ordersSK.reduce((sum, o) => sum + (o.total_eur || 0), 0);
+
+    // Previous month totals
+    const prevOrdersCZ = prevMonthOrders.filter(o => o.currency !== 'EUR');
+    const prevOrdersSK = prevMonthOrders.filter(o => o.currency === 'EUR');
+    const prevTotalCZK = prevOrdersCZ.reduce((sum, o) => sum + (o.total_czk || 0), 0);
+    const prevTotalEUR = prevOrdersSK.reduce((sum, o) => sum + (o.total_eur || 0), 0);
+
+    // Plan fulfillment
+    const plan = planData[selectedMonth] || { celkomCZ: 0, celkomSK: 0 };
+    const planCZPercent = plan.celkomCZ > 0 ? (totalCZK / plan.celkomCZ) * 100 : 0;
+    const planSKPercent = plan.celkomSK > 0 ? (totalEUR / plan.celkomSK) * 100 : 0;
+
+    // Month-over-month change
+    const momChangeCZ = prevTotalCZK > 0 ? ((totalCZK - prevTotalCZK) / prevTotalCZK) * 100 : 0;
+    const momChangeSK = prevTotalEUR > 0 ? ((totalEUR - prevTotalEUR) / prevTotalEUR) * 100 : 0;
+
+    // === INVOICES STATS ===
+    const invoicesCZ = monthInvoices.filter(i => i.currency !== 'EUR');
+    const invoicesSK = monthInvoices.filter(i => i.currency === 'EUR');
+    const invoicedCZK = invoicesCZ.reduce((sum, i) => sum + (i.total_czk || 0), 0);
+    const invoicedEUR = invoicesSK.reduce((sum, i) => sum + (i.total_eur || 0), 0);
+    const paidInvoices = monthInvoices.filter(i => i.is_paid).length;
+    const paidPercent = monthInvoices.length > 0 ? (paidInvoices / monthInvoices.length) * 100 : 0;
+
+    // === BRAND BREAKDOWN ===
+    const brandTotals = { ENERVIT: 0, ROYALBAY: 0, VITAR: 0 };
+    monthItems.forEach(item => {
+        const brand = classifyBrand(item.product_name);
+        const amount = (item.total_czk || 0) + ((item.total_eur || 0) * 25);
+        brandTotals[brand] += amount;
+    });
+    const brandTotal = brandTotals.ENERVIT + brandTotals.ROYALBAY + brandTotals.VITAR;
+    const brandPercents = {
+        ENERVIT: brandTotal > 0 ? (brandTotals.ENERVIT / brandTotal) * 100 : 0,
+        ROYALBAY: brandTotal > 0 ? (brandTotals.ROYALBAY / brandTotal) * 100 : 0,
+        VITAR: brandTotal > 0 ? (brandTotals.VITAR / brandTotal) * 100 : 0
+    };
+
+    // === CHANNEL BREAKDOWN ===
+    const channelTotals = { ESHOP: 0, B2B: 0 };
+    monthOrders.forEach(o => {
+        const amount = (o.total_czk || 0) + ((o.total_eur || 0) * 25);
+        if (o.channel === 'B2B') {
+            channelTotals.B2B += amount;
+        } else {
+            channelTotals.ESHOP += amount;
+        }
+    });
+    const channelTotal = channelTotals.ESHOP + channelTotals.B2B;
+    const eshopPercent = channelTotal > 0 ? (channelTotals.ESHOP / channelTotal) * 100 : 0;
+    const b2bPercent = channelTotal > 0 ? (channelTotals.B2B / channelTotal) * 100 : 0;
+
+    // === B2B SALESPERSON BREAKDOWN ===
+    const b2bOrders = monthOrders.filter(o => o.channel === 'B2B');
+    const salespersonStats = {};
+
+    b2bOrders.forEach(o => {
+        const sp = o.salesperson || 'VITAR Sport';
+        if (!salespersonStats[sp]) {
+            salespersonStats[sp] = {
+                orders: 0,
+                totalCZK: 0,
+                totalEUR: 0,
+                products: {},
+                customers: {}
+            };
+        }
+        salespersonStats[sp].orders++;
+        salespersonStats[sp].totalCZK += o.total_czk || 0;
+        salespersonStats[sp].totalEUR += o.total_eur || 0;
+
+        // Track customer
+        const customer = o.company || 'Neznámý';
+        salespersonStats[sp].customers[customer] = (salespersonStats[sp].customers[customer] || 0) + (o.total_czk || 0) + ((o.total_eur || 0) * 25);
+    });
+
+    // Get top products per salesperson from items
+    const b2bItems = monthItems.filter(i => i.channel === 'B2B');
+    b2bItems.forEach(item => {
+        const sp = item.salesperson || 'VITAR Sport';
+        if (salespersonStats[sp]) {
+            const productKey = item.product_name || item.product_code || 'Unknown';
+            if (!salespersonStats[sp].products[productKey]) {
+                salespersonStats[sp].products[productKey] = { qty: 0, total: 0 };
+            }
+            salespersonStats[sp].products[productKey].qty += item.quantity || 0;
+            salespersonStats[sp].products[productKey].total += (item.total_czk || 0) + ((item.total_eur || 0) * 25);
+        }
+    });
+
+    // Find top product and customer for each salesperson
+    Object.keys(salespersonStats).forEach(sp => {
+        const products = salespersonStats[sp].products;
+        const topProduct = Object.entries(products)
+            .sort((a, b) => b[1].total - a[1].total)[0];
+        salespersonStats[sp].topProduct = topProduct ? { name: topProduct[0], ...topProduct[1] } : null;
+
+        const customers = salespersonStats[sp].customers;
+        const topCustomer = Object.entries(customers)
+            .sort((a, b) => b[1] - a[1])[0];
+        salespersonStats[sp].topCustomer = topCustomer ? { name: topCustomer[0], total: topCustomer[1] } : null;
+    });
+
+    // === TOP 5 PRODUCTS OVERALL ===
+    const productTotals = {};
+    monthItems.forEach(item => {
+        const key = item.product_name || item.product_code || 'Unknown';
+        if (!productTotals[key]) {
+            productTotals[key] = { qty: 0, total: 0, code: item.product_code };
+        }
+        productTotals[key].qty += item.quantity || 0;
+        productTotals[key].total += (item.total_czk || 0) + ((item.total_eur || 0) * 25);
+    });
+    const top5Products = Object.entries(productTotals)
+        .sort((a, b) => b[1].total - a[1].total)
+        .slice(0, 5);
+
+    // === TOP 5 CUSTOMERS ===
+    const customerTotals = {};
+    monthOrders.forEach(o => {
+        const customer = o.company || 'Neznámý';
+        if (!customerTotals[customer]) {
+            customerTotals[customer] = { orders: 0, total: 0 };
+        }
+        customerTotals[customer].orders++;
+        customerTotals[customer].total += (o.total_czk || 0) + ((o.total_eur || 0) * 25);
+    });
+    const top5Customers = Object.entries(customerTotals)
+        .sort((a, b) => b[1].total - a[1].total)
+        .slice(0, 5);
+
+    // === GENERATE HTML ===
+    const planCZClass = planCZPercent >= 90 ? 'good' : (planCZPercent >= 70 ? 'warning' : 'bad');
+    const planSKClass = planSKPercent >= 90 ? 'good' : (planSKPercent >= 70 ? 'warning' : 'bad');
+
+    let html = `
+        <div class="summary-report">
+            <h2>Mesačné zhrnutie - ${getMonthNameSK(selectedMonth)}</h2>
+
+            <!-- Orders Section -->
+            <div class="summary-section">
+                <h3>Prijaté objednávky</h3>
+                <div class="summary-grid">
+                    <div class="summary-stat ${planCZClass}">
+                        <div class="label">CZ Market</div>
+                        <div class="value">${formatCZK(totalCZK)}</div>
+                        <div class="sub">Plán: ${formatPercent(planCZPercent)}</div>
+                    </div>
+                    <div class="summary-stat ${planSKClass}">
+                        <div class="label">SK Market</div>
+                        <div class="value">${formatEUR(totalEUR)}</div>
+                        <div class="sub">Plán: ${formatPercent(planSKPercent)}</div>
+                    </div>
+                    <div class="summary-stat info">
+                        <div class="label">Počet objednávok</div>
+                        <div class="value">${monthOrders.length}</div>
+                        <div class="sub">CZ: ${ordersCZ.length} | SK: ${ordersSK.length}</div>
+                    </div>
+                    <div class="summary-stat ${momChangeCZ >= 0 ? 'good' : 'bad'}">
+                        <div class="label">vs. predchádzajúci mesiac</div>
+                        <div class="value">${momChangeCZ >= 0 ? '+' : ''}${formatPercent(momChangeCZ)}</div>
+                        <div class="sub">CZ market</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Invoices Section -->
+            <div class="summary-section">
+                <h3>Vydané faktúry</h3>
+                <div class="summary-grid">
+                    <div class="summary-stat info">
+                        <div class="label">CZ Market</div>
+                        <div class="value">${formatCZK(invoicedCZK)}</div>
+                        <div class="sub">${invoicesCZ.length} faktúr</div>
+                    </div>
+                    <div class="summary-stat info">
+                        <div class="label">SK Market</div>
+                        <div class="value">${formatEUR(invoicedEUR)}</div>
+                        <div class="sub">${invoicesSK.length} faktúr</div>
+                    </div>
+                    <div class="summary-stat ${paidPercent >= 80 ? 'good' : (paidPercent >= 50 ? 'warning' : 'bad')}">
+                        <div class="label">Uhradené</div>
+                        <div class="value">${formatPercent(paidPercent)}</div>
+                        <div class="sub">${paidInvoices} z ${monthInvoices.length}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brand & Channel Breakdown -->
+            <div class="summary-section">
+                <h3>Rozdelenie podľa značky a kanálu</h3>
+                <div class="summary-text">
+                    <p><strong>Značky:</strong>
+                        ENERVIT <span class="${brandPercents.ENERVIT > 50 ? 'positive' : ''}">${formatPercent(brandPercents.ENERVIT)}</span> (${formatCZK(brandTotals.ENERVIT)}) |
+                        ROYALBAY ${formatPercent(brandPercents.ROYALBAY)} (${formatCZK(brandTotals.ROYALBAY)}) |
+                        VITAR ${formatPercent(brandPercents.VITAR)} (${formatCZK(brandTotals.VITAR)})
+                    </p>
+                    <p><strong>Kanály:</strong>
+                        ESHOP ${formatPercent(eshopPercent)} |
+                        B2B <span class="${b2bPercent > 50 ? 'positive' : ''}">${formatPercent(b2bPercent)}</span>
+                    </p>
+                    <p><strong>Krajiny:</strong>
+                        CZ ${formatPercent((totalCZK / (totalCZK + totalEUR * 25)) * 100)} |
+                        SK ${formatPercent((totalEUR * 25 / (totalCZK + totalEUR * 25)) * 100)}
+                    </p>
+                </div>
+            </div>
+
+            <!-- B2B Salespeople Section -->
+            <div class="summary-section">
+                <h3>B2B obchodníci</h3>
+    `;
+
+    // Add salesperson sections
+    const salespersonOrder = ['Karolina', 'Jirka', 'Štěpán', 'VITAR Sport'];
+    salespersonOrder.forEach(sp => {
+        const stats = salespersonStats[sp];
+        if (stats && stats.orders > 0) {
+            const spPlan = plan[sp === 'Karolina' ? 'karolina' : (sp === 'Jirka' ? 'jirkaCZ' : (sp === 'Štěpán' ? 'stepanCZ' : 0))] || 0;
+            const spPercent = spPlan > 0 ? (stats.totalCZK / spPlan) * 100 : 0;
+            const spClass = spPercent >= 90 ? 'good' : (spPercent >= 70 ? 'warning' : 'bad');
+
+            html += `
+                <div class="salesperson-section">
+                    <h4>${sp} <span class="plan-percent ${spClass}">${spPlan > 0 ? formatPercent(spPercent) + ' plánu' : ''}</span></h4>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="label">Objednávky:</span>
+                            <span class="value">${stats.orders}</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Obrat CZ:</span>
+                            <span class="value">${formatCZK(stats.totalCZK)}</span>
+                        </div>
+                        ${stats.totalEUR > 0 ? `
+                        <div class="stat-item">
+                            <span class="label">Obrat SK:</span>
+                            <span class="value">${formatEUR(stats.totalEUR)}</span>
+                        </div>
+                        ` : ''}
+                    </div>
+                    ${stats.topProduct ? `
+                    <div class="top-product">
+                        <span class="label">Top produkt:</span>
+                        <span class="name">${stats.topProduct.name.substring(0, 50)}${stats.topProduct.name.length > 50 ? '...' : ''}</span>
+                        <span class="details">(${stats.topProduct.qty} ks, ${formatCZK(stats.topProduct.total)})</span>
+                    </div>
+                    ` : ''}
+                    ${stats.topCustomer ? `
+                    <div class="top-customer" style="margin-top: 8px;">
+                        <span class="label">Top zákazník:</span>
+                        <span class="name">${stats.topCustomer.name.substring(0, 40)}${stats.topCustomer.name.length > 40 ? '...' : ''}</span>
+                        <span class="details">(${formatCZK(stats.topCustomer.total)})</span>
+                    </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+    });
+
+    html += `
+            </div>
+
+            <!-- Top Products -->
+            <div class="summary-section">
+                <h3>Top 5 produktov</h3>
+                <div class="summary-text">
+    `;
+
+    top5Products.forEach((product, index) => {
+        html += `<p>${index + 1}. <strong>${product[0].substring(0, 60)}${product[0].length > 60 ? '...' : ''}</strong> - ${product[1].qty} ks, ${formatCZK(product[1].total)}</p>`;
+    });
+
+    html += `
+                </div>
+            </div>
+
+            <!-- Top Customers -->
+            <div class="summary-section">
+                <h3>Top 5 zákazníkov</h3>
+                <div class="summary-text">
+    `;
+
+    top5Customers.forEach((customer, index) => {
+        html += `<p>${index + 1}. <strong>${customer[0].substring(0, 50)}${customer[0].length > 50 ? '...' : ''}</strong> - ${customer[1].orders} obj., ${formatCZK(customer[1].total)}</p>`;
+    });
+
+    html += `
+                </div>
+            </div>
+
+            <!-- Business Insight -->
+            <div class="insight-box">
+                <h4>Business Insight</h4>
+                <p>
+                    ${planCZPercent >= 100 && planSKPercent >= 100
+                        ? `Výborný mesiac! Plán bol splnený na oboch trhoch.`
+                        : planCZPercent >= 90 || planSKPercent >= 90
+                            ? `Dobrý mesiac, plán bol takmer splnený.`
+                            : `Mesiac pod očakávaním, plán nebol splnený.`
+                    }
+                    ${b2bPercent > 60 ? ` B2B kanál dominuje s ${formatPercent(b2bPercent)} obratu.` : ''}
+                    ${brandPercents.ENERVIT > 60 ? ` ENERVIT je najsilnejšia značka (${formatPercent(brandPercents.ENERVIT)}).` : ''}
+                    ${top5Customers[0] ? ` Najväčší zákazník ${top5Customers[0][0].substring(0, 30)} priniesol ${formatCZK(top5Customers[0][1].total)}.` : ''}
+                </p>
+            </div>
+        </div>
+    `;
+
+    container.innerHTML = html;
 }
 
 // Initialize application
