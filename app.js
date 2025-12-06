@@ -2064,6 +2064,24 @@ function generateMonthlySummary(selectedMonth) {
     container.innerHTML = html;
 }
 
+// Print summary to PDF
+function printSummaryToPdf() {
+    const selectedMonth = document.getElementById('summaryMonthFilter')?.value || '2025-11';
+    const monthName = getMonthNameSK(selectedMonth).replace(' ', '_');
+
+    // Set document title for PDF filename
+    const originalTitle = document.title;
+    document.title = `VITAR_Zhrnutie_${monthName}`;
+
+    // Trigger print dialog
+    window.print();
+
+    // Restore original title
+    setTimeout(() => {
+        document.title = originalTitle;
+    }, 1000);
+}
+
 // Initialize application
 document.addEventListener('DOMContentLoaded', () => {
     initViewToggle();

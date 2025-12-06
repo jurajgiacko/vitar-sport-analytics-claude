@@ -589,6 +589,69 @@
             font-size: 0.85rem;
         }
 
+        /* PDF Print Button */
+        .summary-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 15px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-pdf {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .btn-pdf:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .btn-pdf .pdf-icon {
+            font-size: 1.1rem;
+        }
+
+        /* Print styles */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #summaryContent, #summaryContent * {
+                visibility: visible;
+            }
+            #summaryContent {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                max-width: none;
+            }
+            .summary-actions, header, .filters, .view-toggle {
+                display: none !important;
+            }
+            .summary-report {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .insight-box {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
         .stock-summary {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -1059,6 +1122,11 @@
 
         <!-- Monthly Summary section (shown only when summary view is active) -->
         <div id="summarySection" style="display: none;">
+            <div class="summary-actions">
+                <button id="printPdfBtn" class="btn-pdf" onclick="printSummaryToPdf()">
+                    <span class="pdf-icon">📄</span> Uložiť PDF
+                </button>
+            </div>
             <div id="summaryContent" class="monthly-summary">
                 <!-- Dynamically populated -->
             </div>
