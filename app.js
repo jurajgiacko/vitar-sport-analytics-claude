@@ -1550,6 +1550,141 @@ function getMonthNameSK(monthStr) {
     return `${months[month]} ${year}`;
 }
 
+// Generate Executive Summary - Big 4 style business insight
+function generateExecutiveSummary(data) {
+    const {
+        selectedMonth,
+        totalCZK, totalEUR, planCZPercent, planSKPercent,
+        invoicedCZK, invoicedEUR, invoicePlanCZPercent, invoicePlanSKPercent,
+        plan, momChangeCZ, momChangeSK,
+        b2bPercent, eshopPercent, brandPercents, brandTotals,
+        salespersonStats, salespersonInvoiceStats,
+        top5Customers, top5Products,
+        monthOrders, monthInvoices, paidPercent
+    } = data;
+
+    let insights = [];
+
+    // === 1. OVERALL PERFORMANCE ASSESSMENT ===
+    const combinedOrderPlan = (planCZPercent + planSKPercent) / 2;
+    const combinedInvoicePlan = (invoicePlanCZPercent + invoicePlanSKPercent) / 2;
+    const czOverperformed = planCZPercent >= 100;
+    const skUnderperformed = planSKPercent < 100;
+    const czCompensatedSk = czOverperformed && skUnderperformed && combinedOrderPlan >= 95;
+
+    if (czOverperformed && planSKPercent >= 100) {
+        insights.push(`<p><strong>Celkové hodnotenie:</strong> Excelentný mesiac. Obchodný plán bol naplnený na oboch trhoch - CZ na ${formatPercent(planCZPercent)} a SK na ${formatPercent(planSKPercent)}. Toto predstavuje silný výkon naprieč celým portfóliom.</p>`);
+    } else if (czCompensatedSk) {
+        const czOverage = totalCZK - plan.celkomCZ;
+        const skShortfall = plan.celkomSK - totalEUR;
+        insights.push(`<p><strong>Celkové hodnotenie:</strong> Český trh prekročil plán o ${formatCZK(czOverage)} (${formatPercent(planCZPercent)}), čím kompenzoval nižší výkon na slovenskom trhu (${formatPercent(planSKPercent)}). V súhrne bol mesačný cieľ v podstate dosiahnutý s kombinovaným plnením ${formatPercent(combinedOrderPlan)}.</p>`);
+    } else if (planCZPercent >= 90 || planSKPercent >= 90) {
+        insights.push(`<p><strong>Celkové hodnotenie:</strong> Mesiac s čiastočným plnením plánu. CZ: ${formatPercent(planCZPercent)}, SK: ${formatPercent(planSKPercent)}. Odporúčame analýzu príčin odchýlok a úpravu taktiky pre nasledujúce obdobie.</p>`);
+    } else {
+        insights.push(`<p><strong>Celkové hodnotenie:</strong> Mesiac pod očakávaním s plnením CZ: ${formatPercent(planCZPercent)}, SK: ${formatPercent(planSKPercent)}. Vyžaduje sa okamžitá revízia obchodnej stratégie.</p>`);
+    }
+
+    // === 2. ORDERS VS INVOICES ANALYSIS ===
+    const orderToInvoiceRatioCZ = invoicedCZK > 0 && totalCZK > 0 ? (invoicedCZK / totalCZK) * 100 : 0;
+    const orderToInvoiceRatioSK = invoicedEUR > 0 && totalEUR > 0 ? (invoicedEUR / totalEUR) * 100 : 0;
+
+    if (invoicePlanCZPercent >= 100 || invoicePlanSKPercent >= 100) {
+        insights.push(`<p><strong>Realizácia objednávok:</strong> Fakturácia dosahuje ${formatPercent(invoicePlanCZPercent)} plánu na CZ a ${formatPercent(invoicePlanSKPercent)} na SK. ${orderToInvoiceRatioCZ > 100 ? 'Faktúry prevyšujú objednávky, čo indikuje úspešnú realizáciu backlogu z predchádzajúcich období.' : 'Konverzia objednávok na faktúry prebieha v štandardnom tempe.'}</p>`);
+    } else {
+        insights.push(`<p><strong>Realizácia objednávok:</strong> Fakturácia na úrovni CZ: ${formatPercent(invoicePlanCZPercent)}, SK: ${formatPercent(invoicePlanSKPercent)} plánu. Pomer faktúr k objednávkam: CZ ${formatPercent(orderToInvoiceRatioCZ)}, SK ${formatPercent(orderToInvoiceRatioSK)}.</p>`);
+    }
+
+    // === 3. MONTH-OVER-MONTH TREND ===
+    if (momChangeCZ !== 0 || momChangeSK !== 0) {
+        let trendText = '<p><strong>Medzimesačný trend:</strong> ';
+        if (momChangeCZ > 0 && momChangeSK > 0) {
+            trendText += `Pozitívny rast na oboch trhoch (CZ: +${formatPercent(momChangeCZ)}, SK: +${formatPercent(momChangeSK)}). `;
+        } else if (momChangeCZ < 0 && momChangeSK < 0) {
+            trendText += `Pokles oproti predchádzajúcemu mesiacu (CZ: ${formatPercent(momChangeCZ)}, SK: ${formatPercent(momChangeSK)}). `;
+        } else {
+            trendText += `Zmiešaný výkon - CZ: ${momChangeCZ >= 0 ? '+' : ''}${formatPercent(momChangeCZ)}, SK: ${momChangeSK >= 0 ? '+' : ''}${formatPercent(momChangeSK)}. `;
+        }
+        trendText += '</p>';
+        insights.push(trendText);
+    }
+
+    // === 4. CHANNEL MIX ANALYSIS ===
+    let channelInsight = '<p><strong>Kanálový mix:</strong> ';
+    if (b2bPercent > 60) {
+        channelInsight += `B2B segment dominuje s ${formatPercent(b2bPercent)} celkového obratu. Toto poskytuje stabilnú bázu, ale zvyšuje závislosť na kľúčových odberateľoch. `;
+    } else if (eshopPercent > 60) {
+        channelInsight += `E-shop kanály tvoria ${formatPercent(eshopPercent)} obratu, čo indikuje silný retail segment s vyššou maržovosťou ale väčšou volatilitou. `;
+    } else {
+        channelInsight += `Vyvážený mix medzi B2B (${formatPercent(b2bPercent)}) a e-shop (${formatPercent(eshopPercent)}) kanálmi poskytuje diverzifikáciu príjmov. `;
+    }
+    channelInsight += '</p>';
+    insights.push(channelInsight);
+
+    // === 5. BRAND PERFORMANCE ===
+    const dominantBrand = Object.entries(brandPercents).sort((a, b) => b[1] - a[1])[0];
+    let brandInsight = '<p><strong>Výkon značiek:</strong> ';
+    brandInsight += `${dominantBrand[0]} vedie s ${formatPercent(dominantBrand[1])} podielu (${formatCZK(brandTotals[dominantBrand[0]])}). `;
+
+    if (brandPercents.ENERVIT > 50) {
+        brandInsight += 'Portfólio je koncentrované na prémiovú značku ENERVIT. ';
+    }
+    if (brandPercents.ROYALBAY > 20) {
+        brandInsight += `ROYALBAY prispieva ${formatPercent(brandPercents.ROYALBAY)}, čo predstavuje rastový potenciál v kompresnom segmente. `;
+    }
+    brandInsight += '</p>';
+    insights.push(brandInsight);
+
+    // === 6. TOP PERFORMERS ===
+    // Top salesperson
+    const topSalesperson = Object.entries(salespersonStats)
+        .filter(([name, stats]) => stats.totalCZK > 0)
+        .sort((a, b) => b[1].totalCZK - a[1].totalCZK)[0];
+
+    if (topSalesperson) {
+        const [spName, spStats] = topSalesperson;
+        const spInvoiceStats = salespersonInvoiceStats[spName];
+        insights.push(`<p><strong>Top obchodník:</strong> ${spName} s obratom ${formatCZK(spStats.totalCZK)}${spStats.totalEUR > 0 ? ' + ' + formatEUR(spStats.totalEUR) : ''} z ${spStats.orders} objednávok. ${spInvoiceStats ? `Fakturované: ${formatCZK(spInvoiceStats.totalCZK)} z ${spInvoiceStats.invoices} faktúr.` : ''}</p>`);
+    }
+
+    // Top customer concentration
+    if (top5Customers.length > 0) {
+        const top5Total = top5Customers.reduce((sum, c) => sum + c[1].total, 0);
+        const totalRevenue = totalCZK + (totalEUR * 25);
+        const top5Concentration = totalRevenue > 0 ? (top5Total / totalRevenue) * 100 : 0;
+
+        insights.push(`<p><strong>Koncentrácia zákazníkov:</strong> Top 5 B2B zákazníkov tvorí ${formatPercent(top5Concentration)} obratu. Najväčší odberateľ ${top5Customers[0][0].substring(0, 35)} s ${formatCZK(top5Customers[0][1].total)} (${top5Customers[0][1].orders} objednávok).</p>`);
+    }
+
+    // === 7. PAYMENT COLLECTION ===
+    if (paidPercent < 70) {
+        insights.push(`<p><strong>Upozornenie - Inkaso:</strong> Len ${formatPercent(paidPercent)} faktúr je uhradených. Odporúčame aktiváciu collection procesu pre minimalizáciu DSO.</p>`);
+    } else if (paidPercent >= 90) {
+        insights.push(`<p><strong>Inkaso:</strong> Výborná platobná disciplína s ${formatPercent(paidPercent)} uhradených faktúr.</p>`);
+    }
+
+    // === 8. KEY RECOMMENDATIONS ===
+    let recommendations = [];
+
+    if (planSKPercent < 80) {
+        recommendations.push('Posilniť obchodné aktivity na SK trhu');
+    }
+    if (b2bPercent > 70) {
+        recommendations.push('Diverzifikovať zákaznícke portfólio pre zníženie koncentračného rizika');
+    }
+    if (paidPercent < 80) {
+        recommendations.push('Zintenzívniť follow-up na neuhradené faktúry');
+    }
+    if (brandPercents.ROYALBAY < 15) {
+        recommendations.push('Zvážiť marketingové aktivity pre značku ROYALBAY');
+    }
+
+    if (recommendations.length > 0) {
+        insights.push(`<p><strong>Odporúčania:</strong> ${recommendations.join('. ')}.</p>`);
+    }
+
+    return insights.join('');
+}
+
 // Generate monthly summary report
 function generateMonthlySummary(selectedMonth) {
     const container = document.getElementById('summaryContent');
@@ -1887,22 +2022,17 @@ function generateMonthlySummary(selectedMonth) {
 
             <!-- Business Insight -->
             <div class="insight-box">
-                <h4>Business Insight</h4>
-                <p>
-                    <strong>Objednávky:</strong> ${planCZPercent >= 100 && planSKPercent >= 100
-                        ? `Výborný mesiac! Plán splnený na oboch trhoch.`
-                        : planCZPercent >= 90 || planSKPercent >= 90
-                            ? `Dobrý mesiac, plán takmer splnený.`
-                            : `Plán nesplnený (CZ: ${formatPercent(planCZPercent)}, SK: ${formatPercent(planSKPercent)}).`
-                    }
-                    <strong>Faktúry:</strong> ${invoicePlanCZPercent >= 100 && invoicePlanSKPercent >= 100
-                        ? `Plán splnený.`
-                        : `CZ: ${formatPercent(invoicePlanCZPercent)}, SK: ${formatPercent(invoicePlanSKPercent)}.`
-                    }
-                    ${b2bPercent > 60 ? ` B2B kanál dominuje (${formatPercent(b2bPercent)}).` : ''}
-                    ${brandPercents.ENERVIT > 60 ? ` ENERVIT je najsilnejšia značka (${formatPercent(brandPercents.ENERVIT)}).` : ''}
-                    ${top5Customers[0] ? ` Top B2B zákazník: ${top5Customers[0][0].substring(0, 30)} (${formatCZK(top5Customers[0][1].total)}).` : ''}
-                </p>
+                <h4>Executive Summary - ${getMonthNameSK(selectedMonth)}</h4>
+                ${generateExecutiveSummary({
+                    selectedMonth,
+                    totalCZK, totalEUR, planCZPercent, planSKPercent,
+                    invoicedCZK, invoicedEUR, invoicePlanCZPercent, invoicePlanSKPercent,
+                    plan, momChangeCZ, momChangeSK,
+                    b2bPercent, eshopPercent, brandPercents, brandTotals,
+                    salespersonStats, salespersonInvoiceStats,
+                    top5Customers, top5Products,
+                    monthOrders, monthInvoices, paidPercent
+                })}
             </div>
         </div>
     `;
