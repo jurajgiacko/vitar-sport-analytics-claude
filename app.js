@@ -1566,33 +1566,57 @@ function generateExecutiveSummary(data) {
     let insights = [];
 
     // === 1. OVERALL PERFORMANCE ASSESSMENT ===
-    const combinedOrderPlan = (planCZPercent + planSKPercent) / 2;
-    const combinedInvoicePlan = (invoicePlanCZPercent + invoicePlanSKPercent) / 2;
+    // Combined plan = total actual (CZ in CZK + SK converted to CZK) vs total plan (CZ + SK converted)
+    const eurToCzk = 25; // conversion rate
+    const totalActualCombined = totalCZK + (totalEUR * eurToCzk);
+    const totalPlanCombined = plan.celkomCZ + (plan.celkomSK * eurToCzk);
+    const combinedOrderPlan = totalPlanCombined > 0 ? (totalActualCombined / totalPlanCombined) * 100 : 0;
+
+    const totalInvoicedCombined = invoicedCZK + (invoicedEUR * eurToCzk);
+    const combinedInvoicePlan = totalPlanCombined > 0 ? (totalInvoicedCombined / totalPlanCombined) * 100 : 0;
+
     const czOverperformed = planCZPercent >= 100;
     const skUnderperformed = planSKPercent < 100;
-    const czCompensatedSk = czOverperformed && skUnderperformed && combinedOrderPlan >= 95;
+    const planAchieved = combinedOrderPlan >= 100;
+    const invoicePlanAchieved = combinedInvoicePlan >= 100;
 
-    if (czOverperformed && planSKPercent >= 100) {
-        insights.push(`<p><strong>Celkové hodnotenie:</strong> Excelentný mesiac. Obchodný plán bol naplnený na oboch trhoch - CZ na ${formatPercent(planCZPercent)} a SK na ${formatPercent(planSKPercent)}. Toto predstavuje silný výkon naprieč celým portfóliom.</p>`);
-    } else if (czCompensatedSk) {
-        const czOverage = totalCZK - plan.celkomCZ;
-        const skShortfall = plan.celkomSK - totalEUR;
-        insights.push(`<p><strong>Celkové hodnotenie:</strong> Český trh prekročil plán o ${formatCZK(czOverage)} (${formatPercent(planCZPercent)}), čím kompenzoval nižší výkon na slovenskom trhu (${formatPercent(planSKPercent)}). V súhrne bol mesačný cieľ v podstate dosiahnutý s kombinovaným plnením ${formatPercent(combinedOrderPlan)}.</p>`);
+    // Build overall assessment
+    let overallText = '<p><strong>Celkové hodnotenie:</strong> ';
+
+    if (planAchieved && planCZPercent >= 100 && planSKPercent >= 100) {
+        overallText += `Excelentný mesiac. Plán naplnený na oboch trhoch - CZ: ${formatPercent(planCZPercent)}, SK: ${formatPercent(planSKPercent)}. Celkové plnenie objednávok ${formatPercent(combinedOrderPlan)}.`;
+    } else if (planAchieved) {
+        overallText += `Plán splnený s celkovým plnením objednávok ${formatPercent(combinedOrderPlan)}. `;
+        if (czOverperformed && skUnderperformed) {
+            const czOverage = totalCZK - plan.celkomCZ;
+            overallText += `CZ trh prekročil cieľ o ${formatCZK(czOverage)} (${formatPercent(planCZPercent)}), čím úspešne kompenzoval nižší výkon SK (${formatPercent(planSKPercent)}).`;
+        } else {
+            overallText += `CZ: ${formatPercent(planCZPercent)}, SK: ${formatPercent(planSKPercent)}.`;
+        }
+    } else if (combinedOrderPlan >= 95) {
+        overallText += `Takmer dosiahnutý cieľ s kombinovaným plnením objednávok ${formatPercent(combinedOrderPlan)}. CZ: ${formatPercent(planCZPercent)}, SK: ${formatPercent(planSKPercent)}.`;
     } else if (planCZPercent >= 90 || planSKPercent >= 90) {
-        insights.push(`<p><strong>Celkové hodnotenie:</strong> Mesiac s čiastočným plnením plánu. CZ: ${formatPercent(planCZPercent)}, SK: ${formatPercent(planSKPercent)}. Odporúčame analýzu príčin odchýlok a úpravu taktiky pre nasledujúce obdobie.</p>`);
+        overallText += `Čiastočné plnenie na úrovni ${formatPercent(combinedOrderPlan)}. CZ: ${formatPercent(planCZPercent)}, SK: ${formatPercent(planSKPercent)}. Odporúčame analýzu príčin odchýlok.`;
     } else {
-        insights.push(`<p><strong>Celkové hodnotenie:</strong> Mesiac pod očakávaním s plnením CZ: ${formatPercent(planCZPercent)}, SK: ${formatPercent(planSKPercent)}. Vyžaduje sa okamžitá revízia obchodnej stratégie.</p>`);
+        overallText += `Mesiac pod očakávaním. Celkové plnenie ${formatPercent(combinedOrderPlan)} (CZ: ${formatPercent(planCZPercent)}, SK: ${formatPercent(planSKPercent)}). Vyžaduje sa revízia stratégie.`;
     }
+    overallText += '</p>';
+    insights.push(overallText);
 
-    // === 2. ORDERS VS INVOICES ANALYSIS ===
-    const orderToInvoiceRatioCZ = invoicedCZK > 0 && totalCZK > 0 ? (invoicedCZK / totalCZK) * 100 : 0;
-    const orderToInvoiceRatioSK = invoicedEUR > 0 && totalEUR > 0 ? (invoicedEUR / totalEUR) * 100 : 0;
+    // === 2. ORDERS VS INVOICES PLAN COMPARISON ===
+    let realizationText = '<p><strong>Plnenie plánu - porovnanie:</strong> ';
+    realizationText += `Objednávky: <strong>${formatPercent(combinedOrderPlan)}</strong> (${formatCZK(totalActualCombined)} z ${formatCZK(totalPlanCombined)}). `;
+    realizationText += `Faktúry: <strong>${formatPercent(combinedInvoicePlan)}</strong> (${formatCZK(totalInvoicedCombined)} z ${formatCZK(totalPlanCombined)}). `;
 
-    if (invoicePlanCZPercent >= 100 || invoicePlanSKPercent >= 100) {
-        insights.push(`<p><strong>Realizácia objednávok:</strong> Fakturácia dosahuje ${formatPercent(invoicePlanCZPercent)} plánu na CZ a ${formatPercent(invoicePlanSKPercent)} na SK. ${orderToInvoiceRatioCZ > 100 ? 'Faktúry prevyšujú objednávky, čo indikuje úspešnú realizáciu backlogu z predchádzajúcich období.' : 'Konverzia objednávok na faktúry prebieha v štandardnom tempe.'}</p>`);
+    if (combinedInvoicePlan > combinedOrderPlan) {
+        realizationText += 'Fakturácia prevyšuje objednávky - úspešná realizácia backlogu.';
+    } else if (combinedOrderPlan > combinedInvoicePlan + 10) {
+        realizationText += 'Objednávky prevyšujú fakturáciu - potenciál pre ďalšie obdobie.';
     } else {
-        insights.push(`<p><strong>Realizácia objednávok:</strong> Fakturácia na úrovni CZ: ${formatPercent(invoicePlanCZPercent)}, SK: ${formatPercent(invoicePlanSKPercent)} plánu. Pomer faktúr k objednávkam: CZ ${formatPercent(orderToInvoiceRatioCZ)}, SK ${formatPercent(orderToInvoiceRatioSK)}.</p>`);
+        realizationText += 'Konverzia objednávok na faktúry prebieha v štandardnom tempe.';
     }
+    realizationText += '</p>';
+    insights.push(realizationText);
 
     // === 3. MONTH-OVER-MONTH TREND ===
     if (momChangeCZ !== 0 || momChangeSK !== 0) {
