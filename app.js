@@ -1690,10 +1690,14 @@ function generateMonthlySummary(selectedMonth) {
         .sort((a, b) => b[1].total - a[1].total)
         .slice(0, 5);
 
-    // === TOP 5 CUSTOMERS ===
+    // === TOP 5 CUSTOMERS (skip empty/unknown) ===
     const customerTotals = {};
     monthOrders.forEach(o => {
-        const customer = o.company || 'Neznámý';
+        const customer = o.company;
+        // Skip empty or unknown customers (eshop orders)
+        if (!customer || customer === 'Neznámý' || customer.trim() === '') {
+            return;
+        }
         if (!customerTotals[customer]) {
             customerTotals[customer] = { orders: 0, total: 0 };
         }
@@ -1704,9 +1708,28 @@ function generateMonthlySummary(selectedMonth) {
         .sort((a, b) => b[1].total - a[1].total)
         .slice(0, 5);
 
+    // === INVOICES PLAN FULFILLMENT ===
+    const invoicePlanCZPercent = plan.celkomCZ > 0 ? (invoicedCZK / plan.celkomCZ) * 100 : 0;
+    const invoicePlanSKPercent = plan.celkomSK > 0 ? (invoicedEUR / plan.celkomSK) * 100 : 0;
+
+    // === B2B SALESPERSON STATS FROM INVOICES ===
+    const b2bInvoices = monthInvoices.filter(i => i.channel === 'B2B');
+    const salespersonInvoiceStats = {};
+    b2bInvoices.forEach(inv => {
+        const sp = inv.salesperson || 'VITAR Sport';
+        if (!salespersonInvoiceStats[sp]) {
+            salespersonInvoiceStats[sp] = { invoices: 0, totalCZK: 0, totalEUR: 0 };
+        }
+        salespersonInvoiceStats[sp].invoices++;
+        salespersonInvoiceStats[sp].totalCZK += inv.total_czk || 0;
+        salespersonInvoiceStats[sp].totalEUR += inv.total_eur || 0;
+    });
+
     // === GENERATE HTML ===
     const planCZClass = planCZPercent >= 90 ? 'good' : (planCZPercent >= 70 ? 'warning' : 'bad');
     const planSKClass = planSKPercent >= 90 ? 'good' : (planSKPercent >= 70 ? 'warning' : 'bad');
+    const invPlanCZClass = invoicePlanCZPercent >= 90 ? 'good' : (invoicePlanCZPercent >= 70 ? 'warning' : 'bad');
+    const invPlanSKClass = invoicePlanSKPercent >= 90 ? 'good' : (invoicePlanSKPercent >= 70 ? 'warning' : 'bad');
 
     let html = `
         <div class="summary-report">
@@ -1743,15 +1766,20 @@ function generateMonthlySummary(selectedMonth) {
             <div class="summary-section">
                 <h3>Vydané faktúry</h3>
                 <div class="summary-grid">
-                    <div class="summary-stat info">
+                    <div class="summary-stat ${invPlanCZClass}">
                         <div class="label">CZ Market</div>
                         <div class="value">${formatCZK(invoicedCZK)}</div>
-                        <div class="sub">${invoicesCZ.length} faktúr</div>
+                        <div class="sub">Plán: ${formatPercent(invoicePlanCZPercent)}</div>
                     </div>
-                    <div class="summary-stat info">
+                    <div class="summary-stat ${invPlanSKClass}">
                         <div class="label">SK Market</div>
                         <div class="value">${formatEUR(invoicedEUR)}</div>
-                        <div class="sub">${invoicesSK.length} faktúr</div>
+                        <div class="sub">Plán: ${formatPercent(invoicePlanSKPercent)}</div>
+                    </div>
+                    <div class="summary-stat info">
+                        <div class="label">Počet faktúr</div>
+                        <div class="value">${monthInvoices.length}</div>
+                        <div class="sub">CZ: ${invoicesCZ.length} | SK: ${invoicesSK.length}</div>
                     </div>
                     <div class="summary-stat ${paidPercent >= 80 ? 'good' : (paidPercent >= 50 ? 'warning' : 'bad')}">
                         <div class="label">Uhradené</div>
@@ -1786,46 +1814,39 @@ function generateMonthlySummary(selectedMonth) {
                 <h3>B2B obchodníci</h3>
     `;
 
-    // Add salesperson sections
+    // Add salesperson sections - simplified with both orders and invoices
     const salespersonOrder = ['Karolina', 'Jirka', 'Štěpán', 'VITAR Sport'];
     salespersonOrder.forEach(sp => {
-        const stats = salespersonStats[sp];
-        if (stats && stats.orders > 0) {
-            const spPlan = plan[sp === 'Karolina' ? 'karolina' : (sp === 'Jirka' ? 'jirkaCZ' : (sp === 'Štěpán' ? 'stepanCZ' : 0))] || 0;
-            const spPercent = spPlan > 0 ? (stats.totalCZK / spPlan) * 100 : 0;
-            const spClass = spPercent >= 90 ? 'good' : (spPercent >= 70 ? 'warning' : 'bad');
+        const orderStats = salespersonStats[sp];
+        const invoiceStats = salespersonInvoiceStats[sp];
 
+        // Show if there are any orders or invoices
+        if ((orderStats && orderStats.orders > 0) || (invoiceStats && invoiceStats.invoices > 0)) {
             html += `
                 <div class="salesperson-section">
-                    <h4>${sp} <span class="plan-percent ${spClass}">${spPlan > 0 ? formatPercent(spPercent) + ' plánu' : ''}</span></h4>
+                    <h4>${sp}</h4>
                     <div class="stats">
                         <div class="stat-item">
                             <span class="label">Objednávky:</span>
-                            <span class="value">${stats.orders}</span>
+                            <span class="value">${orderStats ? orderStats.orders : 0} obj. / ${orderStats ? formatCZK(orderStats.totalCZK) : formatCZK(0)}${orderStats && orderStats.totalEUR > 0 ? ' + ' + formatEUR(orderStats.totalEUR) : ''}</span>
                         </div>
                         <div class="stat-item">
-                            <span class="label">Obrat CZ:</span>
-                            <span class="value">${formatCZK(stats.totalCZK)}</span>
+                            <span class="label">Faktúry:</span>
+                            <span class="value">${invoiceStats ? invoiceStats.invoices : 0} fakt. / ${invoiceStats ? formatCZK(invoiceStats.totalCZK) : formatCZK(0)}${invoiceStats && invoiceStats.totalEUR > 0 ? ' + ' + formatEUR(invoiceStats.totalEUR) : ''}</span>
                         </div>
-                        ${stats.totalEUR > 0 ? `
-                        <div class="stat-item">
-                            <span class="label">Obrat SK:</span>
-                            <span class="value">${formatEUR(stats.totalEUR)}</span>
-                        </div>
-                        ` : ''}
                     </div>
-                    ${stats.topProduct ? `
+                    ${orderStats && orderStats.topProduct ? `
                     <div class="top-product">
                         <span class="label">Top produkt:</span>
-                        <span class="name">${stats.topProduct.name.substring(0, 50)}${stats.topProduct.name.length > 50 ? '...' : ''}</span>
-                        <span class="details">(${stats.topProduct.qty} ks, ${formatCZK(stats.topProduct.total)})</span>
+                        <span class="name">${orderStats.topProduct.name.substring(0, 50)}${orderStats.topProduct.name.length > 50 ? '...' : ''}</span>
+                        <span class="details">(${orderStats.topProduct.qty} ks, ${formatCZK(orderStats.topProduct.total)})</span>
                     </div>
                     ` : ''}
-                    ${stats.topCustomer ? `
+                    ${orderStats && orderStats.topCustomer ? `
                     <div class="top-customer" style="margin-top: 8px;">
                         <span class="label">Top zákazník:</span>
-                        <span class="name">${stats.topCustomer.name.substring(0, 40)}${stats.topCustomer.name.length > 40 ? '...' : ''}</span>
-                        <span class="details">(${formatCZK(stats.topCustomer.total)})</span>
+                        <span class="name">${orderStats.topCustomer.name.substring(0, 40)}${orderStats.topCustomer.name.length > 40 ? '...' : ''}</span>
+                        <span class="details">(${formatCZK(orderStats.topCustomer.total)})</span>
                     </div>
                     ` : ''}
                 </div>
@@ -1868,15 +1889,19 @@ function generateMonthlySummary(selectedMonth) {
             <div class="insight-box">
                 <h4>Business Insight</h4>
                 <p>
-                    ${planCZPercent >= 100 && planSKPercent >= 100
-                        ? `Výborný mesiac! Plán bol splnený na oboch trhoch.`
+                    <strong>Objednávky:</strong> ${planCZPercent >= 100 && planSKPercent >= 100
+                        ? `Výborný mesiac! Plán splnený na oboch trhoch.`
                         : planCZPercent >= 90 || planSKPercent >= 90
-                            ? `Dobrý mesiac, plán bol takmer splnený.`
-                            : `Mesiac pod očakávaním, plán nebol splnený.`
+                            ? `Dobrý mesiac, plán takmer splnený.`
+                            : `Plán nesplnený (CZ: ${formatPercent(planCZPercent)}, SK: ${formatPercent(planSKPercent)}).`
                     }
-                    ${b2bPercent > 60 ? ` B2B kanál dominuje s ${formatPercent(b2bPercent)} obratu.` : ''}
+                    <strong>Faktúry:</strong> ${invoicePlanCZPercent >= 100 && invoicePlanSKPercent >= 100
+                        ? `Plán splnený.`
+                        : `CZ: ${formatPercent(invoicePlanCZPercent)}, SK: ${formatPercent(invoicePlanSKPercent)}.`
+                    }
+                    ${b2bPercent > 60 ? ` B2B kanál dominuje (${formatPercent(b2bPercent)}).` : ''}
                     ${brandPercents.ENERVIT > 60 ? ` ENERVIT je najsilnejšia značka (${formatPercent(brandPercents.ENERVIT)}).` : ''}
-                    ${top5Customers[0] ? ` Najväčší zákazník ${top5Customers[0][0].substring(0, 30)} priniesol ${formatCZK(top5Customers[0][1].total)}.` : ''}
+                    ${top5Customers[0] ? ` Top B2B zákazník: ${top5Customers[0][0].substring(0, 30)} (${formatCZK(top5Customers[0][1].total)}).` : ''}
                 </p>
             </div>
         </div>
