@@ -48,20 +48,25 @@ def classify_order(order_number, currency, centre):
     """
     Classify order by sales channel based on order number prefix.
 
+    Order number format: XXYY where XX = type, YY = year
+    - 11YY = ESHOP_ENERVIT_CZ (e.g., 1125 = eshop enervit CZ 2025)
+    - 12YY = ESHOP_ENERVIT_SK (e.g., 1225 = eshop enervit SK 2025)
+    - 22YY = ESHOP_ROYALBAY (e.g., 2225 = eshop royalbay 2025)
+
     Returns: (channel, salesperson, country, supplier)
     """
     order_str = str(order_number)
 
-    # ESHOP_ENERVIT_CZ - 112xxx
-    if order_str.startswith('112'):
+    # ESHOP_ENERVIT_CZ - 11YY (e.g., 1125 for 2025)
+    if order_str.startswith('11') and len(order_str) >= 4 and order_str[2:4].isdigit():
         return ('ESHOP_ENERVIT_CZ', None, 'CZ', 'ENERVIT')
 
-    # ESHOP_ENERVIT_SK - 122xxx
-    if order_str.startswith('122'):
+    # ESHOP_ENERVIT_SK - 12YY (e.g., 1225 for 2025)
+    if order_str.startswith('12') and len(order_str) >= 4 and order_str[2:4].isdigit():
         return ('ESHOP_ENERVIT_SK', None, 'SK', 'ENERVIT')
 
-    # ESHOP_ROYALBAY - 222xxx
-    if order_str.startswith('222'):
+    # ESHOP_ROYALBAY - 22YY (e.g., 2225 for 2025)
+    if order_str.startswith('22') and len(order_str) >= 4 and order_str[2:4].isdigit():
         country = 'SK' if currency == 'EUR' else 'CZ'
         return (f'ESHOP_ROYALBAY_{country}', None, country, 'ARIES')
 
