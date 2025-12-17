@@ -8,7 +8,8 @@ const users = {
     'stepan.frysara': 'TriathlonTurbo3!',
     'daniel.pavlis': 'CykloSpeed100@',
     'tomas.cervinka': 'PowerGel4Ever#',
-    'vladimir.polasek': 'IsoCarb2Win!'
+    'vladimir.polasek': 'IsoCarb2Win!',
+    'pozar.jindrich': 'RecoveryPro2025#'
 };
 
 // Simple hash function for password comparison
